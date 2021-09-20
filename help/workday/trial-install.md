@@ -12,7 +12,7 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: beafe6c0-262f-4f5b-9315-a023a4eef4a2
-source-git-commit: d462ccf41fa5483cfa02f5eaf154c23f26157a1e
+source-git-commit: ba5e0fccfdb7cd278cc0ae57dc03da1e17b51577
 workflow-type: tm+mt
 source-wordcount: '998'
 ht-degree: 34%
@@ -163,6 +163,6 @@ I clienti Adobe Sign possono contattare il proprio Customer Success Manager (CSM
 
 * [Aggiunta di tag di testo di Adobe ai documenti](https://adobe.com/go/adobesign_text_tag_guide)
 
-* [Configurazione ed esempi per la revisione di documenti](https://experienceleague.adobe.com/docs/dc-sign-integrations/using/workday/quick-start.html)
+* [Configurazione ed esempi per la revisione di documenti](https://www.adobe.com/go/adobesign_workday_quick_start)
 
 [**Contatta il supporto di Adobe Sign**](https://adobe.com/go/adobesign-support-center_it)

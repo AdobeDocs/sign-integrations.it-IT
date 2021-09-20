@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 63a34c2d77ba7a262670da624c86a3730de0fdc5
+source-git-commit: d8b7271cae9bcbe8b66311eba0317b8937ea855c
 workflow-type: tm+mt
-source-wordcount: '2772'
+source-wordcount: '2839'
 ht-degree: 2%
 
 ---
@@ -24,6 +24,16 @@ ht-degree: 2%
 ## Panoramica {#overview}
 
 Questo documento spiega come stabilire l&#39;integrazione di Adobe Sign con la piattaforma [!DNL Veeva Vault]. [!DNL Veeva Vault] è una piattaforma ECM (Enterprise Content Management) creata per le scienze della vita. Un &quot;insieme di credenziali&quot; è un repository di contenuti e dati con un utilizzo tipico per i file normativi, per i report di ricerca, per le applicazioni di concessione, per i contratti generali e altro ancora. Un&#39;unica impresa può disporre di più &#39;archivi&#39; che devono essere gestiti separatamente.
+
+Le fasi di alto livello per completare l&#39;integrazione sono:
+
+* Attiva il tuo account amministrativo in Adobe Sign (solo nuovi clienti)
+* Creare oggetti per tenere traccia della cronologia di un ciclo di vita dei contratti nell&#39;insieme di credenziali.
+* Crea un nuovo profilo di protezione.
+* Configurare un gruppo in Adobe Sign per mantenere l&#39;utente di integrazione [!DNL Veeva Vault].
+* Crea campi documento e copie trasformate.
+* Configurare le azioni Web e aggiornare il ciclo di vita del documento.
+* Crea impostazione utente e ruolo utente tipo di documento.
 
 ## Configura le seguenti opzioni [!DNL Veeva Vault]
 
