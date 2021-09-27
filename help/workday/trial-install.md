@@ -12,9 +12,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: beafe6c0-262f-4f5b-9315-a023a4eef4a2
-source-git-commit: 3f826e88969562a69279a29dfdd98775ec01fd51
+source-git-commit: c25be043b404e9bf7a90496d4e47c1f22069313d
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '995'
 ht-degree: 34%
 
 ---
@@ -39,7 +39,7 @@ I principali passaggi per completare l&#39;integrazione sono:
 
 ## Attiva l&#39;account di valutazione di Adobe Sign {#activate-sign-trial-account}
 
-Per richiedere una prova di 30 giorni di Adobe Sign, è necessario compilare questo modulo di registrazione [](https://land.echosign.com/esign-trial-workday-registration.html).
+Per richiedere una prova di 30 giorni di Adobe Sign, è necessario compilare questo [modulo di registrazione](https://land.echosign.com/esign-trial-workday-registration.html).
 
 **Nota**: È consigliabile utilizzare un indirizzo di posta elettronica funzionale valido per creare la versione di valutazione e non un messaggio di posta elettronica temporaneo. Per verificare l&#39;account, è necessario accedere a questa e-mail, quindi l&#39;indirizzo deve essere valido.
 
@@ -49,7 +49,7 @@ Entro un giorno lavorativo, un tecnico Adobe Sign-On-boarding fornisce il tuo ac
 
 ![E-mail di benvenuto da Adobe Sign](images/welcome-email-2020.png)
 
-Seguire le istruzioni indicate nell&#39;e-mail per inizializzare l&#39;account e accedere alla pagina Adobe Sign [!UICONTROL Home].
+Per inizializzare l&#39;account e accedere alla pagina Adobe Sign [!UICONTROL Home], seguire le istruzioni riportate nell&#39;e-mail.
 
 ![Dashboard di Adobe Sign](images/classic-home.png)
 
@@ -165,4 +165,4 @@ I clienti Adobe Sign possono contattare il proprio Customer Success Manager (CSM
 
 * [Rivedi la configurazione del documento ed esempi](https://www.adobe.com//go/adobesign_workday_quick_start){target=&quot;_blank&quot;}
 
-[**Contatta il supporto di Adobe Sign**](https://adobe.com/go/adobesign-support-center_it)
+[**Contatta il supporto di Adobe Sign**](https://www.adobe.com/go/adobesign-support-center)

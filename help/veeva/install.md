@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 3f826e88969562a69279a29dfdd98775ec01fd51
+source-git-commit: c25be043b404e9bf7a90496d4e47c1f22069313d
 workflow-type: tm+mt
-source-wordcount: '3061'
+source-wordcount: '3043'
 ht-degree: 2%
 
 ---
@@ -122,7 +122,7 @@ Per una corretta integrazione dell&#39;insieme di credenziali, viene creato un n
 
 ![Immagine dei dettagli dell&#39;evento della firma](images/security-profiles.png)
 
-Tutti i profili di sicurezza degli utenti che richiedono l&#39;accesso alla cronologia di Adobe Sign in Vault devono disporre dell&#39;autorizzazione Lettura per gli oggetti Signature, Firmatory e Signature Event.
+I profili di sicurezza degli utenti che richiedono un accesso alla cronologia di Adobe Sign in Vault devono disporre delle autorizzazioni di lettura per gli oggetti Signature, Firmatory e Signature Event.
 
 ![Immagine dei dettagli dell&#39;evento della firma](images/set-permissions.png)
 
@@ -214,7 +214,7 @@ Il ciclo di vita del contratto di Adobe Sign ha i seguenti stati:
 * ANNULLATA
 * SCADUTO
 
-Quando un documento dell&#39;insieme di credenziali viene inviato ad Adobe Sign, il relativo stato deve corrispondere allo stato in cui si trova il contratto. A tale scopo, è necessario aggiungere i seguenti stati in ogni ciclo di vita utilizzato dai documenti idonei per Adobe Signature:
+Quando un documento dell&#39;insieme di credenziali viene inviato ad Adobe Sign, il relativo stato deve corrispondere allo stato in cui si trova il contratto. A tale scopo, aggiungere i seguenti stati in ogni ciclo di vita utilizzato dai documenti idonei per Adobe Signature:
 
 * **Prima di Adobe Signature** (Reviewed): Nome segnaposto per lo stato da cui il documento può essere inviato ad Adobe Sign. In base al tipo di documento, può essere Stato Bozza o Revisionato. L&#39;etichetta dello stato del documento può essere personalizzata in base alle esigenze del cliente. Prima che lo stato Firma Adobe definisca le seguenti due azioni utente:
 
@@ -294,7 +294,7 @@ Per connettersi a [!DNL Veeva Vault] Adobe Sign utilizzando middleware, l&#39;am
 
    ![Immagine](images/middleware-signin.png)
 
-   Una volta eseguito l&#39;accesso, la pagina visualizza l&#39;ID e-mail associato nell&#39;angolo superiore destro e una scheda Impostazioni aggiuntive, come illustrato di seguito.
+   Dopo aver eseguito correttamente l&#39;accesso, nella pagina vengono visualizzati l&#39;ID e-mail associato e una scheda Impostazioni, come illustrato di seguito.
 
    ![Immagine](images/middleware_settings.png)
 
