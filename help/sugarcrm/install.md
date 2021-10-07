@@ -7,9 +7,9 @@ type: Documentation
 solution: Adobe Sign
 role: User, Developer
 topic: Integrations
-source-git-commit: 27610773d47a947dbfa1deb3f594667406a9aefb
+source-git-commit: 40fe3649aab0499ce8e5fbd1b11308ffbd759a44
 workflow-type: tm+mt
-source-wordcount: '2336'
+source-wordcount: '2354'
 ht-degree: 1%
 
 ---
@@ -247,6 +247,10 @@ Nota: Se viene inviato un [!DNL EchoSign] Contratto per la firma e il record vie
 Il sottopannello [!UICONTROL Eventi] di un accordo [!DNL EchoSign] tiene traccia dello stato dei contratti inviati per la firma. Per visualizzare gli ultimi aggiornamenti su un accordo [!DNL EchoSign], selezionare **[!UICONTROL Aggiorna stato]**. Il pulsante [!UICONTROL Aggiorna stato] è disponibile solo dopo l&#39;invio di un contratto per la firma.
 
 ![Immagine](images/update-cancel-status.png)
+
+Dopo l&#39;invio di un contratto per una firma, selezionare **[!UICONTROL Aggiorna stato]** per recuperare lo stato più recente.
+
+![Immagine](images/events-subpanel.png)
 
 ### Invia promemoria {#send-reminders}
 
