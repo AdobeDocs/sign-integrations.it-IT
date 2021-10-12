@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: d8071d9aa23351e31a9360d3c4d17f6297d0e2f1
+source-git-commit: 45bc2d698396bb07c4a246930d34b7e2ad0f6648
 workflow-type: tm+mt
-source-wordcount: '3115'
+source-wordcount: '3113'
 ht-degree: 2%
 
 ---
@@ -41,7 +41,7 @@ Le fasi di alto livello per completare l&#39;integrazione sono:
 
 ## Configura le seguenti opzioni [!DNL Veeva Vault]
 
-Per configurare [!DNL Veeva Vault] per l&#39;integrazione con Adobe Sign, vengono creati alcuni oggetti che consentono di tenere traccia della cronologia di un ciclo di vita di un accordo nell&#39;insieme di credenziali. Gli amministratori devono creare i seguenti oggetti:
+Per configurare [!DNL Veeva Vault] per l&#39;integrazione con Adobe Sign, creare alcuni oggetti che consentono di tenere traccia della cronologia di un ciclo di vita di un accordo nell&#39;insieme di credenziali. Gli amministratori devono creare i seguenti oggetti:
 
 * Firma
 * Firmatario
@@ -57,7 +57,7 @@ L&#39;oggetto Signature viene creato per memorizzare le informazioni relative al
 | Campo | Etichetta | Tipo | Descrizione |
 | --- | --- | ---| --- | 
 | id_esterno__c | ID accordo | Stringa (100) | Contiene l&#39;ID di accordo univoco di Adobe Sign |
-| file_hash__c | Hash file | Stringa (50) | Contiene il chcksum md5 del file inviato ad Adobe Sign |
+| file_hash__c | Hash file | Stringa (50) | Contiene il checksum md5 del file inviato ad Adobe Sign |
 | nome_v | Nome | Stringa (128) | Contiene il nome del contratto |
 | mittente__c | Mittente | Oggetto (utente) | Contiene il riferimento all&#39;utente dell&#39;insieme di credenziali che ha creato il contratto |
 | status_firma__c | Stato firma | Stringa (75) | Contiene lo stato del contratto in Adobe Sign |
@@ -122,7 +122,7 @@ Per una corretta integrazione dell&#39;insieme di credenziali, viene creato un n
 
 ![Immagine dei dettagli dell&#39;evento della firma](images/security-profiles.png)
 
-I profili di sicurezza degli utenti che richiedono un accesso alla cronologia di Adobe Sign in Vault devono disporre delle autorizzazioni di lettura per gli oggetti Signature, Firmatory e Signature Event.
+I profili di sicurezza degli utenti che richiedono l&#39;accesso alla cronologia di Adobe Sign in Vault devono disporre delle autorizzazioni di lettura per gli oggetti Signature, Firmatory e Signature Event.
 
 ![Immagine dei dettagli dell&#39;evento della firma](images/set-permissions.png)
 
@@ -223,7 +223,7 @@ Quando un documento dell&#39;insieme di credenziali viene inviato ad Adobe Sign,
 
    ![Immagine dello stato del ciclo di vita 1](images/lifecycle-state1.png)
 
-* **In Adobe Sign Draft**: Nome segnaposto per lo stato che indica che il documento è già caricato in Adobe Sign e che il relativo accordo è in stato DRAFT. È uno stato obbligatorio. Questo stato deve negare l&#39;accesso a cinque azioni utente:
+* **In Adobe Sign Draft**: Nome segnaposto per lo stato che indica che il documento è già caricato in Adobe Sign e che il relativo accordo è in stato DRAFT. È uno stato obbligatorio. Questo stato deve definire le seguenti cinque azioni utente:
 
    * Azione che modifica lo stato del documento in *In Adobe Sign Authoring* stato. Il nome di questa azione utente deve essere lo stesso per tutti i tipi di documento per qualsiasi ciclo di vita. Se necessario, i criteri per questa azione possono essere impostati su &quot;Consenti azioni utente di Adobe Sign uguale a Sì&quot;.
    * Azione che modifica lo stato del documento in *In Adobe Signing state*. Il nome di questa azione utente deve essere lo stesso per tutti i tipi di documento per qualsiasi ciclo di vita. Se necessario, i criteri per questa azione possono essere impostati su &quot;Consenti azioni utente di Adobe Sign uguale a Sì&quot;.
