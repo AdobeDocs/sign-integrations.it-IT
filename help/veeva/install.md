@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: b6925abdeb7912ae17161663a86637d9913de1ec
+source-git-commit: d8071d9aa23351e31a9360d3c4d17f6297d0e2f1
 workflow-type: tm+mt
-source-wordcount: '3089'
+source-wordcount: '3115'
 ht-degree: 2%
 
 ---
@@ -283,7 +283,10 @@ Una volta configurato correttamente il ciclo di vita, il sistema deve garantire 
 
 ## Connetti [!DNL Veeva Vault] a Adobe Sign utilizzando middleware {#connect-middleware}
 
-Dopo aver completato l&#39;impostazione per [!DNL Veeva Vault] e l&#39;account Adobe Sign Admin, l&#39;amministratore deve creare una connessione tra i due account utilizzando middleware. La connessione dell&#39;account [!DNL Veeva Vault] e di Adobe Sign è avviata da Adobe Sign Identity e quindi viene utilizzata per memorizzare l&#39;identità di Veeva Vault.Un amministratore dell&#39;account di Adobe Sign deve seguire la procedura seguente per connettersi [!DNL Veeva Vault] a Adobe Sign utilizzando middleware:
+Dopo aver completato l&#39;impostazione per [!DNL Veeva Vault] e l&#39;account Adobe Sign Admin, l&#39;amministratore deve creare una connessione tra i due account utilizzando middleware. La connessione dell&#39;account [!DNL Veeva Vault] e di Adobe Sign viene avviata da Adobe Sign Identity e quindi viene utilizzata per memorizzare l&#39;identità di Veeva Vault.
+Per garantire la sicurezza e la stabilità del sistema, l&#39;amministratore deve utilizzare un account [!DNL Veeva Vault] di sistema/servizio/utilità dedicato, ad esempio `adobe.for.veeva@xyz.com`, anziché un account utente personale, ad esempio `bob.smith@xyz.com`.
+
+Per connettersi a [!DNL Veeva Vault] Adobe Sign utilizzando middleware, l&#39;amministratore dell&#39;account di Adobe Sign deve seguire la procedura seguente:
 
 1. Passare alla [Firma Adobe per [!DNL Veeva Vault] Home page](https://static.adobesigncdn.com/veevavaultintsvc/index.html).
 1. Selezionare **[!UICONTROL Login]** dall&#39;angolo superiore destro.
