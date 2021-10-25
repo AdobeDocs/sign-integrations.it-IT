@@ -1,6 +1,6 @@
 ---
 title: Guida introduttiva per Workday
-description: Guida rapida per i clienti che desiderano utilizzare Adobe Sign nei loro ambienti Workday.
+description: Una guida rapida per i clienti che desiderano utilizzare Adobe Sign nei propri ambienti Workday.
 uuid: 10bf8ee8-9075-44d1-a836-e454950e2d9a
 products: Adobe Sign
 content-type: reference
@@ -24,113 +24,113 @@ ht-degree: 26%
 
 ## Panoramica {#overview}
 
-Questo documento è stato progettato per aiutare [!DNL Workday] gli amministratori a capire come personalizzare i processi aziendali [!DNL Workday] per includere Adobe Sign per l&#39;ottenimento di firme elettroniche. Per utilizzare Adobe Sign all&#39;interno di [!DNL Workday], è necessario sapere come creare e modificare [!DNL Workday] elementi quali:
+Questo documento è progettato per facilitare [!DNL Workday] gli amministratori comprendono come personalizzare [!DNL Workday] Processi aziendali per includere Adobe Sign per ottenere firme elettroniche. Per utilizzare Adobe Sign all&#39;interno di [!DNL Workday], devi sapere come creare e modificare [!DNL Workday] elementi quali:
 
-* [!UICONTROL Framework di processi aziendali]
-* Configurazione e configurazione tenant
-* Reporting and [!DNL Workday] Integrazione in studio
+* [!UICONTROL Business Process Framework]
+* Configurazione e configurazione del tenant
+* Segnalazione e [!DNL Workday] Integrazione con studio
 
 ## Accesso ad Adobe Sign in [!DNL Workday] {#access-adobe-sign}
 
-[!UICONTROL Le ] funzionalità di firma elettronica di Adobe Sign vengono visualizzate come  [!UICONTROL Review Document ] Stepaction all&#39;interno di BPF ( [!UICONTROL Business Process Framework) ] e come attività Distribuisci documenti.
+[!UICONTROL Funzionalità di firma elettronica di Adobe Sign] viene visualizzata come [!UICONTROL Passaggio Rivedi documento] all&#39;interno del [!UICONTROL Business Process Framework (BPF)] e come attività Distribuisci documenti.
 
 ## [!UICONTROL Passaggio Review Document (Rivedi documento)] {#review-document-step}
 
-Adobe Sign for [!DNL Workday] è esposto tramite il [!UICONTROL Review Document Step] che è possibile aggiungere a uno qualsiasi dei più di 400 processi aziendali all&#39;interno di [!DNL Workday], incluso [!UICONTROL Offerta], [!UICONTROL Distribuisci documenti e attività], [!UICONTROL Proponi retribuzione] e altro.
+Adobe Sign per [!DNL Workday] viene esposto tramite [!UICONTROL Passaggio Rivedi documento] che puoi aggiungere a uno degli oltre 400 processi aziendali all&#39;interno di [!DNL Workday], tra cui [!UICONTROL Offerta], [!UICONTROL Distribuire documenti e attività], [!UICONTROL Proposta di compensazione]e altro ancora.
 
-È possibile fare riferimento agli [[!DNL Workday] articoli della community su [!UICONTROL Review Document Step]](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg).
+È possibile fare riferimento alla proprietà [[!DNL Workday] articoli comunitari su [!UICONTROL Passaggio Rivedi documento]](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg).
 
-Esiste una relazione 1:1 tra [!UICONTROL [!UICONTROL Review Document Step]s] e le transazioni fatturabili con Adobe Sign. È possibile combinare più documenti all&#39;interno di un singolo [!UICONTROL Review Document Step] e vengono presentati come un unico pacchetto per la firma.
+Esiste una relazione 1:1 tra [!UICONTROL [!UICONTROL Passaggio Rivedi documento]s] e transazioni fatturabili con Adobe Sign. È possibile combinare più documenti in un unico documento [!UICONTROL Passaggio Rivedi documento] e sono presentati come un unico pacchetto per la firma.
 
-**Nota**: È possibile fare riferimento a un solo  ** documento dinamico all&#39;interno di un passo [!UICONTROL  specifico ]Revisione documento.
+**Nota**: Solo un *Dinamico* è possibile fare riferimento a un documento specifico [!UICONTROL Passaggio Rivedi documento].
 
-Per definire una funzione [!UICONTROL Rivedi fase documento]:
+Definizione di una funzione [!UICONTROL Passaggio Rivedi documento]:
 
-1. Inserire un [!UICONTROL Verifica fase documento].
-1. Specificare i gruppi (ruoli) che possono agire in base alla [!UICONTROL Verifica fase documento].
+1. Inserire un [!UICONTROL Passaggio Rivedi documento].
+1. Specifica i gruppi (ruoli) che possono agire sulla [!UICONTROL Passaggio Rivedi documento].
 
 ![Passaggi dei processi aziendali](images/insert-review-doc-steptornm-575.png)
 
-Per configurare [!UICONTROL Revisione passo documento]:
+Per configurare la proprietà [!UICONTROL Passaggio Rivedi documento]:
 
-1. Specificare il *[!UICONTROL tipo di integrazione eSignature]* come *[!UICONTROL eSign da Adobe]*.
+1. Specificare il parametro *[!UICONTROL Tipo di integrazione eSignature]* as *[!UICONTROL eSign per Adobe]*.
 
 1. Aggiungi righe alla griglia delle firme.
 
    * La griglia delle firme specifica l’ordine seriale secondo cui il documento viene indirizzato per la firma. Ogni riga può contenere uno o più ruoli e ogni riga rappresenta un passaggio del processo di firma..
-   * A ogni membro del ruolo all&#39;interno di un determinato passaggio viene notificato che un evento di firma è in sospeso.
-   * Una volta che una singola persona viene segnalata dal ruolo, il passo riga viene completato e il documento viene spostato nel passo riga successivo.
-   * Quando tutte le righe sono state firmate, [!UICONTROL Review Document Step] è stato completato.
+   * A ogni membro del ruolo all&#39;interno di un determinato passaggio viene notificato che un evento di firma è in attesa.
+   * Una volta che una singola persona del ruolo firma, il passaggio della riga viene completato e il documento viene spostato al passaggio della riga successiva.
+   * Quando tutte le righe sono state firmate, la proprietà [!UICONTROL Passaggio Rivedi documento] è completo.
 
-1. Specifica il documento da firmare. Se il documento è un [!UICONTROL Offerta BP], è possibile utilizzarlo da un passaggio Genera documento. In caso contrario, seleziona un documento o report esistente.
+1. Specifica il documento da firmare. Se il documento è [!UICONTROL Offer BP], potete usarlo da un passaggio Genera documento. In caso contrario, seleziona un documento o report esistente.
 
 1. Ripeti il passaggio 3 per tutti i documenti interessati..
 
    ![Finestra Configure Review Document Step (Configura passaggio Rivedi documento)](images/configure-rd-stepsmaller-575.png)
 
-1. È possibile aggiungere un &quot;utente di reindirizzamento&quot; per l&#39;acquisizione delle azioni &quot;declino alla firma&quot;. Quando gli utenti rifiutano, [!DNL Workday] riinvia i documenti a un gruppo di sicurezza configurato per la revisione.
+1. Facoltativamente, aggiungi un &quot;utente di reindirizzamento&quot; per acquisire le azioni di &quot;rifiuto di firmare&quot;. Quando gli utenti rifiutano, [!DNL Workday] reindirizza i documenti a un gruppo di sicurezza configurato per la revisione.
 
-Dal menu delle azioni correlate di un [!UICONTROL Review Document Step], selezionare **[!UICONTROL Business Process]** > **[!UICONTROL Gestisci reindirizzamento]**. Quindi, selezionare una delle seguenti opzioni:
+Dal menu Azioni correlate di un [!UICONTROL Passaggio Rivedi documento], seleziona **[!UICONTROL Processo aziendale]** > **[!UICONTROL Mantieni reindirizzamento]**. Quindi, selezionate una delle seguenti opzioni:
 
-* **[!UICONTROL Invia indietro]**: Per consentire ai membri del gruppo di sicurezza di inviare un passo indietro a un passaggio precedente nel processo aziendale. Il processo aziendale riparte quindi da tale passaggio.
-* **[!UICONTROL Passa al passaggio]** successivo: Per consentire ai membri del gruppo di sicurezza di inoltrare un passaggio al passo successivo del processo aziendale.
-* **[!UICONTROL Gruppi]** di protezione: Per reindirizzare i passaggi nel flusso del processo aziendale. I gruppi di sicurezza visualizzati al prompt vengono selezionati nei criteri di sicurezza del processo aziendale nella sezione Redirect.
+* **[!UICONTROL Porta indietro]**: Per consentire ai membri del gruppo di sicurezza di inviare un passo indietro rispetto a un passaggio precedente nel processo aziendale. Il processo aziendale riparte quindi da tale passaggio.
+* **[!UICONTROL Passa al passaggio successivo]**: Per consentire ai membri del gruppo di sicurezza di passare al passaggio successivo del processo aziendale.
+* **[!UICONTROL Gruppi di sicurezza]**: Per reindirizzare i passaggi del flusso del processo aziendale. I gruppi di sicurezza visualizzati a questo prompt sono selezionati nella policy di protezione dei processi aziendali nella sezione Reindirizzamento.
 
-## Note passo processo aziendale {#business-process-step-notes}
+## Note sulle fasi del processo aziendale {#business-process-step-notes}
 
-[!UICONTROL Il ] quadro del processo aziendale è potente; tuttavia, devi garantire che:
+[!UICONTROL Il quadro per i processi aziendali] è potente; tuttavia, devi assicurarti che:
 
-* Ogni processo aziendale deve avere una fase di completamento, idealmente alla fine del processo aziendale.
+* Ogni processo aziendale deve avere una fase di completamento, che è idealmente alla fine del processo aziendale.
 
-* Una fase di completamento viene impostata dal menu delle azioni correlate dell&#39;icona di ricerca. Ciò è possibile solo quando si &quot;guarda&quot; la BP e non quando si &quot;modifica&quot;.
+* Un passaggio di completamento è impostato dal menu azioni correlate dell’icona di ricerca. Ciò è possibile solo durante la &quot;visualizzazione&quot; della pressione e non durante la &quot;modifica&quot;.
 
-* Ogni fase del processo aziendale viene eseguita in modo sequenziale.
+* Ogni fase del processo aziendale viene eseguita in sequenza.
 
-   È possibile modificare l&#39;ordine di un passo modificando il valore dell&#39;ordine. Ad esempio, per inserire un passaggio tra le voci &quot;c&quot; e &quot;d&quot;, specificare un nuovo elemento come &quot;ca&quot;.
+   È possibile modificare l’ordine di un passaggio modificando il valore dell’ordine. Ad esempio, per inserire un passaggio tra gli elementi &quot;c&quot; e &quot;d&quot;, specificate un nuovo elemento come &quot;ca&quot;.
 
-### Esempio: offrire {#example-offer}
+### Esempio: offerta {#example-offer}
 
-L&#39;Offerta BP è un processo secondario di [!UICONTROL Job Application Dynamic BP] che deve essere configurato per eseguire l&#39;Offerta BP. Viene attivata quando lo stato dell&#39;applicazione job viene spostato in &quot;[!UICONTROL Offerta]&quot; o &quot;[!UICONTROL Crea offerta]&quot;.
+Il processo aziendale Offer è un processo secondario del [!UICONTROL Job Application Dynamic BP] deve essere configurato per eseguire il processo aziendale Offer. Viene attivato quando lo stato della candidatura viene spostato in &quot;[!UICONTROL Offerta]&quot; o &quot;[!UICONTROL Fai un&#39;offerta]&quot;.
 
-Nell&#39;esempio seguente, un [!UICONTROL Review Document Step] utilizza un passaggio del documento dinamico sia per l&#39;America del Nord che per il Giappone.
+Nell&#39;esempio seguente, un [!UICONTROL Passaggio Rivedi documento] utilizza un passaggio Dynamic Document per il Nord America e il Giappone.
 
 ![[!DNL Workday]Esempio di un processo aziendale di ](images/bp-for-offersmaller-575.png)
 
 Questo processo aziendale prevede i seguenti passaggi:
 
-* Chiede al promotore della BP di proporre una compensazione per il candidato (fase b).
-* Utilizza una condizione di passaggio per verificare se il paese attuale NON è il Giappone.
+* Chiede al promotore del BP di proporre un risarcimento per il candidato (passaggio b).
+* Utilizza una condizione step per verificare se il paese corrente NON è il Giappone.
 
    Se true, viene eseguito il passaggio &quot;ba&quot; che utilizza un documento in lingua inglese.
 
-   Se false, viene eseguito il passaggio &quot;bb&quot; che utilizza un documento in lingua giapponese.
+   Se è false, viene eseguito il passaggio &quot;bb&quot; che utilizza un documento in lingua giapponese.
 
-* Definisce il processo di firma in [!UICONTROL Review Document Step] &quot;bc&quot;.
-* Definisce il punto di decisione di fare un&#39;offerta nella fase di completamento richiesta &quot;d&quot;.
+* Definisce il processo di firma nel metodo [!UICONTROL Passaggio Rivedi documento] &quot;bc&quot;.
+* Definisce il punto decisionale per fare un&#39;offerta nel passaggio di completamento richiesto &quot;d&quot;.
 
-Il documento dinamico generato nel passaggio “ba” è denominato [!UICONTROL Offer Letter] (Lettera di offerta) e contiene un singolo blocco di testo denominato [!UICONTROL Rapid Offer] (Offerta rapida). È possibile aggiungere più blocchi di testo, ad esempio intestazione, formula di apertura, compensazione, materiale, chiusura, termini e altro, a seconda delle necessità.
+Il documento dinamico generato nel passaggio “ba” è denominato [!UICONTROL Offer Letter] (Lettera di offerta) e contiene un singolo blocco di testo denominato [!UICONTROL Rapid Offer] (Offerta rapida). Potete aggiungere più blocchi di testo, ad esempio intestazione, formula di saluto, compenso, stock, chiusura, termini e altro ancora.
 
-![[!DNL Workday] visualizza pagina documento](images/offer-letter-575.png)
+![[!DNL Workday] pagina visualizza documento](images/offer-letter-575.png)
 
-La lettera di offerta dinamica riportata di seguito viene creata nell&#39;editor di testo RTF [!DNL Workday]. Gli elementi evidenziati in *grigio* sono [!DNL Workday] oggetti forniti che fanno riferimento a dati contestuali.
+La lettera di offerta dinamica riportata di seguito viene creata nel [!DNL Workday] editor rich text. Gli elementi evidenziati in *grigio* sono [!DNL Workday] oggetti forniti che fanno riferimento a dati contestuali.
 
 Gli elementi tra {{parentesi}} sono [tag di testo di Adobe](https://adobe.com/go/adobesign_text_tag_guide_it).
 
 ![Esempio di modulo dinamico](images/script.png)
 
-All&#39;interno di [!UICONTROL Review Document Step], al documento dinamico viene fatto riferimento dal passaggio precedente e viene definito il processo di firma sequenziale tramite due gruppi di firma.
+All&#39;interno della [!UICONTROL Passaggio Rivedi documento], al documento dinamico viene fatto riferimento dal passaggio precedente e viene definito il processo di firma sequenziale tramite due gruppi di firma.
 
-Il comportamento illustrato di seguito consente di instradare il documento generato in modo dinamico prima al Gestore assunzioni, quindi al Candidato.
+Il comportamento illustrato di seguito indirizza il documento generato dinamicamente prima al responsabile delle assunzioni e poi al candidato.
 
-![[!DNL Workday] gruppi di firma definiti](images/configure-rd-stepsmaller-575.png)
+![[!DNL Workday] gruppi di firma da definire](images/configure-rd-stepsmaller-575.png)
 
-### Esempio: Distribuisci documenti {#example-distribute-documents}
+### Esempio: Distribuire i documenti {#example-distribute-documents}
 
-Introdotta in [!DNL Workday] 30, l&#39;attività Distribuisci di massa documenti o Attività può essere utilizzata per inviare un singolo documento a un gruppo di grandi dimensioni (&lt;20K) di singoli firmatari. È soggetta alla limitazione di una singola firma per documento. La creazione di una distribuzione viene eseguita accedendo all&#39;azione &quot;[!UICONTROL Crea documenti di distribuzione o Attività]&quot; dalla barra di ricerca.
+Introdotto in [!DNL Workday] 30, l&#39;attività Distribuisci in massa documenti o attività può essere utilizzata per inviare un singolo documento a un gruppo di grandi dimensioni (&lt;20 K) di singoli firmatari. È soggetta alla limitazione di una singola firma per documento. La creazione di una distribuzione viene eseguita accedendo alla proprietà &quot;[!UICONTROL Creare documenti o attività]Azione dalla barra di ricerca.
 
-Esempio: Inviare un modulo di scelta del capitale proprio dipendente a tutti i manager con [!UICONTROL Global Modern Services]. Se lo si desidera, è possibile filtrare ulteriormente i singoli manager.
+Esempio: Invia un modulo di scelta del valore netto del dipendente a tutti i responsabili con [!UICONTROL Global Modern Services]. Se necessario, puoi filtrarlo ulteriormente per singoli manager.
 
-È inoltre possibile accedere al report **Visualizza documenti di distribuzione o Attività** per tenere traccia dello stato di avanzamento della distribuzione.
+È anche possibile accedere alla proprietà **Visualizzazione di documenti o attività di distribuzione** per tenere traccia dell&#39;avanzamento della distribuzione.
 
 ![](images/create-distributedocumentsortasks.png)
 
@@ -154,39 +154,39 @@ Il report seguente è stato generato con riferimento ai processi aziendali Offer
 
 ## Documenti firmati {#signed-documents}
 
-Il ciclo di firma [!DNL Workday] sopprime tutte le notifiche via e-mail di Adobe Sign. Gli utenti sono informati delle azioni in sospeso nella posta in arrivo [!DNL Workday].
+Il [!DNL Workday] il ciclo di firma elimina tutte le notifiche e-mail di Adobe Sign. Gli utenti vengono informati delle azioni in sospeso all&#39;interno del proprio [!DNL Workday] posta in arrivo.
 
-Una volta firmato un documento da tutti i gruppi di firme, una copia del documento firmato viene distribuita a tutti i membri del gruppo di firme via e-mail.
+Una volta che un documento è stato firmato da tutti i gruppi di firma, una copia del documento firmato viene distribuita a tutti i membri del gruppo di firma tramite e-mail.
 
-Per sopprimere questo comportamento, è possibile contattare il [!UICONTROL Adobe Sign Success Manager] o il [Supporto per i segni Adobe](https://adobe.com/go/adobesign-support-center).
+Per eliminare questo comportamento, è possibile contattare il [!UICONTROL Adobe Sign Success Manager] o la [Team di supporto di Adobe Sign](https://adobe.com/go/adobesign-support-center).
 
-All&#39;interno di [!DNL Workday] è possibile accedere ai documenti firmati nel record di elaborazione completo. Puoi trovare:
+All&#39;interno [!DNL Workday], puoi accedere ai documenti firmati nel record completo del processo. Puoi trovare:
 
-* Documenti lavoratore sul profilo lavoratore, e
-* Documenti candidati (lettere di offerta) sul profilo Candidato.
+* I documenti del lavoratore nel profilo del lavoratore e
+* Documenti candidati (lettere di offerta) nel profilo Candidato.
 
 L&#39;immagine seguente mostra una lettera di offerta firmata per il candidato Chris Foxx.
 
-![Lettera  [!DNL Workday] offerta di esempio](images/offer.png)
+![Esempio [!DNL Workday] lettera di offerta](images/offer.png)
 
 ## Supporto {#support}
 
-### [!DNL Workday] sostegno {#workday-support}
+### [!DNL Workday] supporto {#workday-support}
 
 [!DNL Workday] è il responsabile del processo di integrazione e deve essere considerato come il principale riferimento di contatto per domande relative a integrazione, richieste di funzionalità o problemi nelle operazioni quotidiane dell’integrazione.
 
-La comunità [!DNL Workday] dispone di numerosi articoli validi su come risolvere i problemi relativi all&#39;integrazione e generare documenti:
+Il [!DNL Workday] la community contiene diversi articoli utili su come risolvere i problemi di integrazione e generare documenti:
 
 * [Risoluzione di problemi relativi alle integrazioni di firma elettronica](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/zhA~hYllD3Hv1wu0CvHH_g)
 * [Passaggio di revisione dei documenti](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg)
 * [Generazione di documenti dinamici](https://community.workday.com/node/176443)
 * [Suggerimenti per la configurazione relativa alla generazione di documenti di offerta](https://community.workday.com/node/183242)
 
-### Supporto di Adobe Sign {#adobe-sign-support}
+### Supporto Adobe Sign {#adobe-sign-support}
 
 In quanto partner per integrazione, è necessario contattare il supporto di Adobe Sign se l’integrazione non è in grado di ottenere firme o se si verificano problemi di notifica delle firme in sospeso.
 
-Adobe Sign Customers deve contattare il proprio Customer Success Manager per il supporto. In alternativa, [!UICONTROL Supporto tecnico Adobe] può essere raggiunto per telefono: 1-866-318-4100, attendere l&#39;elenco dei prodotti, quindi immettere: 4 e 2 (come richiesto).
+I clienti Adobe Sign devono contattare il proprio Customer Success Manager per assistenza. In alternativa, [!UICONTROL Adobe supporto tecnico] è possibile raggiungerlo per telefono: 1-866-318-4100, attendi l&#39;elenco dei prodotti e inserisci: 4 e poi 2 (come richiesto).
 
 * [Aggiunta di tag di testo di Adobe ai documenti](https://www.adobe.com/go/adobesign_text_tag_guide)
 
