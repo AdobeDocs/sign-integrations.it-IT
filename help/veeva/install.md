@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 7ded835b48519cba656f160e691c697c91e2c8d0
+source-git-commit: aef70e46f24bb019b07092d84d69519fe16846e4
 workflow-type: tm+mt
-source-wordcount: '3131'
+source-wordcount: '3163'
 ht-degree: 2%
 
 ---
@@ -182,9 +182,13 @@ L&#39;integrazione di Adobe Sign e Vault richiede la creazione e la configurazio
 
    Tipo: Document Target: Visualizza nell’URL del Vault: <https://api.na1.adobesign.com/api/gateway/veevavaultintsvc/partner/agreement?docId=${Document.id}&majVer=${Document.major_version_number__v}&minVer=${Document.minor_version_number__v}&vaultid=${Vault.id}&useWaitPage=true>
 
+   ![Immagine di create Adobe Sign](images/create-adobe-sign.png)
+
 * **Annulla Adobe Sign**: Annulla un accordo esistente in Adobe Sign e ripristina lo stato iniziale di un documento.
 
    Tipo: Document Target: Visualizza nell’URL del Vault: : <https://api.na1.adobesign.com/api/gateway/veevavaultintsvc/partner/agreement/cancel?docId=${Document.id}&majVer=${Document.major_version_number__v}&minVer=${Document.minor_version_number__v}&vaultid=${Vault.id}&useWaitPage=true>
+
+   ![Immagine di Annulla Adobe Sign](images/cancel-adobe-sign.png)
 
 ## Aggiornamento del ciclo di vita dei documenti {#document-lifecycle}
 
@@ -192,12 +196,16 @@ Per ogni tipo di documento idoneo per la firma di Adobi, il ciclo di vita del do
 
 ### Ruolo Ciclo di vita {#lifecycle-role}
 
-Il ruolo dell’applicazione per l’amministratore di Adobe Sign deve essere aggiunto in tutti i cicli di vita utilizzati dai documenti idonei per la firma degli Adobi. Questo ruolo deve essere creato con le seguenti opzioni:
-
-* Abilita controllo accesso dinamico
-* Regole di condivisione dei documenti che includono solo il gruppo di tipi di documento
+Il ruolo dell’applicazione di amministrazione Adobe Sign deve essere aggiunto a tutti i cicli di vita utilizzati dai documenti idonei per la firma degli Adobi, come illustrato di seguito.
 
 ![Immagine dei ruoli di amministratore del ciclo di vita](images/document-lifecycle-admin-role.png)
+
+Il ruolo di amministratore deve essere creato con le seguenti opzioni:
+
+* Abilitato Controllo accesso dinamico.
+* Regole di condivisione dei documenti che includono solo il gruppo di tipi di documento, come illustrato nell&#39;immagine seguente.
+
+![Immagine della regola di condivisione di adobe sign](images/adobe-sign-sharing-rule.png)
 
 ### Stati del ciclo di vita {#lifecycle-states}
 
@@ -263,7 +271,9 @@ Gli amministratori devono creare un nuovo record Gruppo tipi di documento denomi
 
 ![Immagine del tipo di documento](images/document-type.png)
 
-![Immagine del tipo di documento](images/document-edit-details.png)
+![Immagine dei dettagli di modifica del documento](images/document-edit-details.png)
+
+![Immagine di gruppi di tipi di documento](images/document-type-groups.png)
 
 ### Crea impostazione ruolo utente {#create-user-role-setup}
 
