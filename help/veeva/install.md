@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 1cf95ee799d0a349636027db0c06467f4529663c
+source-git-commit: 722f39a7220d72fde19ebb1058c8c2e8dea06b46
 workflow-type: tm+mt
-source-wordcount: '3164'
+source-wordcount: '3401'
 ht-degree: 2%
 
 ---
@@ -41,14 +41,61 @@ I passaggi di alto livello per completare l&#39;integrazione sono:
 
 ## Configura le seguenti opzioni [!DNL Veeva Vault] {#configure-veeva}
 
-Per configurare [!DNL Veeva Vault] per l’integrazione con Adobe Sign, crea alcuni oggetti che consentono di monitorare la cronologia del ciclo di vita di un accordo in Vault. Gli amministratori devono creare i seguenti oggetti:
+Per configurare [!DNL Veeva Vault] per l&#39;integrazione con Adobe Sign, è necessario implementare i seguenti passaggi:
 
-* Firma
-* Firmatario
-* Evento firma
-* Process Locker
+**Passaggio 1.** Crea un nuovo gruppo denominato &quot;Adobe Sign Admin Group&quot;.
 
-### Crea oggetto firma  {#create-signature-object}
+**Passaggio 2.** [Distribuire il pacchetto](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip).
+
+**Passaggio 3.** Creare profili di protezione
+
+**Passaggio 4.** Crea utente
+
+**Passaggio 5.** Configurare il gruppo di tipi di documento
+
+**Passaggio 6.** Crea configurazione ruolo utente
+
+**Passaggio 7.** Configurazione dei campi del documento
+
+**Passaggio 8.** Dichiarare le interpretazioni dei documenti
+
+**Passaggio 9.** Aggiornare le azioni Web
+
+**Passaggio 10.** Aggiornamento del ciclo di vita del documento
+
+**Passaggio 11.** Aggiungere lo stage Adobe Sign ai gruppi di Lifecycle Stage Generali
+
+**Passaggio 12.** Impostare le autorizzazioni per il ruolo utente nello stato del ciclo di vita
+
+**Passaggio 13.** Configurare la sicurezza atomica in base allo stato del documento e al ruolo utente
+
+**Passaggio 14.** Creazione di messaggi di documento per Adobe Sign Annulla
+
+### 1. Crea gruppo {#create-group}
+
+Per configurare Adobe Sign per [!DNL Vault], un nuovo gruppo denominato *Adobe Sign Admin Group* viene creato. Questo gruppo viene utilizzato per impostare la sicurezza a livello di campo del documento per i campi correlati ad Adobe Sign e deve includere *Profilo di integrazione Adobe Sign* per impostazione predefinita.
+
+![Immagine dei dettagli dell’evento della firma](images/create-admin-group.png)
+
+### 2. Distribuisci il pacchetto {#deploy-package}
+
+[Distribuire il pacchetto](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip) e segui i passaggi. Una volta distribuito, il pacchetto crea:
+
+* Oggetti personalizzati: Oggetto Signature, oggetto Signature, oggetto evento Signature, oggetto Process Locker
+* Layout di pagina dell’oggetto firma
+* Layout di pagina dell’oggetto evento firma
+* Layout di pagina dell’oggetto firmatario
+* Layout di pagina dell’oggetto Process Locker
+* Tipo di rendering Adobe Sign
+* Campo condiviso signature__c , allow_adobe_sign_user_actions__c
+* Azione Web di Adobe Sign
+* Annullare l’azione Web di Adobe Sign
+* Insieme di autorizzazioni Azioni amministratore Adobe Sign
+* Profilo di sicurezza di Adobe Sign Integration Profile
+* Ruolo di amministratore Adobe Sign ruolo applicazione
+* Gruppo di tipi di documento &quot;Adobe Sign documento&quot;
+
+#### Oggetto Signature {#signature-object}
 
 L’oggetto Firma viene creato per memorizzare le informazioni relative all’accordo. Un oggetto Signature è un database che contiene informazioni nei seguenti campi specifici:
 
@@ -69,7 +116,7 @@ L’oggetto Firma viene creato per memorizzare le informazioni relative all’ac
 
 ![Immagine dei dettagli dell’oggetto firma](images/signature-object-details.png)
 
-### Crea oggetto firmatario {#create-signatory-object}
+#### Oggetto firmatario {#signatory-object}
 
 L’oggetto firmatario viene creato per memorizzare le informazioni relative ai partecipanti di un accordo. Contiene informazioni nei seguenti campi specifici:
 
@@ -88,7 +135,7 @@ L’oggetto firmatario viene creato per memorizzare le informazioni relative ai 
 
 ![Immagine dei dettagli dei firmatari](images/signatory-object-details.png)
 
-### Crea oggetto evento firma  {#create-signature-event}
+#### Oggetto evento firma {#signature-event}
 
 L&#39;oggetto evento firma viene creato per memorizzare le informazioni relative agli eventi di un accordo. Contiene informazioni nei seguenti campi specifici:
 
@@ -107,13 +154,19 @@ L&#39;oggetto evento firma viene creato per memorizzare le informazioni relative
 
 ![Immagine dei dettagli dell’evento della firma](images/signature-event-object-details.png)
 
-### Creare un oggetto Process Locker  {#create-process-locker}
+#### Oggetto Process Locker {#process-locker}
 
 Viene creato un oggetto Process Locker per bloccare il processo di integrazione di Adobe Sign. Non richiede alcun campo personalizzato.
 
 ![Immagine dei dettagli dell’evento della firma](images/process-locker-details.png)
 
-## Creare profili di protezione{#security-profiles}
+#### Ruolo applicazione {#create-application-roles}
+
+È necessario creare un ruolo applicazione chiamato *Ruolo di amministratore Adobe Sign*. Questo ruolo deve essere definito nel ciclo di vita di ogni tipo di documento idoneo per la firma degli Adobi. Per ciascuno degli stati del ciclo di vita specifici di Adobe Sign, il ruolo di amministratore Adobe Sign viene aggiunto e configurato con le autorizzazioni appropriate.
+
+![Immagine dei ruoli di creazione dell’applicazione](images/create-application-roles.png)
+
+### 3. Configurazione dei profili di protezione {#security-profiles}
 
 Per una corretta integrazione con il Vault, è stato creato un nuovo profilo di sicurezza denominato *Profilo di integrazione Adobe Sign* viene creato e le relative autorizzazioni sono impostate per *Azioni di amministrazione di Adobe Sign*. Il profilo di integrazione Adobe Sign viene assegnato all’account di sistema e viene utilizzato dall’integrazione quando si chiamano le API Vault. Questo profilo consente le autorizzazioni per:
 
@@ -126,13 +179,7 @@ I profili di sicurezza degli utenti che richiedono l’accesso alla cronologia d
 
 ![Immagine dei dettagli dell’evento della firma](images/set-permissions.png)
 
-## Crea gruppo {#create-group}
-
-Per configurare Adobe Sign per [!DNL Vault], un nuovo gruppo denominato *Adobe Sign Admin Group* viene creato. Questo gruppo viene utilizzato per impostare la sicurezza a livello di campo del documento per i campi correlati ad Adobe Sign e deve includere *Profilo di integrazione Adobe Sign* per impostazione predefinita.
-
-![Immagine dei dettagli dell’evento della firma](images/create-admin-group.png)
-
-## Crea utente {#create-user}
+## 4. Crea utente {#create-user}
 
 L’account di sistema Vault utilizzato dall’integrazione Adobe Sign deve:
 
@@ -141,40 +188,84 @@ L’account di sistema Vault utilizzato dall’integrazione Adobe Sign deve:
 * Disporre di criteri di sicurezza specifici che disabilitano la scadenza della password
 * Diventa membro del gruppo di amministrazione di Adobe Sign.
 
-Per garantire che l’utente dell’account di sistema appartenga al gruppo di amministratori di Adobe Sign per il ciclo di vita del documento specifico, è necessario creare i record di impostazione del ruolo utente.
+Per garantire che l’utente dell’account di sistema appartenga al gruppo di amministratori di Adobe Sign per il ciclo di vita del documento specifico, è necessario creare i record di impostazione del ruolo utente. Per eseguire questa operazione:
 
-## Creare ruoli applicazione {#create-application-roles}
+1. Create un account di sistema Vault per gli utenti dell&#39;integrazione con Adobe Sign.
 
-È necessario creare un ruolo applicazione chiamato *Ruolo di amministratore Adobe Sign*. Questo ruolo deve essere definito nel ciclo di vita di ogni tipo di documento idoneo per la firma degli Adobi. Per ciascuno degli stati del ciclo di vita specifici di Adobe Sign, il ruolo di amministratore Adobe Sign viene aggiunto e configurato con le autorizzazioni appropriate.
+   ![Immagine dei dettagli dell’evento della firma](images/create-user.png)
 
-![Immagine dei ruoli di creazione dell’applicazione](images/create-application-roles.png)
+2. Aggiungi l’utente al gruppo di amministrazione di Adobe Sign.
 
-## Crea campi documento {#create-fields}
+   ![Immagine dei dettagli dell’evento della firma](images/add-user.png)
 
-Per stabilire l’integrazione con Adobe Sign, gli amministratori devono creare due nuovi campi documento condivisi:
+### 5. Crea gruppo di tipi di documento {#create-document-type-group}
+
+Quando distribuisci il pacchetto Adobe Sign, viene creato un record Gruppo tipi di documento denominato &quot;Adobe Sign documento&quot;.
+
+![Immagine di gruppi di tipi di documento](images/document-type-groups.png)
+
+È necessario aggiungere questo gruppo di tipi di documento per tutte le classificazioni di documenti idonee per il processo Adobe Sign. Poiché la proprietà del gruppo di tipi di documento non viene ereditata dal tipo al sottotipo né dal sottotipo al livello di classificazione, deve essere impostata per ogni classificazione del documento idonea per Adobe Sign.
+
+![Immagine dei dettagli di modifica del documento](images/document-edit-details.png)
+
+![Immagine del tipo di documento](images/document-type.png)
+
+**Nota:** Se l’oggetto Impostazione ruolo utente non contiene il campo che fa riferimento all’oggetto Gruppo tipo di documento, è necessario aggiungere il campo.
+
+### 6. Crea impostazione ruolo utente {#create-user-role-setup}
+
+Una volta che i cicli di vita sono stati configurati correttamente, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC a tutti i documenti idonei per la procedura di Adobe Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
+
+* Gruppo di tipi di documento come &quot;Adobe Sign documento&quot;,
+* Ruolo dell&#39;applicazione come &quot;ruolo di amministratore dell&#39;Adobe Sign&quot; e
+* Utente di integrazione.
+
+![Immagine della configurazione del ruolo utente](images/user-role-setup.png)
+
+**Nota:** Se l’oggetto Impostazione ruolo utente non contiene il campo che fa riferimento all’oggetto Gruppo tipo di documento, è necessario aggiungere il campo. A tale scopo, seleziona Oggetto > Configurazione ruolo utente > Campi e completa i passaggi richiesti, come illustrato nell’immagine seguente.
+
+![Immagine della configurazione del ruolo utente](images/create-setup-field.png)
+
+### 7. Imposta campi documento {#create-fields}
+
+Per stabilire l’integrazione con Adobe Sign, sono necessari due nuovi campi documento condivisi:
 
 * Firma (signature__c)
 * Consenti azioni utente di Adobe Sign (allow_adobe_sign_user_actions__c)
 
 ![Immagine dei dettagli del documento](images/create-document-fields.png)
 
-Questi campi condivisi devono essere aggiunti a tutti i tipi di documento idonei per la firma degli Adobi. Entrambi i campi devono avere una protezione specifica che consente solo ai membri del gruppo di amministrazione di Adobe Sign di aggiornare i propri valori.
+Per configurare i campi documento:
 
-![Immagine dei dettagli del campo firma](images/signature-field-details.png)
+1. Vai alla scheda Configuration e seleziona **Campi documento** > **Campi condivisi**.
+1. Nel campo Sezione di visualizzazione, selezionate Crea sezione di visualizzazione e assegnate l’etichetta Firma Adobe.
 
-Gli amministratori devono aggiungere il campo condiviso esistente *Disattivare le sovrapposizioni vettoriali (disable_vault_overlays__v)* e impostalo su Attivo per tutti i tipi di documento idonei per la firma degli Adobi. Facoltativamente, il campo può avere una protezione specifica che consente solo ai membri del gruppo di amministrazione di Adobe Sign di aggiornarne il valore.
+   ![Immagine dei dettagli del documento](images/create-display-section.png)
 
-![Immagine delle azioni utente di allow adobe sign](images/allow-adobe-sign-user-actions.png)
+1. Per i due campi Documento condivisi (signature__c e allow_adobe_sign_user_actions__c), aggiorna la sezione dell’interfaccia utente con l’etichetta della sezione &quot;Adobe firma&quot;.
+1. Aggiungi i tre campi condivisi a tutti i tipi di documento idonei per la firma degli Adobi. A tale scopo, nella pagina del documento di base, selezionate **Aggiungi** > **Campo condiviso esistente** dall&#39;angolo superiore destro.
 
-## Creare interpretazioni documento {#create-renditions}
+   ![Immagine dei dettagli del documento](images/add-existing-fields.png)
 
-Gli amministratori devono creare un nuovo tipo di rendering denominato *Adobe Sign rendering (adobe_sign_rendition__c)*, che viene utilizzato dall&#39;integrazione Vault per caricare documenti PDF firmati in Adobe Sign. L’interpretazione Adobe Sign deve essere dichiarata per ogni tipo di documento idoneo per la firma dell’Adobe.
+   ![Immagine dei dettagli del documento](images/use-shared-fields.png)
+
+1. Entrambi i campi devono avere una protezione specifica che consente solo ai membri del gruppo di amministratori di Adobe Sign di aggiornare i propri valori.
+
+   ![Immagine dei dettagli del documento](images/security-overrides.png)
+
+1. Gli amministratori devono aggiungere il campo condiviso esistente *Disattivare le sovrapposizioni vettoriali (disable_vault_overlays__v)* e impostalo su Attivo per tutti i tipi di documento idonei per la firma degli Adobi. Facoltativamente, il campo può avere una protezione specifica che consente solo ai membri del gruppo di amministrazione di Adobe Sign di aggiornarne il valore.
+
+   ![Immagine delle azioni utente di allow adobe sign](images/allow-adobe-sign-user-actions.png)
+
+### 8. Dichiara le interpretazioni dei documenti {#declare-renditions}
+
+Il nuovo tipo di rendering denominato *Adobe Sign rendering (adobe_sign_rendition__c) viene utilizzato dall’integrazione Vault per caricare i documenti di PDF firmati in Adobe Sign. L’interpretazione Adobe Sign deve essere dichiarata per ogni tipo di documento idoneo per la firma dell’Adobe.
 
 ![Immagine dei tipi di rendering](images/rendition-type.png)
 
 ![Immagine dei tipi di rendering](images/edit-details-clinical-type.png)
 
-## Configurare le azioni Web {#web-actions}
+### 9. Aggiorna le azioni Web {#web-actions}
 
 L&#39;integrazione di Adobe Sign e Vault richiede la creazione e la configurazione delle seguenti due azioni Web:
 
@@ -190,35 +281,46 @@ L&#39;integrazione di Adobe Sign e Vault richiede la creazione e la configurazio
 
    ![Immagine di Annulla Adobe Sign](images/cancel-adobe-sign.png)
 
-## Aggiornamento del ciclo di vita dei documenti {#document-lifecycle}
+### 10. Aggiorna il ciclo di vita dei documenti {#document-lifecycle}
 
 Per ogni tipo di documento idoneo per la firma di Adobi, il ciclo di vita del documento corrispondente deve essere aggiornato aggiungendo nuovi stati e ruoli del ciclo di vita.
 
-### Ruolo Ciclo di vita {#lifecycle-role}
-
-Il ruolo dell’applicazione di amministrazione Adobe Sign deve essere aggiunto a tutti i cicli di vita utilizzati dai documenti idonei per la firma degli Adobi, come illustrato di seguito.
-
-![Immagine dei ruoli di amministratore del ciclo di vita](images/document-lifecycle-admin-role.png)
-
-Il ruolo di amministratore deve essere creato con le seguenti opzioni:
-
-* Abilitato Controllo accesso dinamico.
-* Regole di condivisione dei documenti che includono solo il gruppo di tipi di documento, come illustrato nell&#39;immagine seguente.
-
-![Immagine della regola di condivisione di adobe sign](images/adobe-sign-sharing-rule.png)
-
-### Stati del ciclo di vita {#lifecycle-states}
-
 Il ciclo di vita degli accordi Adobe Sign ha i seguenti stati:
 
-* BOZZA
-* AUTHORING o DOCUMENTS_NOT_YET_PROCESSED
-* OUT_FOR_SIGNATURE o OUT_FOR_approval
-* FIRMATO O APPROVATO
-* ANNULLATA
-* SCADUTO
+    * BOZZA
+    * AUTHORING o DOCUMENTS_NOT_YET_PROCESSED
+    * OUT_FOR_SIGNATURE o OUT_FOR_approval
+    * FIRMATO O APPROVATO
+    * ANNULLATO
+    * SCADUTO
 
-Quando un documento di archivio viene inviato ad Adobe Sign, il suo stato deve corrispondere allo stato in cui si trova l’accordo. A tale scopo, aggiungi i seguenti stati in ogni ciclo di vita utilizzato dai documenti idonei per la firma degli Adobi:
+Per aggiornare il ciclo di vita del documento, effettua le seguenti operazioni:
+
+1. Aggiungere il ruolo Ciclo di vita
+
+   Il ruolo dell’applicazione di amministrazione Adobe Sign deve essere aggiunto a tutti i cicli di vita utilizzati dai documenti idonei per la firma degli Adobi, come illustrato di seguito.
+
+   ![Immagine dei ruoli di amministratore del ciclo di vita](images/document-lifecycle-admin-role.png)
+
+   Il ruolo di amministratore deve essere creato con le seguenti opzioni:
+
+   * Abilitato Controllo accesso dinamico.
+   * Regole di condivisione dei documenti che includono solo il gruppo di tipi di documento, come illustrato nell&#39;immagine seguente.
+
+   ![Immagine della regola di condivisione di adobe sign](images/adobe-sign-sharing-rule.png)
+
+2. Creare gli stati del ciclo di vita. A tale scopo, passare a **Impostazioni** > **Configurazione** > **Cicli di vita documento** > **Cicli di vita generali** > **Stati** > **Crea**. Quindi, creare i seguenti stati:
+
+   * In Adobe Sign Draft
+      ![Immagine della regola di condivisione di adobe sign](images/create-draft-state.png)
+   * In Adobe Sign Authoring
+      ![Immagine della regola di condivisione di adobe sign](images/create-authoring-state.png)
+   * In Adobe firma
+      ![Immagine della regola di condivisione di adobe sign](images/create-signing-state.png)
+
+3. Aggiungi le azioni utente agli stati elencati di seguito.
+
+   Quando un documento di archivio viene inviato ad Adobe Sign, il suo stato deve corrispondere allo stato in cui si trova l’accordo. A tale scopo, aggiungi i seguenti stati in ogni ciclo di vita utilizzato dai documenti idonei per la firma degli Adobi:
 
 * **Prima della firma dell’Adobe** (recensito): Si tratta di un nome segnaposto per lo stato da cui è possibile inviare il documento ad Adobe Sign. In base al tipo di documento, può essere Bozza o Revisionato. L&#39;etichetta dello stato del documento può essere personalizzata in base alle esigenze del cliente. Prima di Adobe lo stato della firma deve definire due azioni utente:
 
@@ -263,35 +365,27 @@ Il diagramma seguente illustra le mappature tra gli stati dell’accordo Adobe S
 
 ![Immagine delle mappature di Adobe Sign Vault](images/sign-vault-mappings.png)
 
-## Creare un gruppo di tipi di documento e impostazione del ruolo utente  {#document-type-group-user-role}
+### 11. Aggiungere lo stage Adobe Sign ai gruppi di Lifecycle Stage Generali
 
-### Crea gruppo di tipi di documento {#create-document-type-group}
+![Immagine delle mappature di Adobe Sign Vault](images/add-adobe-sign-stage.png)
 
-Gli amministratori devono creare un nuovo record Gruppo tipi di documento denominato &quot;Adobe Sign documento&quot;. Questo gruppo di tipi di documento viene aggiunto per tutte le classificazioni di documenti idonee per il processo Adobe Sign. Poiché la proprietà del gruppo di tipi di documento non viene ereditata dal tipo al sottotipo né dal sottotipo al livello di classificazione, deve essere impostata per ogni classificazione del documento idonea per Adobe Sign.
+### 12. Imposta le autorizzazioni per il ruolo utente nello stato del ciclo di vita
 
-![Immagine del tipo di documento](images/document-type.png)
+È necessario impostare autorizzazioni appropriate per ogni ruolo utente nello stato del ciclo di vita, come illustrato nell&#39;immagine seguente.
 
-![Immagine dei dettagli di modifica del documento](images/document-edit-details.png)
+![Immagine delle mappature di Adobe Sign Vault](images/set-user-role-permissions.png)
 
-![Immagine di gruppi di tipi di documento](images/document-type-groups.png)
+### 13. Imposta la sicurezza atomica in base allo stato del documento e al ruolo dell’utente
 
-### Crea impostazione ruolo utente {#create-user-role-setup}
+![Immagine delle mappature di Adobe Sign Vault](images/set-atomic-security.png)
 
-Una volta che i cicli di vita sono stati configurati correttamente, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC a tutti i documenti idonei per la procedura di Adobe Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
+### 14. Creazione di messaggi di documento per Adobe Sign Cancel
 
-* Gruppo di tipi di documento come &quot;Adobe Sign documento&quot;,
-* Ruolo dell&#39;applicazione come &quot;ruolo di amministratore dell&#39;Adobe Sign&quot; e
-* Utente di integrazione.
-
-![Immagine della configurazione del ruolo utente](images/user-role-setup.png)
-
->[!NOTE]
->
->Se l’oggetto Impostazione ruolo utente non contiene il campo che fa riferimento all’oggetto Gruppo tipo di documento, questo campo deve essere aggiunto.
+![Immagine delle mappature di Adobe Sign Vault](images/create-cancel-message.png)
 
 ## Connetti [!DNL Veeva Vault] per Adobe Sign tramite middleware {#connect-middleware}
 
-Dopo aver completato la configurazione per [!DNL Veeva Vault] e l’account amministratore di Adobe Sign, l’amministratore deve creare una connessione tra i due account utilizzando il middleware. Il [!DNL Veeva Vault] e la connessione all’account Adobe Sign viene avviata da Adobe Sign Identity e quindi utilizzata per memorizzare l’identità Veeva Vault.
+Dopo aver completato la configurazione per [!DNL Veeva Vault] e l’account amministratore di Adobe Sign, l’amministratore deve creare una connessione tra i due account utilizzando il middleware. Il [!DNL Veeva Vault] e la connessione all&#39;account Adobe Sign viene avviata da Adobe Sign Identity e viene quindi utilizzata per memorizzare[!DNL Veeva Vault]identità.
 Per garantire la sicurezza e la stabilità del sistema, l&#39;amministratore deve utilizzare una [!DNL Veeva Vault] account di sistema/servizio/utilità, ad esempio `adobe.for.veeva@xyz.com`, anziché un account utente personale, ad esempio `bob.smith@xyz.com`.
 
 L’amministratore dell’account Adobe Sign deve seguire i passaggi riportati di seguito per connettersi [!DNL Veeva Vault] per Adobe Sign tramite middleware:
@@ -333,46 +427,19 @@ L’amministratore dell’account Adobe Sign deve seguire i passaggi riportati d
 
    ![Immagine](images/middleware_group.png)
 
+1. Per allegare il report di audit all’interpretazione firmata, seleziona la casella di controllo **[!UICONTROL Allega report di audit a rendering firmato]**.
+
+   ![Immagine](images/add-audit-report.png)
+
+1. Per consentire il provisioning automatico degli utenti in Adobe Sign, seleziona la casella di controllo **[!UICONTROL Fornitura automatica per gli utenti di Sign]**.
+
+   **Nota:** Il provisioning automatico dei nuovi utenti di Adobe Sign funziona solo se è stato abilitato a livello di account Adobe Sign in Adobe Sign, oltre all’attivazione **[!UICONTROL Fornitura automatica per gli utenti di Sign]** per la[!DNL Veeva Vault]Integrazione con Adobe Sign come illustrato di seguito dall’amministratore dell’account Adobe Sign.
+
+   ![Immagine](images/allow-auto-provisioning.png)
+
 1. Seleziona **[!UICONTROL Salva]** per salvare la nuova connessione.
 
    La nuova connessione viene visualizzata nella scheda Impostazioni e mostra l’integrazione riuscita tra [!DNL Veeva Vault] e Adobe Sign.
 
    ![Immagine](images/middleware_setup.png)
 
-## Ciclo di vita della distribuzione dei pacchetti {#deployment-lifecycle}
-
-### Ciclo di vita generale della distribuzione {#general-deployment}
-
-**Passaggio 1.** Creare un nuovo ruolo applicazione denominato &quot;Ruolo amministratore Adobe Sign&quot;.
-
-**Passaggio 2.** Creare un nuovo gruppo di tipi di documento denominato &quot;Adobe Sign documento&quot;.
-
-**Passaggio 3.** [Distribuire il pacchetto](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip).
-
-**Passaggio 4.** Crea un nuovo gruppo gestito dall’utente denominato &quot;Adobe Sign Admin Group&quot;.
-
-**Passaggio 5.** Crea un profilo Utente di integrazione con il profilo di sicurezza &quot;Profilo di integrazione Adobe Sign&quot; e assegnalo al gruppo di amministrazione di Adobe Sign.
-
-**Passaggio 6.** Assegnare le autorizzazioni di lettura per tutti i profili di sicurezza agli oggetti Signature, Signatory e Signature Event per gli utenti che richiedono l’accesso alla cronologia di Adobe Sign in Vault.
-
-**Passaggio 7.** Definisci il ruolo di amministratore Adobe Sign nel ciclo di vita di ogni tipo di documento idoneo per la firma degli Adobi. Per ogni stato del ciclo di vita specifico di Adobe Sign, questo ruolo viene aggiunto e configurato con le autorizzazioni appropriate.
-
-**Passaggio 8.** Dichiarare il rendering Adobe Sign per ogni tipo di documento idoneo per la firma di Adobe.
-
-**Passaggio 9.** Per ogni tipo di documento idoneo per la firma di Adobi, aggiorna il ciclo di vita del documento corrispondente aggiungendo nuovi stati e ruoli del ciclo di vita.
-
-**Passaggio 10.** Aggiungete il gruppo di tipi di documento denominato &quot;Adobe Sign documento&quot; per tutte le classificazioni di documenti idonee per la procedura di Adobe Sign.
-
-**Passaggio 11.** Una volta completate tutte le configurazioni, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto dal DAC per tutti i documenti idonei per la procedura di Adobe Sign. A tale scopo, viene creato il record User Role Setup appropriato che specifica il Document Type Group come &#39;Adobe Sign Document&#39;, il ruolo dell&#39;applicazione come &#39;Adobe Sign Admin Role&#39; e un utente di integrazione.
-
-### Ciclo di vita specifico della distribuzione {#specific-deployment}
-
-**Passaggio 1.** Crea un nuovo ruolo applicazione denominato &quot;Ruolo amministratore Adobe Sign&quot;.
-
-**Passaggio 2.** Creare un nuovo gruppo di tipi di documento denominato &quot;Adobe Sign documento&quot;.
-
-**Passaggio 3.** [Distribuire il pacchetto](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip).
-
-**Passaggio 4.** Crea un nuovo gruppo gestito dagli utenti denominato &quot;Adobe Sign Admin Group&quot;.
-
-**Passaggio 5.** Crea un profilo Utente di integrazione con il profilo di sicurezza denominato &quot;Profilo di integrazione Adobe Sign&quot; e assegnalo al gruppo di amministrazione di Adobe Sign.
