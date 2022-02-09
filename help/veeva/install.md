@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 722f39a7220d72fde19ebb1058c8c2e8dea06b46
+source-git-commit: f647d0573f3e44f5a7e7997a309a8d18886959be
 workflow-type: tm+mt
-source-wordcount: '3401'
+source-wordcount: '3317'
 ht-degree: 2%
 
 ---
@@ -43,41 +43,13 @@ I passaggi di alto livello per completare l&#39;integrazione sono:
 
 Per configurare [!DNL Veeva Vault] per l&#39;integrazione con Adobe Sign, è necessario implementare i seguenti passaggi:
 
-**Passaggio 1.** Crea un nuovo gruppo denominato &quot;Adobe Sign Admin Group&quot;.
-
-**Passaggio 2.** [Distribuire il pacchetto](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip).
-
-**Passaggio 3.** Creare profili di protezione
-
-**Passaggio 4.** Crea utente
-
-**Passaggio 5.** Configurare il gruppo di tipi di documento
-
-**Passaggio 6.** Crea configurazione ruolo utente
-
-**Passaggio 7.** Configurazione dei campi del documento
-
-**Passaggio 8.** Dichiarare le interpretazioni dei documenti
-
-**Passaggio 9.** Aggiornare le azioni Web
-
-**Passaggio 10.** Aggiornamento del ciclo di vita del documento
-
-**Passaggio 11.** Aggiungere lo stage Adobe Sign ai gruppi di Lifecycle Stage Generali
-
-**Passaggio 12.** Impostare le autorizzazioni per il ruolo utente nello stato del ciclo di vita
-
-**Passaggio 13.** Configurare la sicurezza atomica in base allo stato del documento e al ruolo utente
-
-**Passaggio 14.** Creazione di messaggi di documento per Adobe Sign Annulla
-
-### 1. Crea gruppo {#create-group}
+### Passaggio 1. Crea gruppo {#create-group}
 
 Per configurare Adobe Sign per [!DNL Vault], un nuovo gruppo denominato *Adobe Sign Admin Group* viene creato. Questo gruppo viene utilizzato per impostare la sicurezza a livello di campo del documento per i campi correlati ad Adobe Sign e deve includere *Profilo di integrazione Adobe Sign* per impostazione predefinita.
 
 ![Immagine dei dettagli dell’evento della firma](images/create-admin-group.png)
 
-### 2. Distribuisci il pacchetto {#deploy-package}
+### Passaggio 2. Distribuire il pacchetto {#deploy-package}
 
 [Distribuire il pacchetto](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip) e segui i passaggi. Una volta distribuito, il pacchetto crea:
 
@@ -166,7 +138,7 @@ Viene creato un oggetto Process Locker per bloccare il processo di integrazione 
 
 ![Immagine dei ruoli di creazione dell’applicazione](images/create-application-roles.png)
 
-### 3. Configurazione dei profili di protezione {#security-profiles}
+### Passaggio 3. Configurazione dei profili di protezione {#security-profiles}
 
 Per una corretta integrazione con il Vault, è stato creato un nuovo profilo di sicurezza denominato *Profilo di integrazione Adobe Sign* viene creato e le relative autorizzazioni sono impostate per *Azioni di amministrazione di Adobe Sign*. Il profilo di integrazione Adobe Sign viene assegnato all’account di sistema e viene utilizzato dall’integrazione quando si chiamano le API Vault. Questo profilo consente le autorizzazioni per:
 
@@ -179,7 +151,7 @@ I profili di sicurezza degli utenti che richiedono l’accesso alla cronologia d
 
 ![Immagine dei dettagli dell’evento della firma](images/set-permissions.png)
 
-## 4. Crea utente {#create-user}
+### Passaggio 4. Crea utente {#create-user}
 
 L’account di sistema Vault utilizzato dall’integrazione Adobe Sign deve:
 
@@ -198,7 +170,7 @@ Per garantire che l’utente dell’account di sistema appartenga al gruppo di a
 
    ![Immagine dei dettagli dell’evento della firma](images/add-user.png)
 
-### 5. Crea gruppo di tipi di documento {#create-document-type-group}
+### Passaggio 5. Configurare il gruppo di tipi di documento {#create-document-type-group}
 
 Quando distribuisci il pacchetto Adobe Sign, viene creato un record Gruppo tipi di documento denominato &quot;Adobe Sign documento&quot;.
 
@@ -212,13 +184,13 @@ Quando distribuisci il pacchetto Adobe Sign, viene creato un record Gruppo tipi 
 
 **Nota:** Se l’oggetto Impostazione ruolo utente non contiene il campo che fa riferimento all’oggetto Gruppo tipo di documento, è necessario aggiungere il campo.
 
-### 6. Crea impostazione ruolo utente {#create-user-role-setup}
+### Passaggio 6. Crea impostazione ruolo utente {#create-user-role-setup}
 
 Una volta che i cicli di vita sono stati configurati correttamente, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC a tutti i documenti idonei per la procedura di Adobe Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
 
-* Gruppo di tipi di documento come &quot;Adobe Sign documento&quot;,
-* Ruolo dell&#39;applicazione come &quot;ruolo di amministratore dell&#39;Adobe Sign&quot; e
-* Utente di integrazione.
+* Gruppo di tipi di documento come documento Adobe Sign
+* Ruolo dell’applicazione come ruolo di amministratore Adobe Sign
+* Utente di integrazione
 
 ![Immagine della configurazione del ruolo utente](images/user-role-setup.png)
 
@@ -226,7 +198,7 @@ Una volta che i cicli di vita sono stati configurati correttamente, il sistema d
 
 ![Immagine della configurazione del ruolo utente](images/create-setup-field.png)
 
-### 7. Imposta campi documento {#create-fields}
+### Passaggio 7. Imposta campi documento {#create-fields}
 
 Per stabilire l’integrazione con Adobe Sign, sono necessari due nuovi campi documento condivisi:
 
@@ -257,7 +229,7 @@ Per configurare i campi documento:
 
    ![Immagine delle azioni utente di allow adobe sign](images/allow-adobe-sign-user-actions.png)
 
-### 8. Dichiara le interpretazioni dei documenti {#declare-renditions}
+### Passaggio 8. Dichiarare le interpretazioni dei documenti {#declare-renditions}
 
 Il nuovo tipo di rendering denominato *Adobe Sign rendering (adobe_sign_rendition__c) viene utilizzato dall’integrazione Vault per caricare i documenti di PDF firmati in Adobe Sign. L’interpretazione Adobe Sign deve essere dichiarata per ogni tipo di documento idoneo per la firma dell’Adobe.
 
@@ -265,7 +237,7 @@ Il nuovo tipo di rendering denominato *Adobe Sign rendering (adobe_sign_renditio
 
 ![Immagine dei tipi di rendering](images/edit-details-clinical-type.png)
 
-### 9. Aggiorna le azioni Web {#web-actions}
+### Passaggio 9. Aggiorna azioni Web {#web-actions}
 
 L&#39;integrazione di Adobe Sign e Vault richiede la creazione e la configurazione delle seguenti due azioni Web:
 
@@ -281,7 +253,7 @@ L&#39;integrazione di Adobe Sign e Vault richiede la creazione e la configurazio
 
    ![Immagine di Annulla Adobe Sign](images/cancel-adobe-sign.png)
 
-### 10. Aggiorna il ciclo di vita dei documenti {#document-lifecycle}
+### Passaggio 10. Aggiornamento del ciclo di vita dei documenti {#document-lifecycle}
 
 Per ogni tipo di documento idoneo per la firma di Adobi, il ciclo di vita del documento corrispondente deve essere aggiornato aggiungendo nuovi stati e ruoli del ciclo di vita.
 
@@ -365,21 +337,21 @@ Il diagramma seguente illustra le mappature tra gli stati dell’accordo Adobe S
 
 ![Immagine delle mappature di Adobe Sign Vault](images/sign-vault-mappings.png)
 
-### 11. Aggiungere lo stage Adobe Sign ai gruppi di Lifecycle Stage Generali
+### Passaggio 11. Aggiungere lo stage Adobe Sign ai gruppi di Lifecycle Stage Generali
 
 ![Immagine delle mappature di Adobe Sign Vault](images/add-adobe-sign-stage.png)
 
-### 12. Imposta le autorizzazioni per il ruolo utente nello stato del ciclo di vita
+### Passaggio 12. Impostare le autorizzazioni per il ruolo utente nello stato del ciclo di vita
 
 È necessario impostare autorizzazioni appropriate per ogni ruolo utente nello stato del ciclo di vita, come illustrato nell&#39;immagine seguente.
 
 ![Immagine delle mappature di Adobe Sign Vault](images/set-user-role-permissions.png)
 
-### 13. Imposta la sicurezza atomica in base allo stato del documento e al ruolo dell’utente
+### Passaggio 13. Configurare la sicurezza atomica in base allo stato del documento e al ruolo utente
 
 ![Immagine delle mappature di Adobe Sign Vault](images/set-atomic-security.png)
 
-### 14. Creazione di messaggi di documento per Adobe Sign Cancel
+### Passaggio 14. Creazione di messaggi di documento per Adobe Sign Annulla
 
 ![Immagine delle mappature di Adobe Sign Vault](images/create-cancel-message.png)
 
