@@ -9,9 +9,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: e1394c24aebd1e026eb6c5a33935149f33ef8ea4
+source-git-commit: f460f23ac3e412b527a91668561fff48ac518941
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '667'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 [**Contatta il supporto di Adobe Sign**](https://adobe.com/go/adobesign-support-center_it)
 
-Questo documento è progettato per facilitare [!DNL Veeva Vault] i clienti imparano a utilizzare Adobe Sign per [!DNL Veeva Vault] per inviare un accordo.
+Questo documento è progettato per facilitare [!DNL Veeva Vault] i clienti imparano a utilizzare Adobe Sign per [!DNL Veeva Vault] integrazione per l’invio di un accordo.
 
 ## Panoramica {#overview}
 
@@ -30,7 +30,7 @@ Il processo complessivo di invio dei documenti per la firma è simile all’invi
 
 Integrazione di Adobe Sign con [!DNL Veeva Vault] semplifica e velocizza i flussi di lavoro relativi a documenti e firme. Utilizzando il flusso di lavoro di integrazione, è possibile:
 
-* Risparmiare tempo e risorse dedicate alla posta tradizionale, alla notte e al fax.
+* Risparmia tempo e risorse dedicate alle lumache, alle riprese notturne o ai fax.
 * Invia contratti per la firma elettronica o l’approvazione da [!DNL Veeva Vault], accedere alla cronologia dei contratti in tempo reale e visualizzare i contratti salvati.
 * Monitora le trattative in tempo reale nell&#39;intera organizzazione e ottieni aggiornamenti quando gli accordi vengono visualizzati, firmati, annullati o rifiutati.
 * Utilizza eSign in più di 20 lingue e supporta il servizio fax-back in più di 50 località in tutto il mondo.
@@ -107,7 +107,7 @@ Per inviare un accordo utilizzando Adobe Sign per Veeva:
 
    ![](images/add-signature-fields.png)
 
-1. Invia il documento al destinatario per la firma. Quando il destinatario riceve l’e-mail del documento, lo stato del documento cambia da [!UICONTROL Revisionato] a [!UICONTROL In Adobe firma].
+1. Invia il documento ai destinatari per la firma. Quando il destinatario riceve l’e-mail del documento, lo stato del documento cambia da [!UICONTROL Revisionato] a [!UICONTROL In Adobe firma].
 
    ![](images/in-adobe-signing.png)
 
