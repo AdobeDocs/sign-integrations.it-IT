@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: db0d9022e520e9db39254e78b66aab8b913f353a
+source-git-commit: 535c4510e876c708679d7f6a800206264a9876e2
 workflow-type: tm+mt
-source-wordcount: '3169'
+source-wordcount: '3428'
 ht-degree: 3%
 
 ---
@@ -125,13 +125,51 @@ L&#39;oggetto evento firma viene creato per memorizzare le informazioni relative
 | participant_role_c | Ruolo partecipante | Stringa | Il ruolo del partecipante di Adobe Sign |
 | signature__c | Firma | Oggetto (firma) | Contiene il riferimento al record principale della firma |
 
-![Immagine dei dettagli dell’evento della firma](images/signature-event-object-details.png)
+![Immagine](images/signature-event-object-details.png)
 
 #### Oggetto Process Locker {#process-locker}
 
 Viene creato un oggetto Process Locker per bloccare il processo di integrazione di Adobe Sign. Non richiede alcun campo personalizzato.
 
 ![Immagine dei dettagli dell’evento della firma](images/process-locker-details.png)
+
+Gli oggetti Signature, Signatory, Signature Event e Process Locker che fanno parte del pacchetto di distribuzione hanno la proprietà &quot;Audit data changes for this object&quot; attivata per impostazione predefinita.
+
+**Nota:** Per includere le modifiche dei dati del record di acquisizione dell’oggetto Vault nei registri di controllo, attivate l’impostazione Verifica modifiche dati. Questa impostazione è disattivata per impostazione predefinita. Una volta attivata questa impostazione e creata i record, non potete disattivarla. Se questa impostazione è disattivata e sono presenti dei record, solo il proprietario dell’archivio può aggiornarla.
+
+#### **Visualizzare i partecipanti e la cronologia per l’oggetto firma** {#display-participants-history}
+
+L&#39;oggetto Signature che fa parte del pacchetto di distribuzione viene fornito con la proprietà [Layout di pagina Dettagli firma](https://vvtechpartner-adobe-rim.veevavault.com/ui/#admin/content_setup/object_schema/pagelayout?t=signature__c&amp;d=signature_detail_page_layout__c). Il layout di pagina contiene sezioni per i partecipanti e la cronologia.
+
+* Il *Partecipanti* la sezione Oggetti correlati è configurata come nell&#39;immagine seguente.
+
+   ![Immagine](images/edit-related-objects.png)
+
+* Potete modificare le colonne da visualizzare per i partecipanti, come illustrato di seguito.
+
+   ![Immagine](images/set-columns-to-display.png)
+
+* Il *Storia* la sezione Oggetti correlati è configurata come nell&#39;immagine seguente.
+
+   ![Immagine](images/edit-related-object-in-history.png)
+
+* Potete modificare le colonne da visualizzare per la Cronologia, come illustrato di seguito.
+
+   ![Immagine](images/select-columns-to-display.png)
+
+#### **Visualizzare i partecipanti e la cronologia di audit per il documento Adobe Sign** {#view-participants-audit-history}
+
+* Per visualizzare i partecipanti e la cronologia di audit per il documento Adobe Sign, seleziona il collegamento nella sezione &quot;Adobe firma&quot; del documento.
+
+   ![Immagine](images/view-participants-audit-history.png)
+
+* La pagina che si apre visualizza i partecipanti e la cronologia del documento Adobe Sign, come illustrato di seguito.
+
+   ![Immagine](images/participants-and-history.png)
+
+* Visualizza la traccia audio per la firma come illustrato di seguito.
+
+   ![Immagine](images/audit-trail.png)
 
 ### Passaggio 3. Configurazione dei profili di protezione {#security-profiles}
 
