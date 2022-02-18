@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 535c4510e876c708679d7f6a800206264a9876e2
+source-git-commit: 928bbadab28f041de2d8bc17ad8383f61033a6c0
 workflow-type: tm+mt
-source-wordcount: '3428'
+source-wordcount: '3431'
 ht-degree: 3%
 
 ---
@@ -135,7 +135,7 @@ Viene creato un oggetto Process Locker per bloccare il processo di integrazione 
 
 Gli oggetti Signature, Signatory, Signature Event e Process Locker che fanno parte del pacchetto di distribuzione hanno la proprietà &quot;Audit data changes for this object&quot; attivata per impostazione predefinita.
 
-**Nota:** Per includere le modifiche dei dati del record di acquisizione dell’oggetto Vault nei registri di controllo, attivate l’impostazione Verifica modifiche dati. Questa impostazione è disattivata per impostazione predefinita. Una volta attivata questa impostazione e creata i record, non potete disattivarla. Se questa impostazione è disattivata e sono presenti dei record, solo il proprietario dell’archivio può aggiornarla.
+**Nota:** È possibile fare in modo che il Vault acquisisca le modifiche dei dati dei record di oggetto nei registri di controllo abilitando l&#39;impostazione di verifica delle modifiche dei dati. Questa impostazione è disattivata per impostazione predefinita. Dopo aver attivato questa impostazione e creato i record, non è più possibile disattivarla. Se questa impostazione è disattivata e sono presenti dei record, solo il proprietario dell’archivio può aggiornarla.
 
 #### **Visualizzare i partecipanti e la cronologia per l’oggetto firma** {#display-participants-history}
 
@@ -167,7 +167,7 @@ L&#39;oggetto Signature che fa parte del pacchetto di distribuzione viene fornit
 
    ![Immagine](images/participants-and-history.png)
 
-* Visualizza la traccia audio per la firma come illustrato di seguito.
+* Visualizza la traccia di verifica per la firma come illustrato di seguito.
 
    ![Immagine](images/audit-trail.png)
 
