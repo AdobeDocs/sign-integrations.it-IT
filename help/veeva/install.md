@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 04a3e58da81c1a034318807776077d0076eec85f
+source-git-commit: ad78f32d6c418ac9c7120899831b74bec9d5620d
 workflow-type: tm+mt
-source-wordcount: '3431'
+source-wordcount: '3503'
 ht-degree: 3%
 
 ---
@@ -40,7 +40,7 @@ I passaggi di alto livello per completare l&#39;integrazione sono:
 >
 >L’amministratore di Adobe Sign deve eseguire i passaggi di configurazione di Adobe Sign in Adobe Sign.
 
-## Configura le seguenti opzioni [!DNL Veeva Vault] {#configure-veeva}
+## Configura [!DNL Veeva Vault] {#configure-veeva}
 
 Per configurare [!DNL Veeva Vault] per l’integrazione con Adobe Sign, è necessario implementare i passaggi elencati di seguito.
 
@@ -60,6 +60,7 @@ Per configurare Adobe Sign per [!DNL Vault], un nuovo gruppo denominato *Adobe S
 * Layout di pagina dell’oggetto firmatario
 * Layout di pagina dell’oggetto Process Locker
 * Tipo di rendering Adobe Sign
+* Tipo di rendering originale
 * Campo condiviso signature__c , allow_adobe_sign_user_actions__c
 * Azione Web di Adobe Sign
 * Annullare l’azione Web di Adobe Sign
@@ -266,6 +267,10 @@ Il nuovo tipo di rendering chiamato *Adobe Sign rendering (adobe_sign_rendition_
 
 ![Immagine dei tipi di rendering](images/edit-details-clinical-type.png)
 
+Il nuovo tipo di rendering chiamato *Rendition originale (original_rendition__c)* viene utilizzato dall’integrazione Vault come nome del rendering da utilizzare per memorizzare il rendering visualizzabile originale se il documento firmato viene importato come rendering visualizzabile.
+
+![Immagine](images/original-rendition.png)
+
 ### Passaggio 9. Aggiorna azioni Web {#web-actions}
 
 L&#39;integrazione di Adobe Sign e Vault richiede la creazione e la configurazione delle seguenti due azioni Web:
@@ -440,6 +445,10 @@ L’amministratore dell’account Adobe Sign deve seguire i passaggi riportati d
    **Nota:** Il provisioning automatico dei nuovi utenti di Adobe Sign funziona solo se è stato abilitato a livello di account Adobe Sign in Adobe Sign, oltre all’attivazione **[!UICONTROL Fornitura automatica per gli utenti di Sign]** per la[!DNL Veeva Vault]Integrazione con Adobe Sign come illustrato di seguito dall’amministratore dell’account Adobe Sign.
 
    ![Immagine](images/allow-auto-provisioning.png)
+
+1. Per configurare la visualizzazione di Adobe Sign rendering in Veeva anziché nella versione originale, selezionate la casella di controllo **[!UICONTROL Visualizzazione del rendering Adobe Sign]**.
+
+   ![Immagine](images/edit-connection-dispplay-adobe-sign-rendition.png)
 
 1. Seleziona **[!UICONTROL Salva]** per salvare la nuova connessione.
 
