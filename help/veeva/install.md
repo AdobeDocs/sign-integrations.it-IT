@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 23263a9dab4c74fd7fed05ed5a36bede67feaaf8
+source-git-commit: b9d0ac0cccc8785469172fd805e7b878743c7c07
 workflow-type: tm+mt
-source-wordcount: '3501'
+source-wordcount: '3498'
 ht-degree: 3%
 
 ---
@@ -265,7 +265,7 @@ Il nuovo tipo di rendering chiamato *Adobe Sign rendering (adobe_sign_rendition_
 
 ![Immagine dei tipi di rendering](images/rendition-type.png)
 
-![Immagine dei tipi di rendering](images/edit-details-clinical-type.png)
+![Immagine](images/edit-details-clinical-type.png)
 
 Il nuovo tipo di rendering chiamato *Rendition originale (original_rendition__c)* viene utilizzato dall’integrazione Vault come nome del rendering da utilizzare per memorizzare il rendering visualizzabile originale se il documento firmato viene importato come rendering visualizzabile.
 
