@@ -1,14 +1,14 @@
 ---
 title: Adobe EchoSign per SugarCRM
-description: Guida all'installazione per consentire l'integrazione di Adobe Sign con SugarCRM
+description: Guida all’installazione per abilitare l’integrazione di Adobe Sign con SugarCRM
 product: Adobe Sign
 content-type: reference
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 0512f616-568a-4b96-9bd1-48e67bc3536b
-source-git-commit: 54216c4fc9442b6291e6b253fa619a1b62a0f40b
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '2354'
 ht-degree: 1%
@@ -18,243 +18,241 @@ ht-degree: 1%
 
 # [!DNL SugarCRM] Guida all’installazione {#sugarcrm-install-guide}
 
-[Contatta l&#39;assistenza clienti](https://adobe.com/go/adobesign-support-center_it)
+[Contatta l’Assistenza clienti](https://adobe.com/go/adobesign-support-center_it)
 
-Adobe [!DNL EchoSign] per [!DNL SugarCRM] è una soluzione leader per l&#39;eSignature e per il Web Contract Agreement che fornisce l&#39;automazione della firma elettronica in [!DNL SugarCRM] per le firme elettroniche e le firme fax. Gli utenti possono inviare direttamente contratti da SugarCRM, visualizzare la cronologia dei contratti e salvare i contratti firmati con account, contatti, preventivi e altro ancora.
-Adobe [!DNL EchoSign] per [!DNL SugarCRM] è disponibile per tutte le versioni supportate di SugarCRM, incluso 6.3 - 6.7 per le soluzioni on demand o on-premise.
+Adobe [!DNL EchoSign] per [!DNL SugarCRM] è una soluzione leader per la firma elettronica e la gestione di contratti via web che offre automazione delle firme elettroniche in [!DNL SugarCRM] per firme elettroniche e fax. Gli utenti possono inviare direttamente i contratti da SugarCRM, visualizzare la cronologia dei contratti e salvare i contratti firmati con account, contatti, preventivi e altro ancora associati.
+Adobe [!DNL EchoSign] per [!DNL SugarCRM] è disponibile per tutte le versioni supportate di SugarCRM, tra cui 6.3 - 6.7 per soluzioni on demand o in sede.
 
-Questo documento è una guida per gli amministratori [!DNL SugarCRM] per informazioni su come installare e configurare Adobe [!DNL EchoSign] per il plug-in [!DNL SugarCRM].
+Questo documento è una guida per [!DNL SugarCRM] per informazioni su come installare e configurare l’Adobe [!DNL EchoSign] per [!DNL SugarCRM] plugin.
 
-## Installa il plug-in {#install-plugin}
+## Installa questo plug-in {#install-plugin}
 
-1. Ottenere il file di archivio Adobe [!DNL EchoSign] per [!DNL SugarCRM] dall&#39;elenco [SugarExchange](http://www.sugarexchange.com/product_details.php?product=1123).
-1. Accedere a [!DNL SugarCRM] con l&#39;account amministratore.
-1. Passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Caricatore moduli]**.
+1. Adobe [!DNL EchoSign] per [!DNL SugarCRM]  file di archivio dal [Listino di SugarExchange](http://www.sugarexchange.com/product_details.php?product=1123).
+1. Accedi a [!DNL SugarCRM] con il tuo account amministratore.
+1. Vai a **[!UICONTROL Amministrazione]** > **[!UICONTROL Caricatore moduli]**.
 
    ![Immagine](images/module-loader.png)
 
-1. Per caricare il file di archivio del plug-in Adobe [!DNL EchoSign] per [!DNL SugarCRM], selezionare **[!UICONTROL Sfoglia]**, quindi selezionare il file di archivio, quindi selezionare **[!UICONTROL Carica]**.
-1. Dopo aver caricato il file di archivio, selezionare **[!UICONTROL Installa]** per iniziare l&#39;installazione.
-1. Esaminare i termini e le condizioni, quindi selezionare **[!UICONTROL Accept]** > **[!UICONTROL Commit]**.
-1. Se il plug-in viene installato correttamente, la barra di stato indica un successo del 100%.  Se la barra di stato non raggiunge il 100%, selezionare **[!UICONTROL Visualizza log]** per visualizzare l&#39;errore rilevato da SugarCRM.
+1. Per caricare il file di archivio dell’Adobe [!DNL EchoSign] per [!DNL SugarCRM] plugin, seleziona **[!UICONTROL Sfoglia]**, quindi selezionare il file di archivio, quindi selezionare **[!UICONTROL Carica]**.
+1. Dopo aver caricato il file di archivio, seleziona **[!UICONTROL Installa]** per avviare l&#39;installazione.
+1. Rivedi i termini e le condizioni, quindi seleziona **[!UICONTROL Accetta]** > **[!UICONTROL Commit]**.
+1. Se il plug-in viene installato correttamente, la barra di avanzamento indica che l’operazione è stata completata al 100%.  Se la barra di avanzamento non raggiunge il 100%, seleziona **[!UICONTROL Registro visualizzazione]** per visualizzare l&#39;errore riscontrato da SugarCRM.
 
    ![Immagine](images/display-log.png)
 
-1. Dopo l&#39;installazione, passare a **[!UICONTROL Amministrazione > Riparazione]** e selezionare **[!UICONTROL Riparazione rapida e ricostruzione]**.
+1. Dopo l’installazione, passa a **[!UICONTROL Amministrazione > Riparazione]** e Seleziona **[!UICONTROL Riparazione e ricostruzione rapide]**.
 
 >[!NOTE]
 >
->Se si sta installando il plug-in su [!DNL SugarCRM] OnDemand, inserire un ticket di supporto con [!DNL SugarCRM] per rimuovere temporaneamente le restrizioni del controllo pacchetti per OnDemand in modo che il pacchetto possa essere installato. Questo fa parte del processo standard.
+>Se stai installando il plug-in su [!DNL SugarCRM] OnDemand, registra un ticket di supporto con [!DNL SugarCRM] per rimuovere temporaneamente le restrizioni della finestra di ispezione dei pacchetti per OnDemand in modo che il pacchetto possa essere installato. Questo è parte del processo standard.
 
-## Aggiorna plug-in {#upgrade-plugin}
+## Aggiorna il plug-in {#upgrade-plugin}
 
-Se si sta aggiornando il plug-in Adobe [!DNL EchoSign] per [!DNL SugarCRM] a una versione più recente, è necessario installare il plug-in senza disinstallare la versione precedente.
-Dopo aver aggiornato il plug-in, passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Riparazione]** e selezionare **[!UICONTROL Riparazione rapida e ricostruzione]**.
+Se state aggiornando l’Adobe [!DNL EchoSign] per [!DNL SugarCRM] plugin a una versione più recente, installate il plug-in senza disinstallare la versione precedente.
+Dopo aver aggiornato il plug-in, passa a **[!UICONTROL Amministrazione]** > **[!UICONTROL Riparazione]** e seleziona **[!UICONTROL Riparazione e ricostruzione rapide]**.
 
-**Nota:** Se si disinstalla un plug-in precedente, non rimuovere le tabelle durante la disinstallazione. In caso contrario, è possibile perdere i dati del contratto [!DNL EchoSign].
+**Nota:** Se disinstalli un plugin precedente, non rimuovere le tabelle durante la disinstallazione. In caso contrario, è possibile che [!DNL EchoSign] dati dell&#39;accordo.
 
-## Configura plug-in {#configure-plugin}
+## Configurare il plug-in {#configure-plugin}
 
-1. Se sei già un cliente Adobe [!DNL EchoSign], continua a passare al passo 2.
+1. Se sei già un Adobe [!DNL EchoSign] cliente, continua al passaggio 2.
 
-   Se non si dispone di un account [!DNL EchoSign], [iscriversi a un test gratuito di 14 giorni](https://sugarcrmintegration.echosign.com/public/login) e seguire i passaggi di registrazione online per attivare l&#39;account Adobe [!DNL EchoSign].
-1. Accedi a [Account di firma eco](http://www.echosign.com) e segui la procedura seguente:
-   1. Selezionare la scheda **[!UICONTROL Account]**.
-   1. Selezionare **[!UICONTROL API EchoSign]** sul lato inferiore sinistro.
-   1. Selezionare **[!UICONTROL Abilita accesso API]** e ottenere la chiave API dalla pagina.
+   Se non si dispone di un [!DNL EchoSign] account, [iscriviti a una versione di prova GRATUITA valida 14 giorni](https://sugarcrmintegration.echosign.com/public/login) e segui i passaggi di registrazione online per abilitare il tuo Adobe [!DNL EchoSign] account.
+1. Accedi a [Account Echo Sign](http://www.echosign.com) e segui questi passaggi:
+   1. Seleziona **[!UICONTROL Account]** tab.
+   1. Seleziona **[!UICONTROL API EchoSign]** in basso a sinistra.
+   1. Seleziona **[!UICONTROL Abilita accesso API]** e ottieni la chiave API dalla pagina.
 
    ![Immagine](images/enable-api-access.png)
 
-1. In SugarCRM, passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]** e immettere la chiave API nel campo contrassegnato con **[!UICONTROL Chiave API EchoSign]**.
-1. È possibile configurare il plug-in con le seguenti impostazioni:
+1. In SugarCRM, passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]** e immettere la chiave API nel campo etichettato **[!UICONTROL Chiave API di EchoSign]**.
+1. Facoltativamente, configura il plugin con le seguenti impostazioni:
 
-   1. Allega automaticamente PDF durante la creazione di un contratto da un preventivo: Selezionare se allegare automaticamente un PDF dell&#39;offerta se un utente [!DNL SugarCRM] crea un accordo EchoSign dal modulo Quotes.
-   1. Gestisci elenco destinatari: Selezionare i moduli visualizzati nel sottopannello Destinatario nel modulo [!DNL EchoSign] Contratti. Questo aggiunge anche il sottopannello Contratti [!DNL EchoSign] a tali moduli.
-   1. Aggiungere i pulsanti di invio ai seguenti moduli: Selezionare questa opzione se si desidera includere il pulsante/l&#39;azione Crea [!DNL EchoSign] Contratto con le azioni principali del modulo Preventivo.
-   1. Selezionare **[!UICONTROL Salva]** per memorizzare le impostazioni.
+   1. Allega automaticamente PDF durante la creazione di un accordo da un preventivo: Selezionare se allegare automaticamente un PDF del preventivo se [!DNL SugarCRM] l’utente crea un accordo EchoSign dal modulo Quote.
+   1. Gestione elenco destinatari: Selezionare i moduli da visualizzare nel sottopannello Destinatario nel [!DNL EchoSign] Modulo Accordi. Questo aggiunge anche la proprietà [!DNL EchoSign] Gli accordi sono suddivisi in sottogruppi di tali moduli.
+   1. Aggiungere i pulsanti di invio ai moduli seguenti: Selezionare se si desidera creare [!DNL EchoSign] Pulsante/azione dell’accordo da includere nelle azioni principali del modulo Preventivo.
+   1. Seleziona **[!UICONTROL Salva]** per memorizzare le impostazioni.
 
-**Nota:** Adobe  [!DNL EchoSign] per il  [!DNL SugarCRM] plug-in richiede l&#39;estensione [ SOAP ](http://www.php.net/manual/en/book.soap.php)PHP. Per attivare il supporto SOAP, configurare PHP con enable-soap.
+**Nota:** L&#39;Adobe [!DNL EchoSign] per [!DNL SugarCRM] il plugin richiede la [Estensione SOAP PHP](http://www.php.net/manual/en/book.soap.php). Per abilitare il supporto SOAP, configurate PHP con enable-soap.
 
-## Ottieni aggiornamenti del contratto (per [!DNL SugarCRM] versioni 6.3 o successive) {#get-agreement-updates}
+## Scarica gli aggiornamenti degli accordi (per [!DNL SugarCRM] versioni 6.3 o successive) {#get-agreement-updates}
 
-Per la versione 6.3 e successiva, è possibile utilizzare le due opzioni seguenti per ottenere gli aggiornamenti del contratto. Nelle versioni precedenti di SugarCRM, il plug-in per impostazione predefinita offre solo il metodo di callback (opzione 1).
+Per le versioni 6.3 e successive, puoi utilizzare le due opzioni seguenti per ottenere gli aggiornamenti degli accordi. Nelle versioni precedenti di SugarCRM, il plug-in per impostazione predefinita offre solo il metodo di callback (Opzione 1).
 
-### Opzione 1: Imposta il metodo di callback per il push degli aggiornamenti a EchoSign
+### Opzione 1: Impostare il metodo di callback per l’invio degli aggiornamenti a EchoSign
 
-Se il sito Web è aperto al pubblico, è possibile che Adobe EchoSign esegua il ping dell&#39;istanza [!DNL SugarCRM] ogni volta che si verifica un nuovo evento. [!DNL SugarCRM] aggiorna quindi lo stato del contratto, gli eventi e scarica il documento firmato (se firmato) automaticamente e in tempo reale. (Se si è dietro un firewall, è necessario elencare gli indirizzi IP del server [!DNL EchoSign] oppure utilizzare il metodo Job pianificato per aggiornare gli accordi EchoSign descritti nella sezione successiva di questa guida).
+Se il tuo sito Web è pubblico, puoi avere Adobe EchoSign ping [!DNL SugarCRM] ogni volta che si verifica un nuovo evento. [!DNL SugarCRM] quindi aggiorna lo stato dell’accordo, gli eventi e scarica il documento firmato (se firmato) automaticamente e in tempo reale. (Se si è in presenza di un firewall, è necessario autorizzare il [!DNL EchoSign] gli indirizzi IP del server o utilizzate il metodo Pianificed Job per aggiornare gli accordi EchoSign descritti nella sezione successiva di questa guida).
 
-1. Passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]**.
-1. Selezionare la casella di controllo **[!UICONTROL Utilizzare il metodo di callback EchoSign]** per aggiornare gli eventi e gli stati degli accordi.
-1. Selezionare **[!UICONTROL Salva]**.
+1. Vai a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]**.
+1. Seleziona la casella di controllo **[!UICONTROL Utilizzare il metodo di callback EchoSign]** per aggiornare gli eventi e gli stati degli accordi.
+1. Seleziona **[!UICONTROL Salva]**.
 
-### Opzione 2: Impostare un processo pianificato per [!DNL SugarCRM] istanze dietro un firewall
+### Opzione 2: Impostare un processo pianificato per [!DNL SugarCRM] Istanze dietro un firewall
 
-Il plug-in [!DNL EchoSign] per [!DNL SugarCRM] può inoltre utilizzare un job pianificato per eseguire una query [!DNL EchoSign] per gli aggiornamenti ai contratti in uscita per la firma. È possibile utilizzare il metodo di query del processo pianificato se si dispone di un&#39;installazione [!DNL SugarCRM] locale dietro un firewall.
+Il [!DNL EchoSign] per [!DNL SugarCRM] Il plug-in può anche utilizzare un processo pianificato per eseguire query [!DNL EchoSign] per gli aggiornamenti agli accordi inviati per la firma. È possibile utilizzare il metodo di query del processo pianificato se si dispone di un [!DNL SugarCRM] l&#39;installazione è protetta da un firewall.
 
-Per impostare:
+Per configurare:
 
-1. Passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Utilità di pianificazione]**.
-1. Dal menu a discesa della scheda, selezionare **[!UICONTROL Crea scheduler]**.
-1. Immettere un nome di processo.
-1. Per il campo Job, selezionare **[!UICONTROL Adobe EchoSign Status Updater]**.
-1. Impostare l&#39;esecuzione del processo con la frequenza necessaria. Suggeriamo di impostarlo per l&#39;esecuzione ogni 10 minuti, il che significa che dopo l&#39;apertura, la lettura o la firma di un accordo, potrebbe richiedere fino a 10 minuti per l&#39;aggiornamento di [!DNL SugarCRM] con tali informazioni.
+1. Vai a **[!UICONTROL Amministrazione]** > **[!UICONTROL Pianificatore]**.
+1. Dal menu a discesa della scheda, seleziona **[!UICONTROL Crea pianificazione]**.
+1. Immetti un Nome processo.
+1. Per il campo Processo, selezionare **[!UICONTROL Adobe EchoSign Status Updater]**.
+1. Impostare il processo in modo che venga eseguito con la frequenza necessaria. Suggeriamo di impostarlo su 10 minuti, il che significa che dopo l’apertura, la lettura o la firma di un accordo, potrebbero essere necessari fino a 10 minuti per [!DNL SugarCRM] per essere aggiornato con tali informazioni.
 
-   **Nota:** Se si dispone di molti contratti per la firma, l&#39;esecuzione troppo frequente potrebbe causare un rallentamento del sistema.
+   **Nota:** Se hai molti accordi pronti per la firma, questa operazione viene eseguita troppo frequentemente, il sistema potrebbe rallentare.
 
    ![Immagine](images/echosign-status-updater.png)
 
-1. Passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]**.
-1. Deselezionare la casella **[!UICONTROL Utilizzare il metodo di callback EchoSign]** per aggiornare gli eventi e gli stati degli accordi.
-1. Selezionare **[!UICONTROL Salva]**.
-Nota: Attiva pianificatori in [!DNL SugarCRM] per il corretto funzionamento di questo programma.
+1. Vai a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]**.
+1. Deseleziona la casella **[!UICONTROL Utilizzare il metodo di callback EchoSign]** per aggiornare gli eventi e gli stati degli accordi.
+1. Seleziona **[!UICONTROL Salva]**.
+Nota: Attivare gli Utilità di pianificazione [!DNL SugarCRM] perché questo funzioni.
 
-Per aggiungere accordi EchoSign ad altri moduli [!DNL SugarCRM]:
+Per aggiungere accordi EchoSign ad altri [!DNL SugarCRM] moduli:
 
-1. Passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Studio]**.
-1. Dall&#39;albero della cartella della colonna sinistra, selezionare il modulo per aggiungere i contratti [!DNL EchoSign].
-1. Selezionare **[!UICONTROL Relazioni]**> **[!UICONTROL Aggiungi relazioni]**.
-1. Dal menu a discesa, selezionare Tipo come **[!UICONTROL Uno a Molti]** e Modulo come **[!UICONTROL Contratti EchoSign]**.
-1. Selezionare **[!UICONTROL Salva e distribuisci]**.
+1. Vai a **[!UICONTROL Amministrazione]** > **[!UICONTROL Studio]**.
+1. Nella struttura ad albero della cartella delle colonne a sinistra, selezionate il modulo da aggiungere [!DNL EchoSign] Accordi.
+1. Seleziona **[!UICONTROL Relazioni]**> **[!UICONTROL Aggiungi relazioni]**.
+1. Dal menu a discesa, seleziona Testo come **[!UICONTROL Uno a molti]** e Modulo come **[!UICONTROL Accordi EchoSign]**.
+1. Seleziona **[!UICONTROL Salva e distribuisci]**.
 
    ![Immagine](images/save-and-deploy.png)
 
-   [!DNL EchoSign] I contratti vengono ora visualizzati nel modulo e gli accordi possono essere creati e registrati in tale modulo.
+   [!DNL EchoSign] Gli accordi vengono ora visualizzati nel modulo e gli accordi possono essere creati e monitorati.
 
    ![Immagine](images/echosign-agreements.png)
 
-**Altre fasi di configurazione**
+**Altri passaggi di configurazione**
 
-* **Nascondi  [!DNL EchoSign] moduli**: È possibile nascondere i moduli  [!DNL EchoSign] Destinatari ed  [!DNL EchoSign] Eventi passando alle schede e ai pannelli secondari del modulo di visualizzazione Amministrazione e spostandoli nella colonna nascosta.
-* **Disabilitazione di PackageScan**: Se è stato attivato packageScan nel proprio sistema, è necessario disattivarlo durante l&#39;installazione. Se si utilizza [!DNL SugarCRM] On-Demand, contattare il supporto [!DNL SugarCRM] per disattivare PackageScan.
+* **Nascondere [!DNL EchoSign] Moduli**: È possibile nascondere la proprietà [!DNL EchoSign] Destinatari e [!DNL EchoSign] Moduli Eventi accedendo a Schede e Sottopannelli del modulo Amministrazione&quot; e spostandoli nella colonna nascosta.
+* **Disattivazione di packageScan**: Se hai attivato packageScan sul tuo sistema, devi disattivarlo durante l&#39;installazione. Se si utilizza [!DNL SugarCRM] On-demand, contatto [!DNL SugarCRM] supporto per disattivare packageScan.
 
-## Disinstalla il plug-in {#uninstall-plugin}
+## Disinstallare il plug-in {#uninstall-plugin}
 
-1. Accedere a [!DNL SugarCRM] con l&#39;account amministratore.
-1. Passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Caricatore moduli]**.
-1. Selezionare **[!UICONTROL Disinstalla]** accanto al plug-in [!UICONTROL EchoSign per SugarCRM].
-1. Selezionare **[!UICONTROL Impegno]** per iniziare la disinstallazione. È inoltre possibile selezionare per rimuovere le tabelle di database create per il plug-in.
+1. Accedi a [!DNL SugarCRM] con il tuo account amministratore.
+1. Vai a **[!UICONTROL Amministrazione]** > **[!UICONTROL Caricatore moduli]**.
+1. Seleziona **[!UICONTROL Disinstallazione]** accanto al [!UICONTROL Plug-in EchoSign per SugarCRM].
+1. Seleziona **[!UICONTROL Commit]** per avviare la disinstallazione. Potete anche scegliere di rimuovere le tabelle di database create per il plugin.
 
    ![Immagine](images/uninstall-plugin.png)
 
-   Se il plug-in viene disinstallato correttamente, la barra di stato indica un successo del 100%. Se la barra di stato non raggiunge il 100%, selezionare [!UICONTROL Visualizza log] per visualizzare l&#39;errore rilevato da SugarCRM.
+   Se il plug-in viene disinstallato correttamente, la barra di avanzamento indica che l’operazione è stata completata al 100%. Se la barra di avanzamento non raggiunge il 100%, seleziona [!UICONTROL Registro visualizzazione] per visualizzare l&#39;errore riscontrato da SugarCRM.
 
    ![Immagine](images/uninstall-display-log.png)
 
-## Usa Adobe [!DNL EchoSign] per [!DNL SugarCRM] {#use-echosign-for-sugarcrm}
+## Adobe [!DNL EchoSign] per [!DNL SugarCRM] {#use-echosign-for-sugarcrm}
 
-È possibile creare un accordo Adobe [!DNL EchoSign] associato a un account, un contatto, un preventivo o altri moduli [!DNL SugarCRM]. È possibile allegare file, specificare i destinatari e inviare la firma. Adobe [!DNL EchoSign] aggiorna [!DNL SugarCRM] con lo stato corrente del contratto e memorizza il contratto firmato in [!DNL SugarCRM] una volta eseguito completamente.
+È possibile creare un Adobe [!DNL EchoSign] accordo associato a un account, un contatto, un preventivo o altro [!DNL SugarCRM] moduli. Puoi allegare file, specificare i destinatari e inviarli per la firma. Adobe [!DNL EchoSign] aggiornamenti [!DNL SugarCRM] con lo stato corrente dell’accordo e memorizza il contratto firmato in [!DNL SugarCRM] una volta completata.
 
-### Crea e modifica un accordo Adobe [!DNL EchoSign] {#create-edit-agreements}
+### Creare e modificare un Adobe [!DNL EchoSign] accordo {#create-edit-agreements}
 
-È possibile creare accordi tramite il modulo [!DNL EchoSign] Contratti o tramite moduli configurati da un amministratore [!DNL SugarCRM].
+È possibile creare accordi mediante il metodo [!DNL EchoSign] Modulo Accordi o tramite moduli configurati da un [!DNL SugarCRM] amministratore.
 
-1. Dall&#39;elenco [!UICONTROL Azioni] nella scheda [!UICONTROL Contratti EchoSign] selezionare **[!UICONTROL Crea accordo EchoSign]**.
-1. Nella sezione principale dell&#39;accordo [!DNL EchoSign], immettere le informazioni seguenti o selezionare tra varie opzioni di contratto:
+1. Dal [!UICONTROL Azioni] elenco nella [!UICONTROL Accordi EchoSign] , seleziona **[!UICONTROL Crea accordo EchoSign]**.
+1. Nella sezione principale del [!DNL EchoSign] Accordo, immetti le seguenti informazioni o seleziona tra diverse opzioni dell’accordo:
 
-   1. **[!UICONTROL Nome:]** Immettere un nome per il contratto.
-   1. **[!UICONTROL Tipo firma:]** Selezionare il tipo di firma accettata per il documento. Le opzioni sono Firma elettronica e Firma fax.
-   1. **[!UICONTROL Devo inoltre firmare il presente Contratto:]** indicare se il mittente deve firmare il contratto.
-   1. **[!UICONTROL Ordine firma:]** Se è selezionata anche l&#39;opzione precedente che devo firmare il presente contratto, selezionare anche l&#39;ordine in cui il mittente e i destinatari devono firmare.
-   1. **[!UICONTROL Richiedi ai destinatari di firmare:]** selezionare la frequenza con cui si desidera ricordare a un destinatario di firmare un documento. Le opzioni sono Daily o Weekly.
-   1. **[!UICONTROL Giorni fino alla scadenza della firma:]** specificare il numero di giorni fino a quando il contratto deve essere firmato.
-   1. **[!UICONTROL Anteprima, posizione della firma o aggiunta di campi modulo:]**  Selezionare questa opzione per visualizzare in anteprima il contratto prima dell&#39;invio o del trascinamento dei campi della firma, dei campi iniziali o di altri campi del modulo nel contratto prima di inviarlo ai destinatari. Dopo aver visualizzato in anteprima il documento o aver trascinato i campi che si desidera inserire nel documento, selezionare il pulsante Invia per inviare il contratto al destinatario.
-   1. **[!UICONTROL Firma host per il primo firmatario:]** indicare se il mittente desidera ospitare il contratto che firma personalmente.
+   1. **[!UICONTROL Nome:]** Immetti un nome per l’accordo.
+   1. **[!UICONTROL Tipo firma:]** Seleziona il tipo di firma accettato per il documento. Le opzioni sono Firma elettronica e Firma tramite fax.
+   1. **[!UICONTROL Devo Anche Firmare Questo Accordo:]** Indica se anche il mittente deve firmare l’accordo.
+   1. **[!UICONTROL Ordine firma:]** Se è selezionata l’opzione precedente Firmo anche questo accordo, seleziona anche l’ordine in cui il mittente e i destinatari devono firmare.
+   1. **[!UICONTROL Ricorda ai destinatari di firmare:]** Seleziona la frequenza con cui ricordare a un destinatario di firmare un documento. Le opzioni sono giornaliere o settimanali.
+   1. **[!UICONTROL Giorni alla scadenza per la firma:]** Specifica quanti giorni devono trascorrere prima che l’accordo venga firmato.
+   1. **[!UICONTROL Visualizza in anteprima, posiziona firma o aggiungi campi modulo:]**  Seleziona questa opzione per visualizzare in anteprima l’accordo prima che venga inviato oppure trascina e rilascia i campi firma, i campi iniziali o altri campi modulo sull’accordo prima che venga inviato ai destinatari. Dopo aver visualizzato l’anteprima del documento o trascinato i campi che desideri inserire nel documento, ricorda di selezionare il pulsante Invia per inviare l’accordo al destinatario.
+   1. **[!UICONTROL Firma in hosting per il primo firmatario:]** Indica se il mittente desidera ospitare di persona la firma dell’accordo.
       * **[!UICONTROL Messaggio:]** Includi un messaggio per il destinatario.
-      * **[!UICONTROL Account, Opportunità, Offerta:]** Selezionare o modificare l&#39;account, l&#39;opportunità o il preventivo associato al contratto.
-      * **[!UICONTROL Lingua:]** specificare la lingua in cui vengono visualizzate le notifiche tramite la pagina di firma e la posta elettronica ai destinatari.
+      * **[!UICONTROL Account, opportunità, preventivo:]** Seleziona o modifica l’account, l’opportunità o il preventivo associati a questo accordo.
+      * **[!UICONTROL Lingua:]** Specifica la lingua in cui la pagina della firma e le notifiche e-mail vengono visualizzate ai destinatari.
 
       ![Immagine](images/create-agreements.png)
 
 
-1. Nella sezione [!UICONTROL Opzioni di sicurezza] dell&#39;accordo [!UICONTROL EchoSign], immettere le informazioni seguenti:
+1. Nel [!UICONTROL Opzioni di protezione] sezione del [!UICONTROL Accordo EchoSign], immettere le seguenti informazioni:
 
-   a) **[!UICONTROL Password necessaria per firmare:]** Indicare se è necessario immettere una password prima che il destinatario possa firmare un documento.
-b) **[!UICONTROL Password necessaria per l&#39;apertura:]** Indicare se è necessario immettere una password prima che il destinatario possa aprire un PDF del contratto o del contratto firmato
-c) **[!UICONTROL Password:]** Specificare la password da utilizzare per firmare o aprire un documento.
+   a) **[!UICONTROL Password necessaria per firmare:]** Indica se è necessario immettere una password prima che un destinatario possa firmare un documento.
+b) **[!UICONTROL Password necessaria per l&#39;apertura:]** Indica se è necessario immettere una password prima che un destinatario possa aprire un PDF dell’accordo o dell’accordo firmato c) **[!UICONTROL Password:]** Specifica la password da utilizzare per firmare o aprire un documento.
 d) **[!UICONTROL Conferma password:]** Confermare la password da utilizzare per firmare o aprire un documento.
 
-1. Nella sezione Altro dell&#39;accordo [!DNL EchoSign] immettere le seguenti informazioni:
+1. Nella sezione Altro del [!DNL EchoSign] Accordo, inserisci le seguenti informazioni:
 
-   a) **[!UICONTROL Utente:]** Specificare un [!DNL SugarCRM] utente. L&#39;impostazione predefinita è l&#39;utente attualmente connesso al sistema.
-b) **[!UICONTROL Team:]** Per modificare l&#39;assegnazione primaria del team, immettere il nome del nuovo team primario. Per assegnare altri team al record, fare clic su **[!UICONTROL Seleziona]** e selezionare un team dall&#39;elenco team oppure selezionare **[!UICONTROL Aggiungi a]** per aggiungere campi team e immettere i nomi del team. Per ulteriori informazioni, vedere &quot;Assegnazione di record agli utenti e ai team&quot; nella [!DNL SugarCRM] Application Guide.
+   a) **[!UICONTROL Utente:]** Specificare un [!DNL SugarCRM] utente. L’impostazione predefinita è l’utente che ha effettuato l’accesso al sistema.
+b) **[!UICONTROL Team:]** Per modificare l’assegnazione del team principale, immetti il nome del nuovo team principale. Per assegnare altri team al record, fai clic su **[!UICONTROL Seleziona]** e seleziona un team dall’elenco Team, oppure seleziona **[!UICONTROL Aggiungi a]** per aggiungere campi team e immettere i nomi dei team. Per ulteriori informazioni, consulta Assegnazione di record a utenti e team nella [!DNL SugarCRM] Guida all&#39;applicazione.
 
-1. Selezionare **[!UICONTROL Salva]**.
+1. Seleziona **[!UICONTROL Salva]**.
 
-### [!DNL EchoSign] vista dettaglio accordo {#agreement-detail-view}
+### [!DNL EchoSign] vista dettagli accordo {#agreement-detail-view}
 
-Dopo il salvataggio di un accordo [!DNL EchoSign], la visualizzazione dei dettagli del contratto include i seguenti sottopannelli:
+Dopo un [!DNL EchoSign] L’accordo viene salvato, la vista Dettagli dell’accordo include i seguenti sottopannelli:
 
-* **[!UICONTROL Destinatari:]** Tutti i contatti elencati in questo sottopannello ricevono i documenti specificati nel sottopannello Documenti. È necessario aggiungere uno o più destinatari prima di inviare il contratto.
-* **[!UICONTROL Documenti:]** Caricare un nuovo documento o selezionare un documento già caricato  [!DNL SugarCRM] per l&#39;invio della firma.
-* **[!UICONTROL Eventi:]** Qualsiasi azione relativa al contratto, ad esempio quando il contratto è stato inviato per la firma, visualizzato o firmato, è elencata in questo sottopanel.
-Per modificare un [!DNL EchoSign] Contratto, selezionare il pulsante [!UICONTROL Modifica] nella [!UICONTROL Visualizzazione dettagli] del contratto.
+* **[!UICONTROL Destinatari:]** I contatti elencati in questo pannello secondario ricevono i documenti specificati nel pannello secondario Documenti. Prima di inviare l’accordo, devi aggiungere uno o più destinatari.
+* **[!UICONTROL Documenti:]** Carica un nuovo documento o seleziona un documento già caricato in [!DNL SugarCRM] per l&#39;invio per la firma.
+* **[!UICONTROL Eventi:]** Qualsiasi azione relativa all’accordo, ad esempio quando l’accordo è stato inviato per la firma, visualizzato o firmato, è elencata in questo sottopannello.
+Per modificare un [!DNL EchoSign] Accordo, seleziona la [!UICONTROL Modifica] sul pulsante [!UICONTROL Vista dettagli] dell&#39;accordo.
 
 ![Immagine](images/agreement-detail-view.png)
 
-**Nota:** Dopo l&#39;invio di un contratto per la firma, il pulsante   Editbutton viene rimosso dalla visualizzazione Dettagli per mantenere il record degli eventi. È tuttavia possibile attivare il pulsante Modifica. A tale scopo, passare a [!UICONTROL Admin] > [!UICONTROL Adobe EchoSign Settings] e deselezionare l&#39;opzione *[!UICONTROL Dopo che un accordo è stato inviato per la firma, disattivare la possibilità di modificare o eliminare]*.
+**Nota:** Dopo che un accordo è stato inviato per la firma, la proprietà [!UICONTROL Modifica] viene rimosso dalla vista Dettagli per mantenere la registrazione degli eventi. Tuttavia, potete attivare il pulsante Modifica. A tale scopo, passare a [!UICONTROL Amministratore] > [!UICONTROL Impostazioni Adobe EchoSign] e deseleziona l’opzione *[!UICONTROL Dopo che un accordo è stato inviato per la firma, disattiva la possibilità di modificare o eliminare]*.
 
-### Aggiungere un documento a un accordo [!DNL EchoSign] {#add-document}
+### Aggiungere un documento a un [!DNL EchoSign] accordo {#add-document}
 
-[!DNL SugarCRM] gli utenti possono caricare un nuovo documento o selezionare un documento già caricato  [!DNL SugarCRM] utilizzando il pannello secondario Documenti di un record contratto EchoSign.
-Per caricare un documento, selezionare **[!UICONTROL Carica documento]** nel sottopannello [!UICONTROL Documenti].
+[!DNL SugarCRM] gli utenti possono caricare un nuovo documento o selezionare un documento già caricato in [!DNL SugarCRM] mediante il pannello secondario Documenti di un record di accordo EchoSign.
+Per caricare un documento, seleziona **[!UICONTROL Carica documento]** nel [!UICONTROL Documenti] sottogruppo.
 
-Per ulteriori informazioni sui singoli campi del modulo, vedere la sezione &quot;Documents Module&quot; della [!DNL SugarCRM] Application Guide.
+Vedere la sezione &quot;Modulo documenti&quot; del [!DNL SugarCRM] Guida all’applicazione per ulteriori informazioni sui singoli campi di quel modulo.
 
-Per selezionare un documento, fare clic su **[!UICONTROL Seleziona]** nel sottopannello Documenti. Per ulteriori informazioni su come gestire le informazioni correlate nei pannelli secondari, vedere &quot;Visualizzazione e gestione delle informazioni sui record&quot; nella [!DNL SugarCRM] Application Guide.
+Per selezionare un documento, fare clic su **[!UICONTROL Seleziona]** nel sottopannello Documenti. Vedere &quot;Visualizzazione e gestione delle informazioni di registrazione&quot; nella [!DNL SugarCRM] Guida all’applicazione per ulteriori informazioni su come gestire le informazioni correlate nei sottopannelli.
 
 ![Immagine](images/add-document-to-agreement.png)
 
-### Specificare un destinatario per un accordo [!DNL EchoSign] {#specify-recipient}
+### Specificare un destinatario per un [!DNL EchoSign] accordo {#specify-recipient}
 
-1. Dal sottopannello [!UICONTROL Destinatario] di un accordo [!DNL EchoSign], selezionare **[!UICONTROL Aggiungi destinatario]**.
-1. Immettere le seguenti informazioni:
-a) [!UICONTROL Destinatario:] Selezionare il tipo di destinatario dal menu a discesa. Digitare il nome o l&#39;indirizzo di posta elettronica del destinatario nel campo di testo. [!DNL SugarCRM] cerca il nome durante la digitazione e offre un elenco di selezioni. Selezionare un nome se viene trovata una corrispondenza. È inoltre possibile selezionare l&#39;icona a forma di freccia per selezionare un nome da una finestra popup. Per cancellare il nome dal campo, selezionare l&#39;icona **[!UICONTROL X]**.
-b) [!UICONTROL Ruolo:] Selezionare un ruolo dal menu a discesa. Le opzioni sono Firmatario, Cc e Approvatore. Un approvatore non deve firmare il documento.
-1. Selezionare Salva.
+1. Dal [!UICONTROL Destinatario] sottogruppo di un [!DNL EchoSign] Accordo, seleziona **[!UICONTROL Aggiungi destinatario]**.
+1. Immettere le informazioni seguenti: a) [!UICONTROL Destinatario:] Seleziona il tipo di destinatario dal menu a discesa. Digita il nome o l’indirizzo e-mail del destinatario nel campo di testo. [!DNL SugarCRM] cerca il nome mentre digiti e offri un elenco di selezioni. Selezionate un nome se viene trovata una corrispondenza. Potete anche selezionare l’icona freccia per selezionare un nome da una finestra a comparsa. Per cancellare il nome dal campo, seleziona la proprietà **[!UICONTROL X]** icona.
+b) [!UICONTROL Ruolo:] Seleziona un ruolo dal menu a discesa. Le opzioni sono Firmatario e CC e Approvatore. Un approvatore non deve firmare il documento.
+1. Selezionate Salva.
 
 ![Immagine](images/add-recipient-to-agreement.png)
 
-### Invia contratti per firma {#send-for-signature}
+### Inviare accordi per la firma {#send-for-signature}
 
-Quando i contratti sono pronti per essere inviati per la firma, selezionare **[!UICONTROL Invia per firma]** dal menu a discesa nella parte superiore sinistra della pagina. I destinatari ricevono quindi un&#39;e-mail che informa i destinatari dei documenti in attesa della firma. Dopo che i destinatari hanno firmato il documento, il mittente riceve una notifica tramite posta elettronica.
-Se l&#39;opzione [!UICONTROL Firma host per primo firmatario] è selezionata, è possibile selezionare **[!UICONTROL Invia per firma]** per consentire al firmatario di firmare il documento con il mittente presente.
+Quando gli accordi sono pronti per essere inviati per la firma, seleziona **[!UICONTROL Send for Signature]** dal menu a discesa in alto a sinistra della pagina. I destinatari riceveranno quindi un messaggio e-mail che li informerà dei documenti in attesa della firma. Dopo che i destinatari firmano il documento, il mittente riceve una notifica e-mail.
+Se la proprietà [!UICONTROL Firma in hosting per il primo firmatario] è selezionata, è possibile selezionare **[!UICONTROL Send for Signature]** per consentire al firmatario di firmare il documento con il mittente presente.
 
 ![Immagine](images/send-for-signature.png)
 
-Accanto al campo [!UICONTROL Firma host per il firmatario corrente ]**viene visualizzato anche un collegamento**[!UICONTROL  Firma host per il primo firmatario], a cui è possibile accedere fino alla firma del documento. È possibile utilizzare questo collegamento per firmare il contratto host per più sottoscrittori o per riaprire la finestra popup se è stata chiusa accidentalmente.
-Se è selezionata l&#39;opzione [!UICONTROL Anteprima, firma di posizione o aggiunta di campi modulo], selezionare **[!UICONTROL Invia per firma]** per consentire al mittente di visualizzare in anteprima il documento o trascinare i campi sul documento prima di inviarlo. È necessario selezionare **[!UICONTROL Invia]** in tale finestra per inviare il contratto al destinatario.
+A **[!UICONTROL Firma in hosting per firmatario corrente]** accanto al [!UICONTROL Firma in hosting per il primo firmatario] , accessibile fino alla firma del documento. Puoi utilizzare questo collegamento per ospitare la firma dell’accordo per più firmatari o per riaprire la finestra a comparsa se è stata chiusa accidentalmente.
+Se [!UICONTROL Visualizzare in anteprima, posizionare la firma o aggiungere campi modulo] è selezionata, seleziona **[!UICONTROL Send for Signature]** per consentire al mittente di visualizzare in anteprima il documento o trascinare i campi sul documento prima che venga inviato. È necessario selezionare **[!UICONTROL Invia]** in quella finestra per inviare l’accordo al destinatario.
 
-Figura 5: Selezionare Invia per firma per inviare un documento a un destinatario per una firma.
+Figura 5: Seleziona Send for Signature per inviare un documento a un destinatario per la firma.
 
-### Invia da un record di offerta {#send-from-quote-record}
+### Inviare da un record di preventivo {#send-from-quote-record}
 
-Adobe [!DNL EchoSign] ha un&#39;integrazione diretta con i preventivi in [!DNL SugarCRM] in modo che il PDF del preventivo venga generato automaticamente e collegato al record del contratto.
-Quando si visualizza un preventivo, selezionare **[!UICONTROL Crea contratto EchoSign]** per generare il preventivo e associarlo automaticamente al contratto. Il nuovo contratto associa inoltre automaticamente qualsiasi opportunità, account o offerta correlata.
+Adobe [!DNL EchoSign] è integrato direttamente con Quotes in [!DNL SugarCRM] in modo che il PDF del preventivo venga generato automaticamente e allegato al record dell’accordo.
+Quando visualizzi un preventivo, seleziona **[!UICONTROL Crea accordo EchoSign]** per generare il preventivo e allegarlo automaticamente all’accordo. Il nuovo accordo associa inoltre automaticamente qualsiasi opportunità, account o preventivo correlato.
 
 ![Immagine](images/create-echosign-agreement.png)
 
-Per disattivare l&#39;allegato automatico dell&#39;offerta PDF al contratto, passare a **[!UICONTROL Amministrazione]** > **[!UICONTROL Adobe EchoSign Settings]** e deselezionare la casella *[!UICONTROL Allega automaticamente PDF durante la creazione di un accordo da un preventivo]*.
+Per disattivare l’allegato automatico del PDF preventivo all’accordo, passa a **[!UICONTROL Amministrazione]** > **[!UICONTROL Impostazioni Adobe EchoSign]** e deseleziona la casella *[!UICONTROL Allega automaticamente PDF durante la creazione di un accordo da un preventivo]*.
 
 ### Annullare un accordo {#cancel-agreement}
 
-È possibile annullare un [!DNL EchoSign] Contratto dopo che è stato inviato per una firma se tutti i destinatari non hanno ancora firmato il documento. Nella visualizzazione dei dettagli di un contratto dopo l&#39;invio di un documento per la firma viene visualizzato un pulsante [!UICONTROL Annulla contratto]. Selezionare **[!UICONTROL Annulla contratto]** per annullare il contratto.
+È possibile annullare un [!DNL EchoSign] Accordo dopo che è stato inviato per la firma se tutti i destinatari non hanno ancora firmato il documento. A [!UICONTROL Annulla accordo] viene visualizzato nella vista Dettagli di un accordo dopo che un documento è stato inviato per la firma. Seleziona **[!UICONTROL Annulla accordo]** per annullare l’accordo.
 
 ![Immagine](images/cancel-agreement.png)
 
-Nota: Se viene inviato un [!DNL EchoSign] Contratto per la firma e il record viene eliminato, è necessario annullare il contratto prima di eliminarlo.
+Nota: Se un [!DNL EchoSign] L’accordo viene inviato per la firma e il record viene eliminato; devi annullarlo prima di eliminarlo.
 
-### Traccia firme {#track-signatures}
+### Monitorare le firme {#track-signatures}
 
-Il sottopannello [!UICONTROL Eventi] di un accordo [!DNL EchoSign] tiene traccia dello stato dei contratti inviati per la firma. Per visualizzare gli ultimi aggiornamenti su un accordo [!DNL EchoSign], selezionare **[!UICONTROL Aggiorna stato]**. Il pulsante [!UICONTROL Aggiorna stato] è disponibile solo dopo l&#39;invio di un contratto per la firma.
+Il [!UICONTROL Eventi] sottogruppo di un [!DNL EchoSign] L’accordo tiene traccia dello stato degli accordi inviati per la firma. Per visualizzare gli ultimi aggiornamenti su un [!DNL EchoSign] Accordo, seleziona **[!UICONTROL Stato aggiornamento]**. Il [!UICONTROL Stato aggiornamento] è disponibile solo dopo che un accordo è stato inviato per la firma.
 
 ![Immagine](images/update-cancel-status.png)
 
-Dopo l&#39;invio di un contratto per una firma, selezionare **[!UICONTROL Aggiorna stato]** per recuperare lo stato più recente.
+Dopo aver inviato un accordo per la firma, seleziona **[!UICONTROL Stato aggiornamento]** per recuperare lo stato più recente.
 
 ![Immagine](images/events-subpanel.png)
 
 ### Invia promemoria {#send-reminders}
 
-Per inviare un promemoria al firmatario corrente dopo aver inviato il contratto, selezionare **[!UICONTROL Invia promemoria]**. Invia immediatamente un promemoria via e-mail al firmatario corrente sul contratto in attesa di firma.
+Per inviare un promemoria al firmatario corrente dopo l’invio dell’accordo, seleziona **[!UICONTROL Invia promemoria]**. Invia immediatamente un promemoria e-mail al firmatario corrente relativo all’accordo in attesa di firma.
 
 ![Immagine](images/send-reminder.png)

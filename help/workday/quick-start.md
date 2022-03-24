@@ -7,11 +7,11 @@ content-type: reference
 discoiquuid: 13135c88-4c39-4707-b7ba-63ff94769258
 locnotes: All languages; screenshots to follow what's there already (seems there is a mix within a given language version of the article)
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 8b6fa8b4-e240-4ebe-ae2a-8807d75a6c69
-source-git-commit: 5ac9dc27dcdb6cab19281e6aafd4ea0524cc01d6
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '1348'
 ht-degree: 26%

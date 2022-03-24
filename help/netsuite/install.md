@@ -4,11 +4,11 @@ description: Adobe Sign per [!DNL NetSuite] - Guida all'installazione e alla per
 product: Adobe Sign
 locnotes: All languages; screenshots for Tier 1 and 2 only (see the currently published localized page for guidance)
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: 7ded835b48519cba656f160e691c697c91e2c8d0
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '4870'
 ht-degree: 1%

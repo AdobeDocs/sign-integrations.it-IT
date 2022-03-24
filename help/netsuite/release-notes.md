@@ -1,131 +1,131 @@
 ---
-title: Note sulla release di Adobe Sign per NetSuite
-description: Informazioni sulle nuove funzionalità e le modifiche incluse nella versione corrente dell'integrazione di Adobe Sign per NetSuite.
+title: Note sulla versione di Adobe Sign per NetSuite
+description: Scoprite le nuove funzioni e le modifiche incluse nella versione corrente dell'integrazione di Adobe Sign per NetSuite.
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 6317723e-447a-4506-a621-4d967bdd6561
-source-git-commit: f8d0bc748872e675dc1c638eb4050efe9e3147ef
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 5%
 
 ---
 
-# Note sulla release di Adobe Sign per NetSuite
+# Note sulla versione di Adobe Sign per NetSuite
 
-## Aggiorna al pacchetto v4.0.4
+## Aggiornamento al pacchetto v4.0.4
 
-4.0.4 è completamente adattato per utilizzare domini specifici dell&#39;account per tutto il traffico appena generato.
+4.0.4 è completamente adattato per utilizzare domini specifici dell’account per tutto il traffico generato di recente.
 
-L&#39;icona di Adobe Sign è stata aggiornata alla nuova immagine.
+L’icona Adobe Sign è stata aggiornata alla nuova grafica.
 
 ## Versioni precedenti
 
 ### Adobe Sign per NetSuite 4.0.4
 
-4.0.4 è completamente adattato per utilizzare domini specifici dell&#39;account per tutto il traffico appena generato.
+4.0.4 è completamente adattato per utilizzare domini specifici dell’account per tutto il traffico generato di recente.
 
-L&#39;icona di Adobe Sign è stata aggiornata alla nuova immagine.
+L’icona Adobe Sign è stata aggiornata alla nuova grafica.
 
 ### Adobe Sign per NetSuite 4.0.2
 
-Assegnato a **Adobe Sign** (da *Servizi di Adobe Document Cloud eSign*)\
-È ora possibile vedere *Adobe Sign* dove è stato visto in precedenza *Adobe eSign Services* come prova della riassegnazione.
+Rebranded to **Adobe Sign** (da *Servizi eSign di Adobe Document Cloud*)\
+Vedete *Adobe Sign* dove hai visto in precedenza *Adobe di servizi eSign* come prova del rebranding.
 
 ### Adobe Sign per NetSuite 4.0.1
 
-A causa di un errore di regressione API introdotto quando NetSuite ha eseguito il relativo aggiornamento della piattaforma, è stato rilasciato un nuovo pacchetto (v4.0.1).
+A causa di un bug di regressione API introdotto quando NetSuite ha eseguito l&#39;aggiornamento della piattaforma, è stato rilasciato un nuovo pacchetto (v4.0.1).
 
-I clienti vengono incoraggiati ad aggiornare il nuovo pacchetto.
+Si consiglia ai clienti di eseguire l&#39;aggiornamento al pacchetto più recente.
 
 ### Adobe Sign per NetSuite 4.0
 
-**Aggiunta di provisioning automatico degli utenti tramite NetSuite**
+**Aggiunta del provisioning automatico degli utenti tramite NetSuite**
 
-È stata aggiunta una nuova preferenza personalizzata per v4.0. Se abilitato, gli utenti che inviano contratti in NetSuite vengono automaticamente dotati di un account utente dei servizi eSign di Adobe Document Cloud.
+È stata aggiunta una nuova preferenza personalizzata per la versione 4.0. Quando questa opzione è attivata, gli utenti che inviano accordi in NetSuite dispongono automaticamente di un account utente dei servizi eSign di Adobe Document Cloud.
 
 **Certificato con &#39;Built for NetSuite&#39;**
 
-Questa versione ha ottenuto la certificazione &quot;Built for NetSuite&quot; e soddisfa tutte le procedure ottimali più recenti per la progettazione di NetSuite.
+Questa versione ha ottenuto la certificazione &quot;Built for NetSuite&quot; e soddisfa tutte le più recenti best practice di progettazione di NetSuite.
 
-**Assegnato ai servizi Adobe Document Cloud eSign (da EchoSign)**
+**Rebranded to Adobe Document Cloud eSign services (da EchoSign)**
 
-Potete vedere Adobe Document Cloud eSign Services (o Adobe eSign Services per breve tempo) dove in precedenza avete visto Adobe EchoSign come prova del ribilanciamento.
+I servizi eSign di Adobe Document Cloud (o in breve Adobe i servizi eSign) sono ora visualizzati in precedenza come prova del rebranding di Adobe EchoSign.
 
-**Protezione avanzata implementata con OAuth**
+**Sicurezza avanzata implementata con OAuth**
 
-Per migliorare la sicurezza dei dati, i servizi eSign utilizzano ora OAuth 2.0 per autenticare l&#39;account dei servizi Adobe Document Cloud eSign in NetSuite. Questo nuovo protocollo consente a NetSuite di parlare con i servizi eSign senza richiedere la password dei servizi eSign. Poiché le informazioni riservate non vengono condivise direttamente tra le applicazioni, la probabilità che il tuo account venga compromesso è più bassa. Questo miglioramento non incide sull&#39;implementazione, ma è necessario eseguire una configurazione unica per autorizzare il pacchetto NetSuite a comunicare con Adobe Document Cloud. Questa operazione viene eseguita durante il processo di installazione. Per i clienti che eseguono l&#39;aggiornamento da una versione precedente del pacchetto—v3.5.9 e precedente—la chiave API utilizzata in precedenza viene sostituita da un token OAuth generato durante il processo di autorizzazione.
+Per migliorare la sicurezza dei dati, i servizi eSign ora utilizzano OAuth 2.0 per autenticare l’account dei servizi eSign di Adobe Document Cloud in NetSuite. Questo nuovo protocollo consente a NetSuite di comunicare con i servizi eSign senza richiedere la password dei servizi eSign. Poiché le informazioni riservate non vengono condivise direttamente tra le applicazioni, la probabilità che il tuo account venga compromesso è più bassa. Questo miglioramento non influisce sull&#39;implementazione, ma è necessario eseguire una configurazione una tantum per autorizzare il pacchetto NetSuite a comunicare con Adobe Document Cloud. Questa operazione viene eseguita durante il processo di installazione. Per i clienti che eseguono l’aggiornamento da una versione precedente del pacchetto (v3.5.9 e versioni precedenti), la chiave API precedentemente utilizzata viene sostituita da un token OAuth generato durante il processo di autorizzazione.
 
-**Migrazione dei servizi eSign dalle API SOAP alle API REST eseguita**
+**Migrazione dei servizi eSign dalle API SOAP alle API REST**
 
-Per migliorare l&#39;efficienza, la flessibilità e la velocità di elaborazione, i servizi Adobe Document Cloud eSign e, di conseguenza, l&#39;integrazione v4.0 per NetSuite sono stati migrati da API basate su SOAP a API basate su REST.
+Per migliorare l&#39;efficienza, la flessibilità e la velocità di elaborazione, i servizi eSign di Adobe Document Cloud, e di conseguenza l&#39;integrazione v4.0 per NetSuite, sono passati dalle API basate su SOAP a quelle basate su REST.
 
 ### Adobe Sign per NetSuite 3.0
 
 **Ruoli partecipanti avanzati - Approvatore**
 
-* Uno o più destinatari possono essere contrassegnati come approvatori in un contratto
-* Gli approvatori devono esaminare e approvare il documento
-* Gli approvatori possono anche essere tenuti a compilare i dati nell&#39;accordo prima di approvare
+* Uno o più destinatari possono essere contrassegnati come approvatori in un accordo
+* Gli approvatori devono rivedere e approvare il documento
+* Gli approvatori possono anche essere tenuti a compilare i dati dell’accordo prima di approvarlo
 
-**Anteprima dei campi del documento o trascinamento della selezione prima dell&#39;invio**
+**Anteprima documento o trascinamento dei campi modulo prima dell’invio**
 
-Visualizza in anteprima i campi del contratto o trascina i campi del modulo prima di inviare la firma
+Anteprima dell’accordo o trascinamento dei campi modulo prima dell’invio per la firma
 
 **Invia promemoria al firmatario corrente**
 
-Invia promemoria immediato al firmatario corrente
+Invia un promemoria immediato al firmatario corrente
 
-**Criteri di autenticazione firma avanzata**
+**Criteri avanzati per l’autenticazione dei firmatari**
 
-* **Autenticazione basata sulle conoscenze:** rispondere alle domande per verificare l&#39;identità del firmatario
-   * Richiede ai firmatari di provare la propria identità rispondendo alle domande di centinaia di banche dati pubbliche e commerciali
-   * Il nome nella firma è tratto dal nome autenticato dell’utente e non può essere modificato al momento della firma
+* **Autenticazione basata su conoscenza:** Rispondere alle domande per verificare l’identità del firmatario
+   * Richiede ai firmatari di dimostrare la propria identità rispondendo a domande prese da centinaia di database pubblici e commerciali
+   * Il nome alla firma è tratto dal nome autenticato dell’utente e non può essere modificato al momento della firma.
    * Con tecnologia RSA
-   * L&#39;utilizzo di KBA è limitato per account al mese. Contatta le vendite per ulteriori informazioni.
+   * L’utilizzo di KBA è limitato per account, al mese. Per ulteriori informazioni, contatta il reparto Vendite.
 
-* **Identità Web:** Accedere con Facebook, LinkedIn, Google o altri servizi Web di terze parti prima di firmare.
+* **Identità Web:** Accedi con Facebook, LinkedIn, Google o altri servizi Web di terze parti prima di firmare.
 
-   * Il firmatario può firmare solo dopo aver verificato la propria identità utilizzando un servizio Web di terze parti.
-   * Il nome nella firma viene preso dal servizio Web pro!le dell&#39;utente e non può essere modificato al momento della firma
-   * Audit trail acquisisce i dettagli della verifica dell&#39;identità
+   * Il firmatario può firmare solo dopo aver verificato la propria identità tramite un servizio Web di terze parti.
+   * Il nome alla firma viene preso dal servizio Web pro!le dell&#39;utente e non può essere modificato al momento della firma.
+   * L’audit trail acquisisce i dettagli della verifica dell’identità
 
-* **Password una volta**
-   * Applicare metodi di autenticazione per i sottoscrittori interni o esterni o per tutti i sottoscrittori. I firmatari esterni devono utilizzare una password o l&#39;autenticazione basata su conoscenze mentre i firmatari interni non utilizzano
+* **Password una tantum**
+   * Applica metodi di autenticazione per i firmatari interni o esterni o per tutti i firmatari. I firmatari esterni devono utilizzare una password o l’autenticazione basata su conoscenza, mentre i firmatari interni non utilizzano l’autenticazione.
 
 **Preferenze personalizzate aggiuntive**
 
-* Aggiungi PDF firmato come collegamento all&#39;URL o come allegato ospitato in NetSuite
-* Aggiungi traccia di controllo al record del contratto a un contratto$er firmato
-* Utilizza il contatto transazione come firmatario per impostazione predefinita, anziché come messaggio di posta elettronica del cliente
-* Concedi ai mittenti l&#39;opzione per contrassegnare i destinatari come approvatori
+* Aggiungere PDF firmato come collegamento all&#39;URL o come allegato ospitato in NetSuite
+* Aggiungi audit trail al record dell’accordo a$er viene firmato un accordo
+* Utilizza il contatto della transazione come firmatario per impostazione predefinita, anziché l’e-mail del cliente
+* Concedi ai mittenti l’opzione di contrassegnare i destinatari come approvatori
 
-**File di transazione**
+**File delle transazioni**
 
-È possibile selezionare i file da allegare dalla transazione corrente con il nuovo elenco a discesa File di transazione.
+Puoi selezionare i file da allegare dalla transazione corrente con il nuovo elenco a discesa &quot;File di transazione&quot;.
 
 **Certificazione Adobe PDF per tutti i documenti EchoSign**
 
 * Tutti i file PDF inviati o scaricati da EchoSign sono certificati con un certificato digitale Adobe EchoSign
-* Acrobat o Reader visualizza la certificazione che garantisce che il documento non sia stato alterato per un&#39;ulteriore attendibilità e tranquillità
+* Acrobat o Reader visualizza la certificazione che garantisce che il documento non sia stato manomesso per una maggiore fiducia e tranquillità
 
 **Raccolta dei documenti di supporto**
 
-* I mittenti possono raccogliere ulteriori documenti giustificativi dai sottoscrittori durante la firma, ad esempio la patente di guida, il certificato commerciale e altro ancora.
-* I documenti raccolti fanno parte del record ufficiale del contratto firmato
+* I mittenti possono raccogliere ulteriori documenti di supporto dai firmatari durante la firma, ad esempio una patente di guida, un certificato aziendale e altro ancora.
+* I documenti raccolti diventano parte del registro ufficiale dell’accordo firmato
 
 **Campi di dati condizionali**
 
-* Definire la logica condizionale per i campi dell&#39;accordo
-* Le condizioni possono essere basate su valori per uno o più campi del contratto
-* Le condizioni possono essere disattivate!Nate tramite l&#39;interfaccia utente di creazione moduli di trascinamento della selezione o tramite tag di testo
-* Al firmatario vengono presentati i campi appropriati durante la firma di un documento in base alle condizioni de!ned
+* Definire la logica condizionale per i campi dell’accordo
+* Le condizioni possono basarsi su valori per uno o più campi dell’accordo
+* Le condizioni possono essere create!ned tramite l&#39;interfaccia utente di creazione dei moduli tramite trascinamento o tramite tag di testo
+* Al firmatario vengono presentati i campi appropriati quando firma un documento in base alle condizioni de!ned.
 
 **Ulteriori miglioramenti per i campi modulo EchoSign**
 
 * Menu a discesa
-* Mascheramento sul campo
+* Mascheramento dei campi
 * Pulsanti di scelta
-* Crea tag di testo più brevi per mantenere la struttura del documento
+* Creare tag di testo più brevi per mantenere la struttura del documento

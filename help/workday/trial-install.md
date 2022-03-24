@@ -8,11 +8,11 @@ content-type: reference
 discoiquuid: 63ed2d5b-9d82-4f87-97e1-2dde23501e89
 locnotes: All languages; screenshots for Tier 1 and 2 only (see the currently published localized page for guidance)
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: beafe6c0-262f-4f5b-9315-a023a4eef4a2
-source-git-commit: c25be043b404e9bf7a90496d4e47c1f22069313d
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '995'
 ht-degree: 34%
@@ -23,47 +23,47 @@ ht-degree: 34%
 
 ## Panoramica {#overview}
 
-Questo documento è stato progettato per aiutare [!DNL Workday] i clienti a imparare come attivare un account di prova con Adobe Sign e quindi integrarlo nel [!DNL Workday] tenant. Per utilizzare Adobe Sign all&#39;interno di [!DNL Workday], è necessario sapere come creare e modificare [!DNL Workday] elementi quali:
+Questo documento è progettato per facilitare [!DNL Workday] i clienti imparano come attivare un account di prova con Adobe Sign e quindi integrarlo in [!DNL Workday] inquilino. Per utilizzare Adobe Sign all&#39;interno di [!DNL Workday], devi sapere come creare e modificare [!DNL Workday] elementi quali:
 
-* Framework di processo aziendale
-* Configurazione e configurazione tenant
-* Reporting e [!DNL Workday] integrazione in studio
+* Quadro dei processi aziendali
+* Configurazione e configurazione del tenant
+* Segnalazione e [!DNL Workday] Integrazione in studio
 
-**Nota**: Se si dispone di un account Adobe Sign esistente, non è necessario avviare una prova. È possibile contattare Client Success Manager per richiedere l&#39;integrazione [!DNL Workday].
+**Nota**: Se disponi di un account Adobe Sign esistente, non è necessario avviare una versione di prova. Puoi contattare il tuo Client Success Manager per richiedere [!DNL Workday] integrazione.
 
 I principali passaggi per completare l&#39;integrazione sono:
 
 * Attivazione dell&#39;account di prova con Adobe Sign
-* Genera una chiave di integrazione in Adobe Sign
-* Installare la chiave di integrazione nel tenant [!DNL Workday]
+* Generare una chiave di integrazione in Adobe Sign
+* Installa la chiave di integrazione nella [!DNL Workday] Tenant
 
-## Attiva l&#39;account di valutazione di Adobe Sign {#activate-sign-trial-account}
+## Attivazione dell’account di prova di Adobe Sign {#activate-sign-trial-account}
 
-Per richiedere una prova di 30 giorni di Adobe Sign, è necessario compilare questo [modulo di registrazione](https://land.echosign.com/esign-trial-workday-registration.html).
+Per richiedere una versione di prova di 30 giorni di Adobe Sign, è necessario compilare questo [modulo di iscrizione](https://land.echosign.com/esign-trial-workday-registration.html).
 
-**Nota**: È consigliabile utilizzare un indirizzo di posta elettronica funzionale valido per creare la versione di valutazione e non un messaggio di posta elettronica temporaneo. Per verificare l&#39;account, è necessario accedere a questa e-mail, quindi l&#39;indirizzo deve essere valido.
+**Nota**: Si consiglia vivamente di utilizzare un indirizzo e-mail funzionale valido per creare la versione di prova e non un indirizzo e-mail temporaneo. È necessario accedere a questa e-mail per verificare l’account, quindi l’indirizzo deve essere valido.
 
 ![Modulo di richiesta della versione di prova](images/trial-land.png)
 
-Entro un giorno lavorativo, un tecnico Adobe Sign-On-boarding fornisce il tuo account (in Adobe Sign) per [!DNL Workday]. Una volta completato, riceverai un&#39;e-mail di conferma come mostrato di seguito.
+Entro un giorno lavorativo, un Adobe Sign on-boarding specializzato fornisce il proprio account (in Adobe Sign) per [!DNL Workday]. Al termine, riceverai un&#39;e-mail di conferma come illustrato di seguito.
 
 ![E-mail di benvenuto da Adobe Sign](images/welcome-email-2020.png)
 
-Per inizializzare l&#39;account e accedere alla pagina Adobe Sign [!UICONTROL Home], seguire le istruzioni riportate nell&#39;e-mail.
+Per inizializzare l’account e accedere all’Adobe Sign [!UICONTROL Home] , segui le istruzioni nell’e-mail .
 
 ![Dashboard di Adobe Sign](images/classic-home.png)
 
-## Genera una chiave di integrazione {#generate-an-integration-key}
+## Generare una chiave di integrazione {#generate-an-integration-key}
 
-Per le nuove installazioni, è necessario generare una chiave di integrazione in Adobe Sign, quindi immetterla in [!DNL Workday]. Questa chiave autentica gli ambienti Adobe Sign e [!DNL Workday] in modo da poterli fidare l&#39;uno dell&#39;altro e condividere il contenuto.
+Per le nuove installazioni, è necessario generare una chiave di integrazione in Adobe Sign e quindi inserirla in [!DNL Workday]. Questa chiave autentica l&#39;Adobe Sign e [!DNL Workday] per fidarsi reciprocamente e condividere i contenuti.
 
 Per generare una chiave di integrazione in Adobe Sign:
 
 1. Accedi alla pagina di amministrazione di Adobe Sign..
-1. Passare a **[!UICONTROL **Account]** > **[!UICONTROL Preferenze personali]** > **[!UICONTROL Token di accesso**]**.
-1. Fare clic sull&#39;icona **cerchiato più sul lato destro della finestra.**
+1. Passa a **[!UICONTROL **Account]** > **[!UICONTROL Preferenze personali]** > **[!UICONTROL Token di accesso**]**.
+1. Fate clic sul **icona più cerchiato** sul lato destro della finestra.
 
-   Apre l&#39;interfaccia [!UICONTROL Crea chiave di integrazione].
+   Apre la [!UICONTROL Crea chiave di integrazione] interfaccia.
 
    ![Immagine del percorso per accedere alla pagina Token di accesso](images/navigate-to-group-accesstokens.png)
 
@@ -85,69 +85,69 @@ Per generare una chiave di integrazione in Adobe Sign:
 
 1. Fai clic sulla definizione della chiave creata per [!DNL Workday].
 
-   Il collegamento [!UICONTROL Chiave di integrazione] è esposto nella parte superiore della definizione.
+   Il [!UICONTROL Chiave di integrazione] viene visualizzato nella parte superiore della definizione.
 
-1. Fare clic sul collegamento **[!UICONTROL Tasto di integrazione]**.
+1. Fate clic sul **[!UICONTROL Chiave di integrazione]** link.
 
    Espone la chiave di integrazione.
 
    ![Collegamento Chiave di integrazione](images/integration-key.png)
 
-1. Copiare questo tasto e salvarlo in un luogo sicuro per il passaggio successivo.
+1. Copia questa chiave e salva in un luogo sicuro per il passaggio successivo.
 1. Fai clic su **[!UICONTROL OK]**.
 
    ![Riquadro Chiave di integrazione](images/copy-the-key-575.png)
 
-## Configurare il tenant [!DNL Workday] {#configuring-the-workday-tenant}
+## Configura il [!DNL Workday] inquilino {#configuring-the-workday-tenant}
 
-### Installa la chiave di integrazione {#install-the-integration-key}
+### Installazione della chiave di integrazione {#install-the-integration-key}
 
-L&#39;installazione della chiave di integrazione nel tenant [!DNL Workday] stabilisce la relazione di trust con Adobe Sign. Una volta stabilita la relazione, qualsiasi processo aziendale può avere aggiunto un [!UICONTROL Verifica fase documento] che abilita il processo di firma.
+Installazione della chiave di integrazione nel [!DNL Workday] tenant stabilisce la relazione affidabile con Adobe Sign. Una volta stabilita tale relazione, qualsiasi processo aziendale può avere un [!UICONTROL Passaggio Rivedi documento] aggiunto che abilita il processo di firma.
 
 **Nota**[!DNL Workday]: Adobe Sign è indicato come &quot;Adobe Document Cloud&quot; nell&#39;ambiente di 
 
 Per installare la chiave di integrazione:
 
-1. Accedere a [!DNL Workday] come amministratore dell&#39;account.
-1. Cercare e aprire la pagina **[!UICONTROL Modifica impostazione tenant - Processi aziendali]**.
+1. Accedi a [!DNL Workday] come amministratore dell’account.
+1. Cerca e apri il **[!UICONTROL Modifica configurazione titolare - Processi aziendali]** pagina.
 
 1. Fornire informazioni per i quattro campi seguenti:
 
-   * **[!UICONTROL Riconoscimento]** cloud di Adobe Document: Conferma di testo fisso dell&#39;integrazione.
+   * **[!UICONTROL Adobe Document Cloud riconoscimento]**: Un testo fisso che riconosce l&#39;integrazione.
 
-   * **[!UICONTROL Chiave]** API cloud Adobe Document: Dove è installata la chiave di integrazione
+   * **[!UICONTROL Chiave API di Adobe Document Cloud]**: Dove è installata la chiave di integrazione
 
-   * **[!UICONTROL Indirizzo]** e-mail mittente cloud Adobe Document: Indirizzo di posta elettronica dell&#39;amministratore a livello di gruppo in Adobe Sign
+   * **[!UICONTROL Indirizzo e-mail mittente di Adobe Document Cloud]**: Indirizzo e-mail dell’amministratore a livello di gruppo in Adobe Sign
 
-   * **[!UICONTROL Rimuovi documenti in attesa di eSignature quando il documento viene annullato]**: Configurazione facoltativa che rimuove i documenti dal ciclo di firma se un documento viene annullato in  [!DNL Workday].
+   * **[!UICONTROL Rimuovere i documenti in attesa di firma elettronica quando il documento è annullato]**: Una configurazione opzionale che rimuove i documenti dal ciclo di firma se un documento viene annullato in [!DNL Workday].
 
    ![Campi relativi alla chiave di integrazione di Adobe Sign](images/bp-filled-torn2-575.png)
 
-1. Completare l&#39;installazione:
+1. Quindi, completa l’installazione:
 
    1. Incolla la chiave di integrazione nel campo [!UICONTROL Chiave di integrazione API Adobe Sign.]
-   1. Immettere l&#39;indirizzo di posta elettronica dell&#39;amministratore di Adobe Sign nel campo [!UICONTROL Indirizzo e-mail mittente cloud Adobe Document].
+   1. Immetti l’indirizzo e-mail dell’amministratore dell’Adobe Sign nel [!UICONTROL Indirizzo e-mail mittente di Adobe Document Cloud] campo.
    1. Fai clic su **[!UICONTROL OK]**.
 
    ![Campi relativi alla chiave di integrazione e all&#39;indirizzo e-mail del titolare della chiave](images/bp-filled-small.png)
 
-È ora possibile aggiungere la funzionalità di Adobe Sign a a qualsiasi processo aziendale aggiungendo un [!UICONTROL Review Document Step] e configurandola per utilizzarla come tipo eSignature con **[!UICONTROL eSign da Adobe]**.
+Ora è possibile aggiungere la funzionalità Adobe Sign a qualsiasi processo aziendale aggiungendo un [!UICONTROL Passaggio Rivedi documento] e configurarlo per l&#39;uso **[!UICONTROL eSign per Adobe]** come tipo di firma elettronica.
 
-### Configura il passaggio del documento di revisione {#configure-the-review-document-step}
+### Configurare il passaggio Rivedi documento {#configure-the-review-document-step}
 
-Il documento per la fase di revisione del documento può essere un documento statico; un documento generato da una fase Genera documento all&#39;interno dello stesso processo aziendale; oppure, un report formattato creato con la finestra di progettazione report [!DNL Workday]. Per ognuno dei casi riportati è possibile usufruire dei [tag di testo di Adobe](https://adobe.com/go/adobesign_text_tag_guide_it) per controllare l&#39;aspetto e la posizione di specifici componenti di Adobe Sign. È necessario specificare l&#39;origine del documento nella definizione del processo aziendale. Non è possibile caricare un documento ad hoc durante l&#39;esecuzione del processo aziendale.
+Il documento per il passaggio Rivedi documento può essere un documento statico; un documento generato da un passaggio Genera documento all&#39;interno dello stesso processo aziendale; oppure un report formattato creato con il metodo [!DNL Workday] Report Designer. Per ognuno dei casi riportati è possibile usufruire dei [tag di testo di Adobe](https://adobe.com/go/adobesign_text_tag_guide_it) per controllare l&#39;aspetto e la posizione di specifici componenti di Adobe Sign. È necessario specificare l&#39;origine del documento nella definizione del processo aziendale. Non è possibile caricare un documento ad hoc durante l&#39;esecuzione del processo aziendale.
 
-L&#39;utilizzo esclusivo di Adobe Sign con un passaggio di revisione del documento è la possibilità di disporre di gruppi di firme serializzati. I gruppi di firme consentono di specificare i gruppi basati su ruoli che eseguono l&#39;accesso in sequenza. Adobe Sign non supporta gruppi di firma paralleli.
+La possibilità di disporre di gruppi di firmatari serializzati è una caratteristica esclusiva di Adobe Sign con un passaggio Rivedi documento. I gruppi di firmatari consentono di specificare gruppi basati su ruoli che firmano in sequenza. Adobe Sign non supporta i gruppi di firma paralleli.
 
-Per assistenza nella configurazione della fase di revisione del documento, è possibile fare riferimento alla [Guida di avvio rapido](https://adobe.com//go/adobesign_workday_quick_start){target=&quot;_blank&quot;}.
+Per assistenza nella configurazione del passaggio Rivedi documento, fare riferimento alla [Guida rapida](https://adobe.com//go/adobesign_workday_quick_start){target=&quot;_blank&quot;}.
 
 ## Supporto {#support}
 
-### [!DNL Workday] sostegno {#workday-support}
+### [!DNL Workday] supporto {#workday-support}
 
 [!DNL Workday] è il responsabile del processo di integrazione e deve essere considerato come il principale riferimento di contatto per domande relative a integrazione, richieste di funzionalità o problemi nelle operazioni quotidiane dell’integrazione.
 
-La comunità [!DNL Workday] dispone di numerosi articoli validi su come risolvere i problemi relativi all&#39;integrazione e generare documenti:
+Il [!DNL Workday] la community contiene diversi articoli utili su come risolvere i problemi di integrazione e generare documenti:
 
 * [Risoluzione di problemi relativi alle integrazioni di firma elettronica](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/zhA~hYllD3Hv1wu0CvHH_g)
 * [Passaggio di revisione dei documenti](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg)
@@ -155,14 +155,14 @@ La comunità [!DNL Workday] dispone di numerosi articoli validi su come risolver
 
 * [Suggerimenti per la configurazione relativa alla generazione di documenti di offerta](https://community.workday.com/node/183242)
 
-### Supporto di Adobe Sign {#adobe-sign-support}
+### Supporto Adobe Sign {#adobe-sign-support}
 
 In quanto partner per integrazione, è necessario contattare il supporto di Adobe Sign se l’integrazione non è in grado di ottenere firme o se si verificano problemi di notifica delle firme in sospeso.
 
-I clienti Adobe Sign possono contattare il proprio Customer Success Manager (CSM) per ricevere assistenza. In alternativa, è possibile contattare il supporto tecnico Adobe per telefono: 1-866-318-4100; attendere l&#39;elenco prodotti, quindi immettere: 4 e 2 (come richiesto).
+I clienti Adobe Sign possono contattare il proprio Customer Success Manager (CSM) per ricevere assistenza. In alternativa, è possibile contattare il supporto tecnico di Adobe telefonicamente: 1-866-318-4100; attendi l&#39;elenco dei prodotti e immetti: 4 e poi 2 (come richiesto).
 
 * [Aggiunta di tag di testo di Adobe ai documenti](https://adobe.com/go/adobesign_text_tag_guide)
 
-* [Rivedi la configurazione del documento ed esempi](https://www.adobe.com//go/adobesign_workday_quick_start){target=&quot;_blank&quot;}
+* [Esempi e configurazione della revisione del documento](https://www.adobe.com//go/adobesign_workday_quick_start){target=&quot;_blank&quot;}
 
 [**Contatta il supporto di Adobe Sign**](https://www.adobe.com/go/adobesign-support-center)
