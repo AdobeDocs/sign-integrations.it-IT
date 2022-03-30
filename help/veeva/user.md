@@ -9,7 +9,7 @@ solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: 1eafeb73f7b7055fa958b15a02148898f7c9d406
+source-git-commit: 2c2d7ebe427166222cc62c5ab8f867275a97cce9
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 2%
@@ -32,7 +32,7 @@ Integrazione di Adobe Acrobat Sign con [!DNL Veeva Vault] semplifica e velocizza
 
 * Risparmia tempo e risorse dedicate alle lumache, alle riprese notturne o ai fax.
 * Invia contratti per la firma elettronica o l’approvazione da [!DNL Veeva Vault], accedere alla cronologia dei contratti in tempo reale e visualizzare i contratti salvati.
-* Monitora le trattative in tempo reale nell&#39;intera organizzazione e ottieni aggiornamenti quando gli accordi vengono visualizzati, firmati, annullati o rifiutati.
+* Monitora le trattative in tempo reale nell’organizzazione e ottieni aggiornamenti quando gli accordi vengono visualizzati, firmati, annullati o rifiutati.
 * Utilizza eSign in più di 20 lingue e supporta il servizio fax-back in più di 50 località in tutto il mondo.
 * Crea modelli di accordo riutilizzabili per le opzioni di invio.
 
@@ -56,7 +56,7 @@ Per inviare un accordo utilizzando Adobe Acrobat Sign per Veeva:
 
    ![](images/choose-document-type.png)
 
-1. Seleziona **[!UICONTROL Ok]** per chiudere la finestra di dialogo.
+1. Per chiudere la finestra di dialogo, selezionate **[!UICONTROL Ok]**.
 
 1. Seleziona **[!UICONTROL Avanti]**.
 
@@ -117,11 +117,11 @@ Per inviare un accordo utilizzando Adobe Acrobat Sign per Veeva:
 
 1. Una volta che tutte le firme sono state acquisite e completate in Adobe Acrobat Sign, lo stato del documento nell’archivio cambia in [!UICONTROL Approvato].
 
-1. Seleziona **[!UICONTROL File documento]** ed espandere la proprietà **[!UICONTROL Renditions]** nel Vault. Una volta che il documento è in stato Approvato, viene creato automaticamente un nuovo rendering denominato &quot;Adobe Sign rendering&quot;.
+1. Seleziona **[!UICONTROL File documento]** ed espandere la proprietà **[!UICONTROL Renditions]** nel Vault. Una volta che il documento è in stato Approvato, viene creato automaticamente un rendering denominato &quot;Adobe Sign rendering&quot;.
 
    ![](images/document-files.png)
 
-1. Scarica il modulo di rendering di Adobe Sign per convalidare la firma del destinatario.
+1. Scarica il modulo di rendering di Adobe Sign per la convalida della firma del destinatario.
 
    ![](images/verify-signature.png)
 

@@ -10,9 +10,9 @@ solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 1eafeb73f7b7055fa958b15a02148898f7c9d406
+source-git-commit: 2c2d7ebe427166222cc62c5ab8f867275a97cce9
 workflow-type: tm+mt
-source-wordcount: '3573'
+source-wordcount: '3568'
 ht-degree: 2%
 
 ---
@@ -222,7 +222,7 @@ Quando distribuisci il pacchetto Adobe Acrobat Sign, viene creato un record Grup
 
 ### Passaggio 6. Crea impostazione ruolo utente {#create-user-role-setup}
 
-Una volta configurati correttamente i cicli di vita, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC a tutti i documenti idonei per la procedura di Adobe Acrobat Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
+Una volta configurati correttamente i cicli di vita, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC per tutti i documenti idonei per la procedura di Adobe Acrobat Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
 
 * Gruppo di tipi di documento come documento Adobe Sign
 * Ruolo dell’applicazione come ruolo di amministratore Adobe Sign
@@ -247,7 +247,7 @@ Per configurare i campi documento:
    ![Immagine](images/create-display-section.png)
 
 1. Per i due campi documento condivisi (signature__c e allow_adobe_sign_user_actions__c), aggiornare la sezione dell’interfaccia utente con **[!UICONTROL Adobe firma]** come etichetta di sezione.
-1. Aggiungi i tre campi condivisi a tutti i tipi di documenti idonei per la firma Adobe Acrobat. A tale scopo, nella pagina del documento di base, selezionate **[!UICONTROL Aggiungi]** > **[!UICONTROL Campo condiviso esistente]** dall&#39;angolo superiore destro.
+1. Aggiungi i tre campi condivisi a tutti i tipi di documenti idonei per la firma Adobe Acrobat. A tale scopo, nella pagina Documento di base, seleziona **[!UICONTROL Aggiungi]** > **[!UICONTROL Campo condiviso esistente]** dall&#39;angolo superiore destro.
 
    ![Immagine](images/create-document-fields.png)
 
