@@ -9,7 +9,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
+source-git-commit: 076c575d179f576366c1d9a76be0a582154574b1
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 2%
@@ -86,7 +86,7 @@ Per inviare un accordo utilizzando Adobe Acrobat Sign per Veeva:
 
    ![](images/select-adobe-sign.png)
 
-1. Se la funzione Utenti in più gruppi è abilitata nell’account Adobe Acrobat Sign e il mittente appartiene a più gruppi, viene visualizzata una finestra di dialogo come illustrato di seguito. Nella finestra di dialogo, selezionate il gruppo, quindi selezionate **[!UICONTROL Ok]**.
+1. Se la funzione Utenti in più gruppi è abilitata nell’account Adobe Acrobat Sign e il mittente appartiene a più gruppi, viene visualizzata una finestra di dialogo come illustrato di seguito. Nella finestra di dialogo, selezionate il gruppo, quindi selezionate **[!UICONTROL Avanti]**.
 
    ![](images/umg-dialog.png)
 
