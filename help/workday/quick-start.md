@@ -11,10 +11,10 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 8b6fa8b4-e240-4ebe-ae2a-8807d75a6c69
-source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
+source-git-commit: 2cc0ea55ee7dca3682896c61c85eec29a555339c
 workflow-type: tm+mt
-source-wordcount: '1348'
-ht-degree: 26%
+source-wordcount: '1347'
+ht-degree: 25%
 
 ---
 
@@ -47,7 +47,7 @@ Esiste una relazione 1:1 tra [!UICONTROL [!UICONTROL Passaggio Rivedi documento]
 Definizione di una funzione [!UICONTROL Passaggio Rivedi documento]:
 
 1. Inserire un [!UICONTROL Passaggio Rivedi documento].
-1. Specifica i gruppi (ruoli) che possono agire sulla [!UICONTROL Passaggio Rivedi documento].
+1. Specify the Groups (roles) that can act upon the [!UICONTROL Review Document Step].
 
 ![Passaggi dei processi aziendali](images/insert-review-doc-steptornm-575.png)
 
@@ -70,15 +70,15 @@ Per configurare la proprietà [!UICONTROL Passaggio Rivedi documento]:
 
 1. Facoltativamente, aggiungi un &quot;utente di reindirizzamento&quot; per acquisire le azioni di &quot;rifiuto di firmare&quot;. Quando gli utenti rifiutano, [!DNL Workday] reindirizza i documenti a un gruppo di sicurezza configurato per la revisione.
 
-Dal menu Azioni correlate di un [!UICONTROL Passaggio Rivedi documento], seleziona **[!UICONTROL Processo aziendale]** > **[!UICONTROL Mantieni reindirizzamento]**. Quindi, selezionate una delle seguenti opzioni:
+From the related actions menu of a [!UICONTROL Review Document Step], select **[!UICONTROL Business Process]** > **[!UICONTROL Maintain Redirect]**. Quindi, selezionate una delle seguenti opzioni:
 
 * **[!UICONTROL Porta indietro]**: Per consentire ai membri del gruppo di sicurezza di inviare un passo indietro rispetto a un passaggio precedente nel processo aziendale. Il processo aziendale riparte quindi da tale passaggio.
 * **[!UICONTROL Passa al passaggio successivo]**: Per consentire ai membri del gruppo di sicurezza di passare al passaggio successivo del processo aziendale.
 * **[!UICONTROL Gruppi di sicurezza]**: Per reindirizzare i passaggi del flusso del processo aziendale. I gruppi di sicurezza visualizzati a questo prompt sono selezionati nella policy di protezione dei processi aziendali nella sezione Reindirizzamento.
 
-## Note sulle fasi del processo aziendale {#business-process-step-notes}
+## Business process step notes {#business-process-step-notes}
 
-[!UICONTROL Il quadro per i processi aziendali] è potente; tuttavia, devi assicurarti che:
+Il [!UICONTROL Business Process Framework] è potente; tuttavia, devi assicurarti che:
 
 * Ogni processo aziendale deve avere una fase di completamento, che è idealmente alla fine del processo aziendale.
 
@@ -108,13 +108,13 @@ Questo processo aziendale prevede i seguenti passaggi:
 * Definisce il processo di firma nel metodo [!UICONTROL Passaggio Rivedi documento] &quot;bc&quot;.
 * Definisce il punto decisionale per fare un&#39;offerta nel passaggio di completamento richiesto &quot;d&quot;.
 
-Il documento dinamico generato nel passaggio “ba” è denominato [!UICONTROL Offer Letter] (Lettera di offerta) e contiene un singolo blocco di testo denominato [!UICONTROL Rapid Offer] (Offerta rapida). Potete aggiungere più blocchi di testo, ad esempio intestazione, formula di saluto, compenso, stock, chiusura, termini e altro ancora.
+Il documento dinamico generato nel passaggio “ba” è denominato [!UICONTROL Offer Letter] (Lettera di offerta) e contiene un singolo blocco di testo denominato [!UICONTROL Rapid Offer] (Offerta rapida). You can add multiple text blocks such as header, salutation, compensation, stock, closing, terms, and more as required.
 
 ![[!DNL Workday] pagina visualizza documento](images/offer-letter-575.png)
 
-La lettera di offerta dinamica riportata di seguito viene creata nel [!DNL Workday] editor rich text. Gli elementi evidenziati in *grigio* sono [!DNL Workday] oggetti forniti che fanno riferimento a dati contestuali.
+La lettera di offerta dinamica riportata di seguito viene creata nel [!DNL Workday] editor rich text. The items highlighted in *gray* are [!DNL Workday] provided objects that reference contextual data.
 
-Gli elementi tra {{parentesi}} sono [tag di testo di Adobe](https://adobe.com/go/adobesign_text_tag_guide_it).
+Elementi {{brackets}} sono [Adobe di tag di testo](https://adobe.com/go/adobesign_text_tag_guide_it).
 
 ![Esempio di modulo dinamico](images/script.png)
 
@@ -186,7 +186,7 @@ Il [!DNL Workday] la community contiene diversi articoli utili su come risolvere
 
 In quanto partner per integrazione, è necessario contattare il supporto di Adobe Sign se l’integrazione non è in grado di ottenere firme o se si verificano problemi di notifica delle firme in sospeso.
 
-I clienti Adobe Sign devono contattare il proprio Customer Success Manager per assistenza. In alternativa, [!UICONTROL Adobe supporto tecnico] è possibile raggiungerlo per telefono: 1-866-318-4100, attendi l&#39;elenco dei prodotti e inserisci: 4 e poi 2 (come richiesto).
+I clienti Adobe Sign devono contattare i propri [!UICONTROL Customer Success Manager] per supporto. In alternativa, [!UICONTROL Adobe supporto tecnico] è possibile raggiungerlo per telefono: 1-866-318-4100, attendi l&#39;elenco dei prodotti e inserisci: 4 e poi 2 (come richiesto).
 
 * [Aggiunta di tag di testo di Adobe ai documenti](https://www.adobe.com/go/adobesign_text_tag_guide)
 
