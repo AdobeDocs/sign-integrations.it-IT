@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 0577f30c35a348174bed27c6eb309fce43f03eca
+source-git-commit: c60fd19fa52fb203fd19da69d58792ef6fb88eec
 workflow-type: tm+mt
-source-wordcount: '3909'
+source-wordcount: '3931'
 ht-degree: 3%
 
 ---
@@ -30,7 +30,7 @@ I passaggi di alto livello per completare l&#39;integrazione sono:
 * Attiva il tuo account amministrativo in Adobe Acrobat Sign (solo per i nuovi clienti).
 * Create oggetti per monitorare la cronologia del ciclo di vita di un accordo nel Vault.
 * Crea un nuovo profilo di sicurezza.
-* Configura un gruppo in Adobe Acrobat Sign per contenere il [!DNL Veeva Vault] utente di integrazione.
+* Configura un gruppo in Adobe Acrobat Sign per contenere la proprietà [!DNL Veeva Vault] utente di integrazione.
 * Creare campi documento ed interpretazioni.
 * Configura le azioni web e aggiorna il ciclo di vita del documento.
 * Crea la configurazione del tipo di documento utente e del ruolo utente.
@@ -46,7 +46,7 @@ Per configurare [!DNL Veeva Vault] per l’integrazione con Adobe Acrobat Sign, 
 
 ### Passaggio 1. Crea gruppo {#create-group}
 
-Per configurare Adobe Acrobat Sign per [!DNL Vault], un nuovo gruppo denominato *Adobe Sign Admin Group* viene creato. Questo gruppo viene utilizzato per impostare la sicurezza a livello di campo del documento per i campi correlati a Adobe Acrobat Sign e deve includere *Profilo di integrazione Adobe Sign* per impostazione predefinita.
+Per configurare Adobe Acrobat Sign per [!DNL Vault], un nuovo gruppo denominato *Adobe Sign Admin Group* viene creato. Questo gruppo viene utilizzato per impostare la sicurezza a livello di campo del documento per i campi correlati ad Adobe Acrobat Sign e deve includere *Profilo di integrazione Adobe Sign* per impostazione predefinita.
 
 ![Immagine dei dettagli dell’evento della firma](images/create-admin-group.png)
 
@@ -80,7 +80,7 @@ L’oggetto Firma viene creato per memorizzare le informazioni relative all’ac
 | Campo | Etichetta | Tipo | Descrizione |
 |:---|:---|:---|:------- | 
 | external_id__c | ID accordo | Stringa (100) | Contiene l’ID accordo univoco di Adobe Acrobat Sign |
-| file_hash__c | Hash file | Stringa (50) | Contiene il checksum md5 del file inviato ad Adobe Acrobat Sign |
+| file_hash__c | Hash file | Stringa (50) | Contiene il checksum md5 del file inviato a Adobe Acrobat Sign |
 | name__v | Nome | Stringa (128) | Contiene il nome dell’accordo |
 | sender_c | Mittente | Oggetto (utente) | Contiene il riferimento all’utente Vault che ha creato l’accordo. |
 | signature_status__c | Stato firma | Stringa (75) | Lo stato dell’accordo è memorizzato in Adobe Acrobat Sign. |
@@ -102,9 +102,9 @@ L’oggetto firmatario viene creato per memorizzare le informazioni relative ai 
 
 | Campo | Etichetta | Tipo | Descrizione |
 |:---|:---|:---|:------- | 
-| email__c | E-mail | Stringa (120) | Contiene l’ID accordo univoco di Adobe Acrobat Sign |
+| email__c | E-mail | Stringa (120) | Contiene l’ID accordo univoco del Adobe Acrobat Sign |
 | external_id__c | ID partecipante | Stringa (80) | Contiene l’identificatore univoco del partecipante a Adobe Acrobat Sign |
-| name__v | Nome | Stringa (128) | Contiene il nome del partecipante a Adobe Acrobat Sign |
+| name__v | Nome | Stringa (128) | Contiene il nome del partecipante ad Adobe Acrobat Sign |
 | order__c | Ordine | Numero | Contiene il numero d’ordine del partecipante all’accordo Adobe Acrobat Sign |
 | role_c | Ruolo | Stringa (30) | Il ruolo del partecipante all’accordo Adobe Acrobat Sign |
 | signature__c | Firma | Oggetto (firma) | Contiene il riferimento al record principale della firma |
@@ -129,7 +129,7 @@ Campi Oggetto evento firma
 | name__v | Nome | Stringa | Nome evento generato automaticamente |
 | participant_comment__c | Commento del partecipante | Stringa | Contiene il commento del partecipante ad Adobe Acrobat Sign, se presente |
 | participant_email__c | Indirizzo e-mail partecipante | Stringa | Contiene l’e-mail del partecipante ad Adobe Acrobat Sign |
-| participant_role_c | Ruolo partecipante | Stringa | Il ruolo del partecipante ad Adobe Acrobat Sign |
+| participant_role_c | Ruolo partecipante | Stringa | Il ruolo del partecipante a Adobe Acrobat Sign |
 | signature__c | Firma | Oggetto (firma) | Contiene il riferimento al record principale della firma |
 | external_id__c | ID esterno | Testo (200) | Contiene l’identificatore evento accordo generato da Adobe Sign. |
 
@@ -185,7 +185,7 @@ L&#39;oggetto Signature che fa parte del pacchetto di distribuzione viene fornit
 
    ![Immagine](images/select-columns-to-display.png)
 
-#### **Visualizzare i partecipanti e la cronologia di audit per il documento Adobe Acrobat Sign** {#view-participants-audit-history}
+#### **Visualizzare i partecipanti e la cronologia di audit per il documento di Adobe Acrobat Sign** {#view-participants-audit-history}
 
 * Per visualizzare i partecipanti e la cronologia di audit per il documento Adobe Acrobat Sign, seleziona il collegamento nella sezione &quot;Adobe firma&quot; del documento.
 
@@ -212,7 +212,7 @@ La distribuzione del pacchetto riuscita al Passaggio 2 crea il profilo di integr
 
 ### Passaggio 4. Crea utente {#create-user}
 
-L’account di sistema Vault che utilizza l’integrazione con Adobe Acrobat Sign deve:
+L’account di sistema Vault dell’integrazione con Adobe Acrobat Sign deve:
 
 * Disporre di un profilo di integrazione Adobe Sign
 * Avere un profilo di sicurezza
@@ -231,7 +231,7 @@ A tale scopo, effettua le seguenti operazioni:
 
 ### Passaggio 5. Configurare il gruppo di tipi di documento {#create-document-type-group}
 
-Quando distribuisci il pacchetto Adobe Acrobat Sign, viene creato un record Gruppo tipi di documento denominato &quot;Documento Adobe Sign&quot;.
+Quando distribuisci il pacchetto Adobe Acrobat Sign, viene creato un record Gruppo tipi di documento denominato &quot;Adobe Sign documento&quot;.
 
 ![Immagine di gruppi di tipi di documento](images/document-type-groups.png)
 
@@ -247,7 +247,7 @@ Quando distribuisci il pacchetto Adobe Acrobat Sign, viene creato un record Grup
 
 ### Passaggio 6. Crea impostazione ruolo utente {#create-user-role-setup}
 
-Una volta configurati correttamente i cicli di vita, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC a tutti i documenti idonei per l’elaborazione di Adobe Acrobat Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
+Una volta configurati correttamente i cicli di vita, il sistema deve garantire che l’utente amministratore di Adobe Sign sia aggiunto da DAC per tutti i documenti idonei per la procedura di Adobe Acrobat Sign. A tale scopo, viene creato il record Impostazione ruolo utente appropriato che specifica:
 
 * Gruppo di tipi di documento come documento Adobe Sign
 * Ruolo dell’applicazione come ruolo di amministratore Adobe Sign
@@ -317,7 +317,7 @@ L&#39;integrazione di Adobe Acrobat Sign e Vault richiede la creazione e la conf
 
 Per ogni tipo di documento idoneo per la firma di Adobi, è necessario aggiornare il ciclo di vita del documento corrispondente aggiungendo nuovi stati e ruoli del ciclo di vita.
 
-Il ciclo di vita degli accordi Adobe Acrobat Sign presenta i seguenti stati:
+Gli stati del ciclo di vita degli accordi di Adobe Acrobat Sign sono i seguenti:
 
 * BOZZA
 * AUTHORING o DOCUMENTS_NOT_YET_PROCESSED
@@ -442,15 +442,19 @@ Questo stato non richiede azioni da parte dell&#39;utente. Deve disporre di una 
 
 ## Connetti [!DNL Veeva Vault] per Adobe Acrobat Sign con il middleware {#connect-middleware}
 
-Dopo aver completato la configurazione per [!DNL Veeva Vault] e l’account di amministrazione di Adobe Acrobat Sign, l’amministratore deve creare una connessione tra i due account utilizzando il middleware. Il [!DNL Veeva Vault] e la connessione dell’account Adobe Acrobat Sign viene avviata da Adobe Acrobat Sign Identity e viene quindi utilizzata per memorizzare[!DNL Veeva Vault] identità.
+Dopo aver completato la configurazione per [!DNL Veeva Vault] e l’account amministratore di Adobe Acrobat Sign, l’amministratore deve creare una connessione tra i due account utilizzando il middleware. Il [!DNL Veeva Vault] e la connessione all&#39;account Adobe Acrobat Sign viene avviata da Adobe Acrobat Sign Identity e quindi viene utilizzata per memorizzare[!DNL Veeva Vault] identità.
 Per garantire la sicurezza e la stabilità del sistema, l&#39;amministratore deve utilizzare una [!DNL Veeva Vault] account di sistema/servizio/utilità, ad esempio `adobe.for.veeva@xyz.com`, anziché un account utente personale, ad esempio `bob.smith@xyz.com`.
 
-L’amministratore dell’account Adobe Acrobat Sign deve seguire i passaggi riportati di seguito per connettersi [!DNL Veeva Vault] per Adobe Acrobat Sign con middleware:
+L’amministratore dell’account Adobe Acrobat Sign deve seguire i passaggi riportati di seguito per connettersi [!DNL Veeva Vault] per Adobe Acrobat Sign con il middleware:
 
 1. Vai alla [Adobe Acrobat Sign per [!DNL Veeva Vault] Home page](https://static.adobesigncdn.com/veevavaultintsvc/index.html).
 1. Seleziona **[!UICONTROL Login]** dall&#39;angolo superiore destro.
 
    ![Immagine di accesso middleware](images/middleware_login.png)
+
+1. Per autorizzare il livello di accesso all&#39;applicazione, seleziona Acrobat Sign ambito OAuth come **[!UICONTROL RESOCONTO]** o **[!UICONTROL GRUPPO]**. Quindi, seleziona **[!UICONTROL Autorizza]**.
+
+   ![Immagine](images/middleware_oauth.png)
 
 1. Nella pagina di accesso di Adobe Acrobat Sign visualizzata, immetti l’indirizzo e-mail e la password dell’amministratore dell’account, quindi seleziona **[!UICONTROL Accedi]**.
 
@@ -490,7 +494,7 @@ L’amministratore dell’account Adobe Acrobat Sign deve seguire i passaggi rip
 
 1. Per consentire il provisioning automatico degli utenti in Adobe Acrobat Sign, seleziona la casella di controllo **[!UICONTROL Fornitura automatica per gli utenti di Sign]**.
 
-   **Nota:** Il provisioning automatico dei nuovi utenti di Adobe Acrobat Sign funziona solo se è stato abilitato a livello di account Adobe Acrobat Sign in Adobe Acrobat Sign, oltre all’attivazione **[!UICONTROL Fornitura automatica per gli utenti di Sign]** per la[!DNL Veeva Vault] Integrazione con Adobe Acrobat Sign come illustrato di seguito dall’amministratore dell’account di Adobe Acrobat Sign.
+   **Nota:** Il provisioning automatico dei nuovi utenti di Adobe Acrobat Sign funziona solo se è stato abilitato a livello di account di Adobe Acrobat Sign in Adobe Acrobat Sign, oltre all’attivazione **[!UICONTROL Fornitura automatica per gli utenti di Sign]** per la[!DNL Veeva Vault] Integrazione con Adobe Acrobat Sign come illustrato di seguito dall’amministratore dell’account di Adobe Acrobat Sign.
 
    ![Immagine](images/allow-auto-provisioning.png)
 
