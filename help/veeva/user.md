@@ -9,7 +9,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: 076c575d179f576366c1d9a76be0a582154574b1
+source-git-commit: c164692d78608c436d136caef44b19fe8d37b9d8
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 2%
@@ -18,17 +18,17 @@ ht-degree: 2%
 
 # Adobe Acrobat Sign per [!DNL Veeva Vault]: Guida utente {#veeva-vault-user-guide}
 
-[**Contatta il supporto di Adobe Acrobat Sign**](https://adobe.com/go/adobesign-support-center_it)
+[**Contatta il supporto Adobe Acrobat Sign**](https://adobe.com/go/adobesign-support-center_it)
 
-Questo documento è progettato per facilitare [!DNL Veeva Vault] Scopri come utilizzare Adobe Acrobat Sign per [!DNL Veeva Vault] integrazione per l’invio di un accordo.
+Questo documento è progettato per facilitare [!DNL Veeva Vault] i clienti imparano a utilizzare Adobe Acrobat Sign per [!DNL Veeva Vault] integrazione per l’invio di un accordo.
 
 ## Panoramica {#overview}
 
-Integrazione di Adobe Acrobat Sign con [!DNL Veeva Vault] facilita il processo di ottenimento di una firma o approvazione per qualsiasi documentazione che richieda firme legali o un’elaborazione dei documenti verificabile.
+Integrazione con Adobe Acrobat Sign [!DNL Veeva Vault] facilita il processo di ottenimento di una firma o approvazione per qualsiasi documentazione che richieda firme legali o un’elaborazione dei documenti verificabile.
 
 Il processo complessivo di invio dei documenti per la firma è simile all’invio di un’e-mail, quindi è facile da adottare per la maggior parte degli utenti.
 
-Integrazione di Adobe Acrobat Sign con [!DNL Veeva Vault] semplifica e velocizza i flussi di lavoro relativi a documenti e firme. Utilizzando il flusso di lavoro di integrazione, è possibile:
+Integrazione con Adobe Acrobat Sign [!DNL Veeva Vault] semplifica e velocizza i flussi di lavoro relativi a documenti e firme. Utilizzando il flusso di lavoro di integrazione, è possibile:
 
 * Risparmia tempo e risorse dedicate alle lumache, alle riprese notturne o ai fax.
 * Invia contratti per la firma elettronica o l’approvazione da [!DNL Veeva Vault], accedere alla cronologia dei contratti in tempo reale e visualizzare i contratti salvati.
@@ -53,6 +53,7 @@ Per inviare un accordo utilizzando Adobe Acrobat Sign per Veeva:
 1. Carica qualsiasi documento dall’unità locale.
 
 1. Nella finestra di dialogo visualizzata, seleziona **[!UICONTROL Tipo]** as *[!UICONTROL Clinico]* quindi selezionare un **[!UICONTROL Sottotipo]** e **[!UICONTROL Classificazione]**, se necessario.
+
 
    ![](images/choose-document-type.png)
 
@@ -94,16 +95,16 @@ Per inviare un accordo utilizzando Adobe Acrobat Sign per Veeva:
 
    ![](images/iframe.png)
 
-   **Nota:** Se per l’e-mail del mittente non esiste un account Adobe Acrobat Sign, nella finestra iFrame viene visualizzato un messaggio, come illustrato di seguito. Inoltre, invia all&#39;utente un&#39;e-mail con le istruzioni per attivare l&#39;account.
+   **Nota:** Se non esiste un account utente Adobe Acrobat Sign per l’e-mail del mittente, nella finestra iFrame viene visualizzato un messaggio, come illustrato di seguito. Inoltre, invia all&#39;utente un&#39;e-mail con le istruzioni per attivare l&#39;account.
 
    ![](images/iFrame-registration-message.png)
 
    ![](images/iFrame-confirm-email.png)
 
-   Tuttavia, se *Fornitura automatica per gli utenti di Sign* La funzione è disattivata, la creazione dell’utente di Adobe Acrobat Sign non riesce e nella finestra iFrame viene visualizzato un messaggio che richiede all’utente di contattare l’amministratore dell’account Adobe Acrobat Sign. L’amministratore dell’account Adobe Acrobat Sign può eseguire una delle seguenti operazioni:
+   Tuttavia, se *Fornitura automatica per gli utenti di Sign* la funzione è disattivata, la creazione dell&#39;utente di Adobe Acrobat Sign non riesce e nella finestra iFrame viene visualizzato un messaggio che richiede all&#39;utente di contattare l&#39;amministratore dell&#39;account Adobe Acrobat Sign. L’amministratore dell’account Adobe Acrobat Sign può effettuare una delle seguenti operazioni:
 
    * Abilita la proprietà *Fornitura automatica per gli utenti di Sign* per l&#39;account.
-   * Creare l’utente in Adobe Acrobat Sign prima di utilizzare l’integrazione di Veeva Vault Adobe Acrobat Sign.
+   * Create l&#39;utente in Adobe Acrobat Sign prima di utilizzare l&#39;integrazione con Veeva Vault Adobe Acrobat Sign.
 
    ![](images/iFrame-contact-administrator.png)
 
@@ -125,7 +126,7 @@ Per inviare un accordo utilizzando Adobe Acrobat Sign per Veeva:
 
    ![](images/verify-signature.png)
 
-## Annullare un accordo con Adobe Acrobat Sign per [!DNL Veeva Vault] {#cancel-sign-vault-agreement}
+## Annullare un accordo utilizzando Adobe Acrobat Sign per [!DNL Veeva Vault] {#cancel-sign-vault-agreement}
 
 1. Vai alla [[!DNL Veeva Vault] pagina di login](https://login.veevavault.com/) e immetti il nome utente e la password. Viene aperta la home page del Vault, come illustrato di seguito.
 
