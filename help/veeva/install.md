@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 163c74a2e03aeaa0627d972b791166d4ea4e66a6
+source-git-commit: 08d55f79fd4fff8f13dc23b9d155e501ca038be1
 workflow-type: tm+mt
-source-wordcount: '3933'
+source-wordcount: '4169'
 ht-degree: 3%
 
 ---
@@ -289,13 +289,40 @@ Disattiva le sovrapposizioni vettoriali (disable_vault_overlays__v) è un campo 
 
 Il nuovo tipo di rendering chiamato *Adobe Sign rendering (adobe_sign_rendition__c)* viene utilizzato dall’integrazione Vault per caricare documenti PDF firmati in Adobe Acrobat Sign. È necessario dichiarare il rendering Adobe Sign per ogni tipo di documento idoneo per la firma Adobe Acrobat.
 
+È necessario dichiarare il rendering originale per ogni tipo di documento idoneo per la firma Adobe Acrobat.
+
 ![Immagine dei tipi di rendering](images/rendition-type.png)
 
 ![Immagine](images/edit-details-clinical.png)
 
-Il nuovo tipo di rendering chiamato *Rendition originale (original_rendition__c)* viene utilizzato dall’integrazione Vault come nome del rendering da utilizzare per memorizzare il rendering visualizzabile originale se il documento firmato viene importato come rendering visualizzabile.
+Il nuovo tipo di rendering chiamato *Rendition originale* (original_rendition__c) viene utilizzato dall’integrazione Vault come nome del rendering da utilizzare per memorizzare il rendering visualizzabile originale se il documento firmato viene importato come rendering visualizzabile.
 
 ![Immagine](images/original-rendition.png)
+
+Facoltativamente, l’archivio può avere un nuovo tipo di rendering Adobe Rendition Audit Trail (adobe_audit_trail_rendition__c), che viene utilizzato dall’integrazione Vault per memorizzare il report Adobe dell’audit trail.
+
+Segui i passaggi riportati di seguito per configurare il rendering dell’audit trail di Adobe:
+
+1. Vai a **Tipo di rendering** > **Crea nuovo tipo di rendering**.
+Create il nuovo tipo di rendering come Rendition della traccia di revisione (adobe_audit_trail_rendition__c).
+
+   ![Immagine](images/audit-trail-rendition-setup-1.png)
+
+1. Per visualizzare e scaricare il rendering Adobe della traccia di audit per il documento, dichiarare *Adobe rendering traccia di audit* per ogni tipo di documento idoneo per Adobe Acrobat Signature.
+
+   ![Immagine](images/audit-trail-rendition-setup-2.png)
+
+**Nota**: Puoi scegliere di allegare il report di audit all’interpretazione firmata attivando **[!UICONTROL Allega report di audit a rendering firmato]** e visualizzare anche il rendering abilitando ****[!UICONTROL Visualizzazione del rendering Acrobat Sign]**** nelle impostazioni dell’interfaccia utente dell’amministratore.
+
+![Immagine](images/audit-trail-rendition-setup-3.png)
+
+Quando un utente opta per un accordo di firma digitale con le impostazioni sopra riportate, viene visualizzato un messaggio (come illustrato di seguito) che indica che Adobe Acrobat Sign utilizza PDF Portfoli per combinare i report di PDF con firma digitale e audit trail.
+
+Per visualizzare il contenuto del documento insieme alla firma digitale e all’audit trail, non selezionare &quot;Allega report di audit a rendering firmato&quot; con &quot;Visualizza rendering Acrobat Sign&quot; nell’interfaccia utente dell’amministratore per la firma digitale.
+
+Puoi scaricare o visualizzare l’audit trail dell’Adobe come interpretazione separata dall’interpretazione firmata.
+
+![Immagine](images/audit-trail-rendition-setup-4.png)
 
 ### Passaggio 9. Aggiorna azioni Web {#web-actions}
 
