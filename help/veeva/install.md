@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 00db62c894df93abac31bf8196730382d54e8fa0
+source-git-commit: 76f1be575130e89d96dfe45f7343382b3a519903
 workflow-type: tm+mt
-source-wordcount: '4176'
+source-wordcount: '4171'
 ht-degree: 3%
 
 ---
@@ -320,7 +320,7 @@ Quando un utente opta per un accordo di firma digitale con le impostazioni sopra
 
 Per visualizzare il contenuto del documento insieme alla firma digitale e all’audit trail, non selezionare &quot;Allega report di audit a rendering firmato&quot; con &quot;Visualizza rendering Acrobat Sign&quot; nell’interfaccia utente dell’amministratore per la firma digitale.
 
-Puoi scaricare o visualizzare l’audit trail di Adobe come interpretazione separata dall’interpretazione firmata utilizzando la funzione &quot;Adobe audit trail rendering&quot;.
+Puoi utilizzare l’opzione Adobe rendering traccia di revisione per scaricare o visualizzare l’Adobe traccia di revisione come un’interpretazione separata.
 
 ![Immagine](images/audit-trail-rendition-setup-4.png)
 
