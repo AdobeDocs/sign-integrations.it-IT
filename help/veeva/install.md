@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 08d55f79fd4fff8f13dc23b9d155e501ca038be1
+source-git-commit: c09759f2455b476fd1093d845cee4f5c3c3601d7
 workflow-type: tm+mt
 source-wordcount: '4169'
 ht-degree: 3%
@@ -289,13 +289,13 @@ Disattiva le sovrapposizioni vettoriali (disable_vault_overlays__v) è un campo 
 
 Il nuovo tipo di rendering chiamato *Adobe Sign rendering (adobe_sign_rendition__c)* viene utilizzato dall’integrazione Vault per caricare documenti PDF firmati in Adobe Acrobat Sign. È necessario dichiarare il rendering Adobe Sign per ogni tipo di documento idoneo per la firma Adobe Acrobat.
 
-È necessario dichiarare il rendering originale per ogni tipo di documento idoneo per la firma Adobe Acrobat.
-
 ![Immagine dei tipi di rendering](images/rendition-type.png)
 
 ![Immagine](images/edit-details-clinical.png)
 
 Il nuovo tipo di rendering chiamato *Rendition originale* (original_rendition__c) viene utilizzato dall’integrazione Vault come nome del rendering da utilizzare per memorizzare il rendering visualizzabile originale se il documento firmato viene importato come rendering visualizzabile.
+
+È necessario dichiarare il rendering originale per ogni tipo di documento idoneo per la firma Adobe Acrobat.
 
 ![Immagine](images/original-rendition.png)
 
