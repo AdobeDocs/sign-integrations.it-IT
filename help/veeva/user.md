@@ -12,13 +12,13 @@ exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
 source-git-commit: c164692d78608c436d136caef44b19fe8d37b9d8
 workflow-type: tm+mt
 source-wordcount: '721'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
 # Adobe Acrobat Sign per [!DNL Veeva Vault]: Guida utente {#veeva-vault-user-guide}
 
-[**Contatta il supporto Adobe Acrobat Sign**](https://adobe.com/go/adobesign-support-center_it)
+[**Contatta il supporto Adobe Acrobat Sign**](https://adobe.com/go/adobesign-support-center)
 
 Questo documento è progettato per facilitare [!DNL Veeva Vault] i clienti imparano a utilizzare Adobe Acrobat Sign per [!DNL Veeva Vault] integrazione per l’invio di un accordo.
 
@@ -33,7 +33,7 @@ Integrazione con Adobe Acrobat Sign [!DNL Veeva Vault] semplifica e velocizza i 
 * Risparmia tempo e risorse dedicate alle lumache, alle riprese notturne o ai fax.
 * Invia contratti per la firma elettronica o l’approvazione da [!DNL Veeva Vault], accedere alla cronologia dei contratti in tempo reale e visualizzare i contratti salvati.
 * Monitora le trattative in tempo reale nell’organizzazione e ottieni aggiornamenti quando gli accordi vengono visualizzati, firmati, annullati o rifiutati.
-* Utilizza eSign in più di 20 lingue e supporta il servizio fax-back in più di 50 località in tutto il mondo.
+* eSign in oltre 20 lingue e supporta il servizio fax-back in più di 50 lingue in tutto il mondo.
 * Crea modelli di accordo riutilizzabili per le opzioni di invio.
 
 ## Invia un accordo utilizzando Adobe Acrobat Sign per [!DNL Veeva Vault] {#send-sign-vault-agreement}

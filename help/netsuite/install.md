@@ -11,7 +11,7 @@ exl-id: 378cac01-87c9-4288-8839-482121d49402
 source-git-commit: 568d001a05bd0e642036b4a73067689e987c02ba
 workflow-type: tm+mt
 source-wordcount: '4870'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -72,7 +72,7 @@ Vedere [Creare un accordo Adobe Sign](#createagreement) per ulteriori informazio
 
 Adobe Sign utilizza OAuth 2.0 per autenticare il tuo account Adobe Sign all&#39;interno di [!DNL NetSuite].
 
-Questo protocollo autorizza l&#39;installazione [!DNL NetSuite] per comunicare con Adobe Sign senza richiedere la password. Poiché le informazioni riservate non vengono condivise direttamente tra le applicazioni, la probabilità che il tuo account venga compromesso è più bassa.
+Questo protocollo autorizza l&#39;installazione [!DNL NetSuite] per comunicare con Adobe Sign senza richiedere la password. Poiché le informazioni riservate non vengono condivise direttamente tra le app, è meno probabile che l’account venga compromesso.
 
 Questa autenticazione non influisce sull&#39;implementazione, ma è necessario eseguire una configurazione una tantum dopo aver installato o aggiornato il pacchetto nell&#39;account Production o Sandbox.
 
@@ -84,7 +84,7 @@ Il [!DNL NetSuite] l’amministratore che configura OAuth deve anche disporre di
 
 1. Nella pagina Risultati ricerca, seleziona **Visualizza** per la *Configurazione Adobe Sign* record.
 
-   ![Cerca Adobe Sign](images/search-for-adobesignconfig.png).
+   ![Cerca Adobe Sign](images/search-for-adobesignconfig.png)
 
 1. Nella pagina Elenco configurazione Adobe Sign , seleziona **[!UICONTROL Visualizza]** per la *Utilizzo di OAuth per accedere alle API Adobe Sign* record.
 
@@ -92,7 +92,7 @@ Il [!DNL NetSuite] l’amministratore che configura OAuth deve anche disporre di
 
 1. Nella pagina Configurazione di Adobe Sign, seleziona **[!UICONTROL Accesso Con Adobe Sign]**
 
-   ![Esegui l’accesso ](images/log-in-with-adobesign.png)
+   ![Accesso ](images/log-in-with-adobesign.png)
 
 1. Nella pagina di accesso di Adobe Sign visualizzata, immetti le credenziali e seleziona **[!UICONTROL Accedi]**.
 
@@ -114,13 +114,13 @@ Il [!DNL NetSuite] l’amministratore che configura OAuth deve anche disporre di
    >Per procedere, è necessario modificare la porzione del dominio dell&#39;account dell&#39;URL (system.netsuite.com) nel browser per tornare alla [!DNL NetSuite] Sandbox nel modo seguente:
    >
    >
-   >Cambia:
+   >Modifica:
    >
    >
    >system.netsuite.com/app/site/hosting/scriptlet.nl?script=745&amp;deploy=1&amp;web_access_point=https://echosign.com
    >
    >
-   >A:
+   >Per:
    >
    >
    >del sistema.**sandbox.** netsuite.com/app/site/hosting/scriptlet.nl?script=745&amp;deploy=1&amp;web_access_point=https://echosign.com
@@ -261,7 +261,7 @@ Se l’accordo viene creato da un record di transazione, il primo documento nel 
 
 In Preferenze personalizzate, potete anche attivare il **[!UICONTROL Usa Trans. Contatta come primo firmatario]** preferenza se desideri che il contatto principale della transazione venga aggiunto automaticamente come primo firmatario. Quando è associato a un record di transazione, visualizza la proprietà **[!UICONTROL Accordi]** e la proprietà **[!UICONTROL Send for Signature]** pulsanti.
 
-![Preventivo](images/quote.png)
+![Citazione](images/quote.png)
 
 ## Record entità {#entity-records}
 
@@ -379,7 +379,7 @@ Maggiori [!DNL NetSuite] i ruoli devono disporre dell’autorizzazione per utili
    **[!UICONTROL Nessuna autorizzazione richiesta].** Questo vale per i seguenti tipi di record:
 
    * Configurazione Adobe Sign
-   * Documento Adobe Sign
+   * Adobe Sign documento
    * Evento Adobe Sign
    * Lingua Adobe Sign
    * Errori di script di Adobe Sign
@@ -647,4 +647,4 @@ Se si verifica un errore di tipo MIME durante l&#39;invio di un accordo, il nome
 
 ## Supporto {#support}
 
-Vai alla [Portale di supporto di Adobe Sign](https://adobe.com/go/adobesign-support-center_it) per accedere a domande frequenti, documentazione, articoli della knowledge base o per contattare il supporto Adobe.
+Vai alla [Portale di supporto di Adobe Sign](https://adobe.com/go/adobesign-support-center) per accedere a domande frequenti, documentazione, articoli della knowledge base o per contattare il supporto Adobe.

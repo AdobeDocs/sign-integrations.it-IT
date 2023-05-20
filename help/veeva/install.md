@@ -13,13 +13,13 @@ exl-id: 5d61a428-06e4-413b-868a-da296532c964
 source-git-commit: 76f1be575130e89d96dfe45f7343382b3a519903
 workflow-type: tm+mt
 source-wordcount: '4171'
-ht-degree: 3%
+ht-degree: 0%
 
 ---
 
-# [!DNL Veeva Vault] Guida all’installazione{#veeva-installation-guide}
+# [!DNL Veeva Vault] Guida all&#39;installazione{#veeva-installation-guide}
 
-[**Contatta il supporto Adobe Acrobat Sign**](https://adobe.com/go/adobesign-support-center_it)
+[**Contatta il supporto Adobe Acrobat Sign**](https://adobe.com/go/adobesign-support-center)
 
 ## Panoramica {#overview}
 
@@ -121,14 +121,14 @@ Campi Oggetto evento firma
 
 | Campo | Etichetta | Tipo | Descrizione |
 |:---|:---|:---|:-------- | 
-| acting_user_email__c | E-mail utente interessato | Stringa | Contiene l’e-mail dell’utente di Adobe Acrobat Sign che ha eseguito l’azione che ha causato la generazione dell’evento |
+| acting_user_email__c | E-mail utente attivo | Stringa | Contiene l’e-mail dell’utente di Adobe Acrobat Sign che ha eseguito l’azione che ha causato la generazione dell’evento |
 | acting_user_name__c | Nome utente attivo | Stringa | Contiene il nome dell&#39;utente di Adobe Acrobat Sign che ha eseguito l&#39;azione che ha causato la generazione dell&#39;evento |
 | description__c | Descrizione | Stringa | Contiene la descrizione dell&#39;evento Adobe Acrobat Sign |
 | event_date__c | Data evento | DateTime | Contiene la data e l&#39;ora dell&#39;evento Adobe Acrobat Sign |
 | event_type__c | Tipo di evento | Stringa | Contiene il tipo di evento Adobe Acrobat Sign |
 | name__v | Nome | Stringa | Nome evento generato automaticamente |
 | participant_comment__c | Commento del partecipante | Stringa | Contiene il commento del partecipante a Adobe Acrobat Sign, se presente |
-| participant_email__c | Indirizzo e-mail partecipante | Stringa | Contiene l’e-mail del partecipante a Adobe Acrobat Sign |
+| participant_email__c | E-mail partecipante | Stringa | Contiene l’e-mail del partecipante a Adobe Acrobat Sign |
 | participant_role_c | Ruolo partecipante | Stringa | Il ruolo del partecipante a Adobe Acrobat Sign |
 | signature__c | Firma | Oggetto (firma) | Contiene il riferimento al record principale della firma |
 | external_id__c | ID esterno | Testo (200) | Contiene l’identificatore evento accordo generato da Adobe Sign. |
@@ -350,7 +350,7 @@ Il ciclo di vita degli accordi Adobe Acrobat Sign presenta i seguenti stati:
 * AUTHORING o DOCUMENTS_NOT_YET_PROCESSED
 * OUT_FOR_SIGNATURE o OUT_FOR_approval
 * FIRMATO O APPROVATO
-* ANNULLATA
+* ANNULLATO
 * SCADUTO
 
 Per aggiornare il ciclo di vita del documento, effettua le seguenti operazioni:
